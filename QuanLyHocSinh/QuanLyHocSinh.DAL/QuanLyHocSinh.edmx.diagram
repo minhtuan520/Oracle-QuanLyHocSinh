@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d87820057e2348598fabaa80e4024bcf" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.ACCOUNT" Width="1.5" PointX="1.5" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.CLASS" Width="1.5" PointX="3.75" PointY="24.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.GRADELEVEL" Width="1.5" PointX="1.5" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.LEARNINGOUTCOMES" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.SCHOOLYEAR" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.SEMESTER" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.STUDENT" Width="1.5" PointX="0.75" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.STUDENTINCLASS" Width="1.5" PointX="6" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.SUBJECT" Width="1.5" PointX="0.75" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TYPEACCOUNT" Width="1.5" PointX="1.5" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TYPERESULT" Width="1.5" PointX="0.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TESTSCORES" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK_ACCOUNT_FK_TYPEAC_TYPEACCO" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_CLASS_FK_CLASS__GRADELEV" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_STUDENTI_STUDENTIN_CLASS" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_LEARNING_FK_SCHOOLYE" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_LEARNING_RELATIONS_STUDENT" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_TR_IN_LOFK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_STUDENTI_STUDENTIN_SCHOOLYE" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_TESTSCOR_TESTSCORE_SCHOOLYE" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_TESTSCOR_TESTSCORE_SEMESTER" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_STUDENTI_STUDENTIN_STUDENT" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_TESTSCOR_TESTSCORE_STUDENT" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_TESTSCOR_TESTSCORE_SUBJECT" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.ACCOUNT_FOR_STUDENT" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

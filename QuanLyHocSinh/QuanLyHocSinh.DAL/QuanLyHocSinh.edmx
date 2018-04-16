@@ -1,0 +1,885 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="12.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ACCOUNT">
+          <Key>
+            <PropertyRef Name="USERNAME" />
+          </Key>
+          <Property Name="USERNAME" Type="varchar2" MaxLength="255" Nullable="false" />
+          <Property Name="PASSWORD" Type="varchar2" MaxLength="255" />
+          <Property Name="IDTYPE" Type="number" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="ACCOUNT_FOR_STUDENT">
+          <Key>
+            <PropertyRef Name="USERNAME" />
+            <PropertyRef Name="MSHOCSINH" />
+          </Key>
+          <Property Name="USERNAME" Type="varchar2" MaxLength="255" Nullable="false" />
+          <Property Name="MSHOCSINH" Type="varchar2" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CLASS">
+          <Key>
+            <PropertyRef Name="IDCLASS" />
+          </Key>
+          <Property Name="IDCLASS" Type="varchar2" MaxLength="255" Nullable="false" />
+          <Property Name="GRADELEVELID" Type="number" Precision="38" Scale="0" />
+          <Property Name="NAME" Type="varchar2" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="GRADELEVEL">
+          <Key>
+            <PropertyRef Name="GRADELEVELID" />
+          </Key>
+          <Property Name="GRADELEVELID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NAME" Type="varchar2" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="LEARNINGOUTCOMES">
+          <Key>
+            <PropertyRef Name="LEARNINGOUTCOMESID" />
+          </Key>
+          <Property Name="LEARNINGOUTCOMESID" Type="varchar2" MaxLength="255" Nullable="false" />
+          <Property Name="TYPERESULTID" Type="varchar2" MaxLength="255" />
+          <Property Name="MSHOCSINH" Type="varchar2" MaxLength="255" />
+          <Property Name="SCHOOLYEARID" Type="varchar2" MaxLength="255" />
+          <Property Name="MEDIUMSCORE" Type="float" Precision="126" Scale="0" />
+          <Property Name="CONDUCT" Type="varchar2" MaxLength="255" />
+          <Property Name="GRADE" Type="varchar2" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="SCHOOLYEAR">
+          <Key>
+            <PropertyRef Name="SCHOOLYEARID" />
+          </Key>
+          <Property Name="SCHOOLYEARID" Type="varchar2" MaxLength="255" Nullable="false" />
+          <Property Name="NAME" Type="varchar2" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="SEMESTER">
+          <Key>
+            <PropertyRef Name="SEMESTERID" />
+          </Key>
+          <Property Name="SEMESTERID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NAME" Type="varchar2" MaxLength="255" />
+          <Property Name="COEFFICIENT" Type="float" Precision="126" Scale="0" />
+        </EntityType>
+        <EntityType Name="STUDENT">
+          <Key>
+            <PropertyRef Name="MSHOCSINH" />
+          </Key>
+          <Property Name="MSHOCSINH" Type="varchar2" MaxLength="255" Nullable="false" />
+          <Property Name="NAME" Type="varchar2" MaxLength="255" />
+          <Property Name="BIRTHDAY" Type="date" />
+          <Property Name="SEX" Type="number" Precision="38" Scale="0" />
+          <Property Name="ADDRESS" Type="varchar2" MaxLength="255" />
+          <Property Name="PHONE" Type="char" MaxLength="12" />
+        </EntityType>
+        <EntityType Name="STUDENTINCLASS">
+          <Key>
+            <PropertyRef Name="SCHOOLYEARID" />
+            <PropertyRef Name="IDCLASS" />
+            <PropertyRef Name="MSHOCSINH" />
+          </Key>
+          <Property Name="SCHOOLYEARID" Type="varchar2" MaxLength="255" Nullable="false" />
+          <Property Name="IDCLASS" Type="varchar2" MaxLength="255" Nullable="false" />
+          <Property Name="MSHOCSINH" Type="varchar2" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SUBJECT">
+          <Key>
+            <PropertyRef Name="SUBJECTID" />
+          </Key>
+          <Property Name="SUBJECTID" Type="varchar2" MaxLength="255" Nullable="false" />
+          <Property Name="NAME" Type="varchar2" MaxLength="255" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'C##QUANLYHOCSINH.TESTSCORES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="TESTSCORES">
+          <Key>
+            <PropertyRef Name="SUBJECTID" />
+            <PropertyRef Name="SEMESTERID" />
+            <PropertyRef Name="SCHOOLYEARID" />
+            <PropertyRef Name="MSHOCSINH" />
+          </Key>
+          <Property Name="SUBJECTID" Type="varchar2" MaxLength="255" Nullable="false" />
+          <Property Name="SEMESTERID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="SCHOOLYEARID" Type="varchar2" MaxLength="255" Nullable="false" />
+          <Property Name="MSHOCSINH" Type="varchar2" MaxLength="255" Nullable="false" />
+          <Property Name="SCORE_5M" Type="float" Precision="126" Scale="0" />
+          <Property Name="SCORE_15M" Type="float" Precision="126" Scale="0" />
+          <Property Name="SCORE_45M" Type="float" Precision="126" Scale="0" />
+          <Property Name="SCORE_MIDYEAR" Type="float" Precision="126" Scale="0" />
+          <Property Name="SCORE_ENDYEAR" Type="float" Precision="126" Scale="0" />
+        </EntityType>
+        <EntityType Name="TYPEACCOUNT">
+          <Key>
+            <PropertyRef Name="IDTYPE" />
+          </Key>
+          <Property Name="IDTYPE" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NAME" Type="varchar2" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="TYPERESULT">
+          <Key>
+            <PropertyRef Name="TYPERESULTID" />
+          </Key>
+          <Property Name="TYPERESULTID" Type="varchar2" MaxLength="255" Nullable="false" />
+          <Property Name="NAME" Type="varchar2" MaxLength="255" />
+        </EntityType>
+        <Association Name="FK_ACCOUNT__ACCOUNT_F_ACCOUNT">
+          <End Role="ACCOUNT" Type="Self.ACCOUNT" Multiplicity="1" />
+          <End Role="ACCOUNT_FOR_STUDENT" Type="Self.ACCOUNT_FOR_STUDENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ACCOUNT">
+              <PropertyRef Name="USERNAME" />
+            </Principal>
+            <Dependent Role="ACCOUNT_FOR_STUDENT">
+              <PropertyRef Name="USERNAME" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ACCOUNT__ACCOUNT_F_STUDENT">
+          <End Role="STUDENT" Type="Self.STUDENT" Multiplicity="1" />
+          <End Role="ACCOUNT_FOR_STUDENT" Type="Self.ACCOUNT_FOR_STUDENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="STUDENT">
+              <PropertyRef Name="MSHOCSINH" />
+            </Principal>
+            <Dependent Role="ACCOUNT_FOR_STUDENT">
+              <PropertyRef Name="MSHOCSINH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ACCOUNT_FK_TYPEAC_TYPEACCO">
+          <End Role="TYPEACCOUNT" Type="Self.TYPEACCOUNT" Multiplicity="0..1" />
+          <End Role="ACCOUNT" Type="Self.ACCOUNT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TYPEACCOUNT">
+              <PropertyRef Name="IDTYPE" />
+            </Principal>
+            <Dependent Role="ACCOUNT">
+              <PropertyRef Name="IDTYPE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CLASS_FK_CLASS__GRADELEV">
+          <End Role="GRADELEVEL" Type="Self.GRADELEVEL" Multiplicity="0..1" />
+          <End Role="CLASS" Type="Self.CLASS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GRADELEVEL">
+              <PropertyRef Name="GRADELEVELID" />
+            </Principal>
+            <Dependent Role="CLASS">
+              <PropertyRef Name="GRADELEVELID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LEARNING_FK_SCHOOLYE">
+          <End Role="SCHOOLYEAR" Type="Self.SCHOOLYEAR" Multiplicity="0..1" />
+          <End Role="LEARNINGOUTCOMES" Type="Self.LEARNINGOUTCOMES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SCHOOLYEAR">
+              <PropertyRef Name="SCHOOLYEARID" />
+            </Principal>
+            <Dependent Role="LEARNINGOUTCOMES">
+              <PropertyRef Name="SCHOOLYEARID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LEARNING_RELATIONS_STUDENT">
+          <End Role="STUDENT" Type="Self.STUDENT" Multiplicity="0..1" />
+          <End Role="LEARNINGOUTCOMES" Type="Self.LEARNINGOUTCOMES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="STUDENT">
+              <PropertyRef Name="MSHOCSINH" />
+            </Principal>
+            <Dependent Role="LEARNINGOUTCOMES">
+              <PropertyRef Name="MSHOCSINH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_STUDENTI_STUDENTIN_CLASS">
+          <End Role="CLASS" Type="Self.CLASS" Multiplicity="1" />
+          <End Role="STUDENTINCLASS" Type="Self.STUDENTINCLASS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLASS">
+              <PropertyRef Name="IDCLASS" />
+            </Principal>
+            <Dependent Role="STUDENTINCLASS">
+              <PropertyRef Name="IDCLASS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_STUDENTI_STUDENTIN_SCHOOLYE">
+          <End Role="SCHOOLYEAR" Type="Self.SCHOOLYEAR" Multiplicity="1" />
+          <End Role="STUDENTINCLASS" Type="Self.STUDENTINCLASS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SCHOOLYEAR">
+              <PropertyRef Name="SCHOOLYEARID" />
+            </Principal>
+            <Dependent Role="STUDENTINCLASS">
+              <PropertyRef Name="SCHOOLYEARID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_STUDENTI_STUDENTIN_STUDENT">
+          <End Role="STUDENT" Type="Self.STUDENT" Multiplicity="1" />
+          <End Role="STUDENTINCLASS" Type="Self.STUDENTINCLASS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="STUDENT">
+              <PropertyRef Name="MSHOCSINH" />
+            </Principal>
+            <Dependent Role="STUDENTINCLASS">
+              <PropertyRef Name="MSHOCSINH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TESTSCOR_TESTSCORE_SCHOOLYE">
+          <End Role="SCHOOLYEAR" Type="Self.SCHOOLYEAR" Multiplicity="1" />
+          <End Role="TESTSCORES" Type="Self.TESTSCORES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SCHOOLYEAR">
+              <PropertyRef Name="SCHOOLYEARID" />
+            </Principal>
+            <Dependent Role="TESTSCORES">
+              <PropertyRef Name="SCHOOLYEARID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TESTSCOR_TESTSCORE_SEMESTER">
+          <End Role="SEMESTER" Type="Self.SEMESTER" Multiplicity="1" />
+          <End Role="TESTSCORES" Type="Self.TESTSCORES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SEMESTER">
+              <PropertyRef Name="SEMESTERID" />
+            </Principal>
+            <Dependent Role="TESTSCORES">
+              <PropertyRef Name="SEMESTERID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TESTSCOR_TESTSCORE_STUDENT">
+          <End Role="STUDENT" Type="Self.STUDENT" Multiplicity="1" />
+          <End Role="TESTSCORES" Type="Self.TESTSCORES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="STUDENT">
+              <PropertyRef Name="MSHOCSINH" />
+            </Principal>
+            <Dependent Role="TESTSCORES">
+              <PropertyRef Name="MSHOCSINH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TESTSCOR_TESTSCORE_SUBJECT">
+          <End Role="SUBJECT" Type="Self.SUBJECT" Multiplicity="1" />
+          <End Role="TESTSCORES" Type="Self.TESTSCORES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SUBJECT">
+              <PropertyRef Name="SUBJECTID" />
+            </Principal>
+            <Dependent Role="TESTSCORES">
+              <PropertyRef Name="SUBJECTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TR_IN_LOFK">
+          <End Role="TYPERESULT" Type="Self.TYPERESULT" Multiplicity="0..1" />
+          <End Role="LEARNINGOUTCOMES" Type="Self.LEARNINGOUTCOMES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TYPERESULT">
+              <PropertyRef Name="TYPERESULTID" />
+            </Principal>
+            <Dependent Role="LEARNINGOUTCOMES">
+              <PropertyRef Name="TYPERESULTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="ACCOUNT" EntityType="Self.ACCOUNT" Schema="C##QUANLYHOCSINH" store:Type="Tables" />
+          <EntitySet Name="ACCOUNT_FOR_STUDENT" EntityType="Self.ACCOUNT_FOR_STUDENT" Schema="C##QUANLYHOCSINH" store:Type="Tables" />
+          <EntitySet Name="CLASS" EntityType="Self.CLASS" Schema="C##QUANLYHOCSINH" store:Type="Tables" />
+          <EntitySet Name="GRADELEVEL" EntityType="Self.GRADELEVEL" Schema="C##QUANLYHOCSINH" store:Type="Tables" />
+          <EntitySet Name="LEARNINGOUTCOMES" EntityType="Self.LEARNINGOUTCOMES" Schema="C##QUANLYHOCSINH" store:Type="Tables" />
+          <EntitySet Name="SCHOOLYEAR" EntityType="Self.SCHOOLYEAR" Schema="C##QUANLYHOCSINH" store:Type="Tables" />
+          <EntitySet Name="SEMESTER" EntityType="Self.SEMESTER" Schema="C##QUANLYHOCSINH" store:Type="Tables" />
+          <EntitySet Name="STUDENT" EntityType="Self.STUDENT" Schema="C##QUANLYHOCSINH" store:Type="Tables" />
+          <EntitySet Name="STUDENTINCLASS" EntityType="Self.STUDENTINCLASS" Schema="C##QUANLYHOCSINH" store:Type="Tables" />
+          <EntitySet Name="SUBJECT" EntityType="Self.SUBJECT" Schema="C##QUANLYHOCSINH" store:Type="Tables" />
+          <EntitySet Name="TYPEACCOUNT" EntityType="Self.TYPEACCOUNT" Schema="C##QUANLYHOCSINH" store:Type="Tables" />
+          <EntitySet Name="TYPERESULT" EntityType="Self.TYPERESULT" Schema="C##QUANLYHOCSINH" store:Type="Tables" />
+          <EntitySet Name="TESTSCORES" EntityType="Self.TESTSCORES" store:Type="Tables" store:Schema="C##QUANLYHOCSINH">
+            <DefiningQuery>SELECT 
+"TESTSCORES"."SUBJECTID" AS "SUBJECTID", 
+"TESTSCORES"."SEMESTERID" AS "SEMESTERID", 
+"TESTSCORES"."SCHOOLYEARID" AS "SCHOOLYEARID", 
+"TESTSCORES"."MSHOCSINH" AS "MSHOCSINH", 
+"TESTSCORES"."SCORE_5M" AS "SCORE_5M", 
+"TESTSCORES"."SCORE_15M" AS "SCORE_15M", 
+"TESTSCORES"."SCORE_45M" AS "SCORE_45M", 
+"TESTSCORES"."SCORE_MIDYEAR" AS "SCORE_MIDYEAR", 
+"TESTSCORES"."SCORE_ENDYEAR" AS "SCORE_ENDYEAR"
+FROM "C##QUANLYHOCSINH"."TESTSCORES" "TESTSCORES"</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_ACCOUNT__ACCOUNT_F_ACCOUNT" Association="Self.FK_ACCOUNT__ACCOUNT_F_ACCOUNT">
+            <End Role="ACCOUNT" EntitySet="ACCOUNT" />
+            <End Role="ACCOUNT_FOR_STUDENT" EntitySet="ACCOUNT_FOR_STUDENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ACCOUNT__ACCOUNT_F_STUDENT" Association="Self.FK_ACCOUNT__ACCOUNT_F_STUDENT">
+            <End Role="STUDENT" EntitySet="STUDENT" />
+            <End Role="ACCOUNT_FOR_STUDENT" EntitySet="ACCOUNT_FOR_STUDENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ACCOUNT_FK_TYPEAC_TYPEACCO" Association="Self.FK_ACCOUNT_FK_TYPEAC_TYPEACCO">
+            <End Role="TYPEACCOUNT" EntitySet="TYPEACCOUNT" />
+            <End Role="ACCOUNT" EntitySet="ACCOUNT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CLASS_FK_CLASS__GRADELEV" Association="Self.FK_CLASS_FK_CLASS__GRADELEV">
+            <End Role="GRADELEVEL" EntitySet="GRADELEVEL" />
+            <End Role="CLASS" EntitySet="CLASS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LEARNING_FK_SCHOOLYE" Association="Self.FK_LEARNING_FK_SCHOOLYE">
+            <End Role="SCHOOLYEAR" EntitySet="SCHOOLYEAR" />
+            <End Role="LEARNINGOUTCOMES" EntitySet="LEARNINGOUTCOMES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LEARNING_RELATIONS_STUDENT" Association="Self.FK_LEARNING_RELATIONS_STUDENT">
+            <End Role="STUDENT" EntitySet="STUDENT" />
+            <End Role="LEARNINGOUTCOMES" EntitySet="LEARNINGOUTCOMES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_STUDENTI_STUDENTIN_CLASS" Association="Self.FK_STUDENTI_STUDENTIN_CLASS">
+            <End Role="CLASS" EntitySet="CLASS" />
+            <End Role="STUDENTINCLASS" EntitySet="STUDENTINCLASS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_STUDENTI_STUDENTIN_SCHOOLYE" Association="Self.FK_STUDENTI_STUDENTIN_SCHOOLYE">
+            <End Role="SCHOOLYEAR" EntitySet="SCHOOLYEAR" />
+            <End Role="STUDENTINCLASS" EntitySet="STUDENTINCLASS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_STUDENTI_STUDENTIN_STUDENT" Association="Self.FK_STUDENTI_STUDENTIN_STUDENT">
+            <End Role="STUDENT" EntitySet="STUDENT" />
+            <End Role="STUDENTINCLASS" EntitySet="STUDENTINCLASS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TESTSCOR_TESTSCORE_SCHOOLYE" Association="Self.FK_TESTSCOR_TESTSCORE_SCHOOLYE">
+            <End Role="SCHOOLYEAR" EntitySet="SCHOOLYEAR" />
+            <End Role="TESTSCORES" EntitySet="TESTSCORES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TESTSCOR_TESTSCORE_SEMESTER" Association="Self.FK_TESTSCOR_TESTSCORE_SEMESTER">
+            <End Role="SEMESTER" EntitySet="SEMESTER" />
+            <End Role="TESTSCORES" EntitySet="TESTSCORES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TESTSCOR_TESTSCORE_STUDENT" Association="Self.FK_TESTSCOR_TESTSCORE_STUDENT">
+            <End Role="STUDENT" EntitySet="STUDENT" />
+            <End Role="TESTSCORES" EntitySet="TESTSCORES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TESTSCOR_TESTSCORE_SUBJECT" Association="Self.FK_TESTSCOR_TESTSCORE_SUBJECT">
+            <End Role="SUBJECT" EntitySet="SUBJECT" />
+            <End Role="TESTSCORES" EntitySet="TESTSCORES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TR_IN_LOFK" Association="Self.FK_TR_IN_LOFK">
+            <End Role="TYPERESULT" EntitySet="TYPERESULT" />
+            <End Role="LEARNINGOUTCOMES" EntitySet="LEARNINGOUTCOMES" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ACCOUNT">
+          <Key>
+            <PropertyRef Name="USERNAME" />
+          </Key>
+          <Property Name="USERNAME" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PASSWORD" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="IDTYPE" Type="Decimal" Precision="38" Scale="0" />
+          <NavigationProperty Name="TYPEACCOUNT" Relationship="Self.FK_ACCOUNT_FK_TYPEAC_TYPEACCO" FromRole="ACCOUNT" ToRole="TYPEACCOUNT" />
+          <NavigationProperty Name="STUDENT" Relationship="Self.ACCOUNT_FOR_STUDENT" FromRole="ACCOUNT" ToRole="STUDENT" />
+        </EntityType>
+        <EntityType Name="CLASS">
+          <Key>
+            <PropertyRef Name="IDCLASS" />
+          </Key>
+          <Property Name="IDCLASS" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GRADELEVELID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="GRADELEVEL" Relationship="Self.FK_CLASS_FK_CLASS__GRADELEV" FromRole="CLASS" ToRole="GRADELEVEL" />
+          <NavigationProperty Name="STUDENTINCLASS" Relationship="Self.FK_STUDENTI_STUDENTIN_CLASS" FromRole="CLASS" ToRole="STUDENTINCLASS" />
+        </EntityType>
+        <EntityType Name="GRADELEVEL">
+          <Key>
+            <PropertyRef Name="GRADELEVELID" />
+          </Key>
+          <Property Name="GRADELEVELID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CLASS" Relationship="Self.FK_CLASS_FK_CLASS__GRADELEV" FromRole="GRADELEVEL" ToRole="CLASS" />
+        </EntityType>
+        <EntityType Name="LEARNINGOUTCOMES">
+          <Key>
+            <PropertyRef Name="LEARNINGOUTCOMESID" />
+          </Key>
+          <Property Name="LEARNINGOUTCOMESID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TYPERESULTID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="MSHOCSINH" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="SCHOOLYEARID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="MEDIUMSCORE" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CONDUCT" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="GRADE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="SCHOOLYEAR" Relationship="Self.FK_LEARNING_FK_SCHOOLYE" FromRole="LEARNINGOUTCOMES" ToRole="SCHOOLYEAR" />
+          <NavigationProperty Name="STUDENT" Relationship="Self.FK_LEARNING_RELATIONS_STUDENT" FromRole="LEARNINGOUTCOMES" ToRole="STUDENT" />
+          <NavigationProperty Name="TYPERESULT" Relationship="Self.FK_TR_IN_LOFK" FromRole="LEARNINGOUTCOMES" ToRole="TYPERESULT" />
+        </EntityType>
+        <EntityType Name="SCHOOLYEAR">
+          <Key>
+            <PropertyRef Name="SCHOOLYEARID" />
+          </Key>
+          <Property Name="SCHOOLYEARID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="LEARNINGOUTCOMES" Relationship="Self.FK_LEARNING_FK_SCHOOLYE" FromRole="SCHOOLYEAR" ToRole="LEARNINGOUTCOMES" />
+          <NavigationProperty Name="STUDENTINCLASS" Relationship="Self.FK_STUDENTI_STUDENTIN_SCHOOLYE" FromRole="SCHOOLYEAR" ToRole="STUDENTINCLASS" />
+          <NavigationProperty Name="TESTSCORES" Relationship="Self.FK_TESTSCOR_TESTSCORE_SCHOOLYE" FromRole="SCHOOLYEAR" ToRole="TESTSCORES" />
+        </EntityType>
+        <EntityType Name="SEMESTER">
+          <Key>
+            <PropertyRef Name="SEMESTERID" />
+          </Key>
+          <Property Name="SEMESTERID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="COEFFICIENT" Type="Decimal" Precision="38" Scale="0" />
+          <NavigationProperty Name="TESTSCORES" Relationship="Self.FK_TESTSCOR_TESTSCORE_SEMESTER" FromRole="SEMESTER" ToRole="TESTSCORES" />
+        </EntityType>
+        <EntityType Name="STUDENT">
+          <Key>
+            <PropertyRef Name="MSHOCSINH" />
+          </Key>
+          <Property Name="MSHOCSINH" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="BIRTHDAY" Type="DateTime" />
+          <Property Name="SEX" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="ADDRESS" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="PHONE" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="LEARNINGOUTCOMES" Relationship="Self.FK_LEARNING_RELATIONS_STUDENT" FromRole="STUDENT" ToRole="LEARNINGOUTCOMES" />
+          <NavigationProperty Name="STUDENTINCLASS" Relationship="Self.FK_STUDENTI_STUDENTIN_STUDENT" FromRole="STUDENT" ToRole="STUDENTINCLASS" />
+          <NavigationProperty Name="TESTSCORES" Relationship="Self.FK_TESTSCOR_TESTSCORE_STUDENT" FromRole="STUDENT" ToRole="TESTSCORES" />
+          <NavigationProperty Name="ACCOUNT" Relationship="Self.ACCOUNT_FOR_STUDENT" FromRole="STUDENT" ToRole="ACCOUNT" />
+        </EntityType>
+        <EntityType Name="STUDENTINCLASS">
+          <Key>
+            <PropertyRef Name="SCHOOLYEARID" />
+            <PropertyRef Name="IDCLASS" />
+            <PropertyRef Name="MSHOCSINH" />
+          </Key>
+          <Property Name="SCHOOLYEARID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IDCLASS" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MSHOCSINH" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="CLASS" Relationship="Self.FK_STUDENTI_STUDENTIN_CLASS" FromRole="STUDENTINCLASS" ToRole="CLASS" />
+          <NavigationProperty Name="SCHOOLYEAR" Relationship="Self.FK_STUDENTI_STUDENTIN_SCHOOLYE" FromRole="STUDENTINCLASS" ToRole="SCHOOLYEAR" />
+          <NavigationProperty Name="STUDENT" Relationship="Self.FK_STUDENTI_STUDENTIN_STUDENT" FromRole="STUDENTINCLASS" ToRole="STUDENT" />
+        </EntityType>
+        <EntityType Name="SUBJECT">
+          <Key>
+            <PropertyRef Name="SUBJECTID" />
+          </Key>
+          <Property Name="SUBJECTID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TESTSCORES" Relationship="Self.FK_TESTSCOR_TESTSCORE_SUBJECT" FromRole="SUBJECT" ToRole="TESTSCORES" />
+        </EntityType>
+        <EntityType Name="TYPEACCOUNT">
+          <Key>
+            <PropertyRef Name="IDTYPE" />
+          </Key>
+          <Property Name="IDTYPE" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ACCOUNT" Relationship="Self.FK_ACCOUNT_FK_TYPEAC_TYPEACCO" FromRole="TYPEACCOUNT" ToRole="ACCOUNT" />
+        </EntityType>
+        <EntityType Name="TYPERESULT">
+          <Key>
+            <PropertyRef Name="TYPERESULTID" />
+          </Key>
+          <Property Name="TYPERESULTID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="LEARNINGOUTCOMES" Relationship="Self.FK_TR_IN_LOFK" FromRole="TYPERESULT" ToRole="LEARNINGOUTCOMES" />
+        </EntityType>
+        <EntityType Name="TESTSCORES">
+          <Key>
+            <PropertyRef Name="SUBJECTID" />
+            <PropertyRef Name="SEMESTERID" />
+            <PropertyRef Name="SCHOOLYEARID" />
+            <PropertyRef Name="MSHOCSINH" />
+          </Key>
+          <Property Name="SUBJECTID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SEMESTERID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="SCHOOLYEARID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MSHOCSINH" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SCORE_5M" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="SCORE_15M" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="SCORE_45M" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="SCORE_MIDYEAR" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="SCORE_ENDYEAR" Type="Decimal" Precision="38" Scale="0" />
+          <NavigationProperty Name="SCHOOLYEAR" Relationship="Self.FK_TESTSCOR_TESTSCORE_SCHOOLYE" FromRole="TESTSCORES" ToRole="SCHOOLYEAR" />
+          <NavigationProperty Name="SEMESTER" Relationship="Self.FK_TESTSCOR_TESTSCORE_SEMESTER" FromRole="TESTSCORES" ToRole="SEMESTER" />
+          <NavigationProperty Name="STUDENT" Relationship="Self.FK_TESTSCOR_TESTSCORE_STUDENT" FromRole="TESTSCORES" ToRole="STUDENT" />
+          <NavigationProperty Name="SUBJECT" Relationship="Self.FK_TESTSCOR_TESTSCORE_SUBJECT" FromRole="TESTSCORES" ToRole="SUBJECT" />
+        </EntityType>
+        <Association Name="FK_ACCOUNT_FK_TYPEAC_TYPEACCO">
+          <End Role="TYPEACCOUNT" Type="Self.TYPEACCOUNT" Multiplicity="0..1" />
+          <End Role="ACCOUNT" Type="Self.ACCOUNT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TYPEACCOUNT">
+              <PropertyRef Name="IDTYPE" />
+            </Principal>
+            <Dependent Role="ACCOUNT">
+              <PropertyRef Name="IDTYPE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CLASS_FK_CLASS__GRADELEV">
+          <End Role="GRADELEVEL" Type="Self.GRADELEVEL" Multiplicity="0..1" />
+          <End Role="CLASS" Type="Self.CLASS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GRADELEVEL">
+              <PropertyRef Name="GRADELEVELID" />
+            </Principal>
+            <Dependent Role="CLASS">
+              <PropertyRef Name="GRADELEVELID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_STUDENTI_STUDENTIN_CLASS">
+          <End Role="CLASS" Type="Self.CLASS" Multiplicity="1" />
+          <End Role="STUDENTINCLASS" Type="Self.STUDENTINCLASS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLASS">
+              <PropertyRef Name="IDCLASS" />
+            </Principal>
+            <Dependent Role="STUDENTINCLASS">
+              <PropertyRef Name="IDCLASS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LEARNING_FK_SCHOOLYE">
+          <End Role="SCHOOLYEAR" Type="Self.SCHOOLYEAR" Multiplicity="0..1" />
+          <End Role="LEARNINGOUTCOMES" Type="Self.LEARNINGOUTCOMES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SCHOOLYEAR">
+              <PropertyRef Name="SCHOOLYEARID" />
+            </Principal>
+            <Dependent Role="LEARNINGOUTCOMES">
+              <PropertyRef Name="SCHOOLYEARID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LEARNING_RELATIONS_STUDENT">
+          <End Role="STUDENT" Type="Self.STUDENT" Multiplicity="0..1" />
+          <End Role="LEARNINGOUTCOMES" Type="Self.LEARNINGOUTCOMES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="STUDENT">
+              <PropertyRef Name="MSHOCSINH" />
+            </Principal>
+            <Dependent Role="LEARNINGOUTCOMES">
+              <PropertyRef Name="MSHOCSINH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TR_IN_LOFK">
+          <End Role="TYPERESULT" Type="Self.TYPERESULT" Multiplicity="0..1" />
+          <End Role="LEARNINGOUTCOMES" Type="Self.LEARNINGOUTCOMES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TYPERESULT">
+              <PropertyRef Name="TYPERESULTID" />
+            </Principal>
+            <Dependent Role="LEARNINGOUTCOMES">
+              <PropertyRef Name="TYPERESULTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_STUDENTI_STUDENTIN_SCHOOLYE">
+          <End Role="SCHOOLYEAR" Type="Self.SCHOOLYEAR" Multiplicity="1" />
+          <End Role="STUDENTINCLASS" Type="Self.STUDENTINCLASS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SCHOOLYEAR">
+              <PropertyRef Name="SCHOOLYEARID" />
+            </Principal>
+            <Dependent Role="STUDENTINCLASS">
+              <PropertyRef Name="SCHOOLYEARID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TESTSCOR_TESTSCORE_SCHOOLYE">
+          <End Role="SCHOOLYEAR" Type="Self.SCHOOLYEAR" Multiplicity="1" />
+          <End Role="TESTSCORES" Type="Self.TESTSCORES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SCHOOLYEAR">
+              <PropertyRef Name="SCHOOLYEARID" />
+            </Principal>
+            <Dependent Role="TESTSCORES">
+              <PropertyRef Name="SCHOOLYEARID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TESTSCOR_TESTSCORE_SEMESTER">
+          <End Role="SEMESTER" Type="Self.SEMESTER" Multiplicity="1" />
+          <End Role="TESTSCORES" Type="Self.TESTSCORES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SEMESTER">
+              <PropertyRef Name="SEMESTERID" />
+            </Principal>
+            <Dependent Role="TESTSCORES">
+              <PropertyRef Name="SEMESTERID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_STUDENTI_STUDENTIN_STUDENT">
+          <End Role="STUDENT" Type="Self.STUDENT" Multiplicity="1" />
+          <End Role="STUDENTINCLASS" Type="Self.STUDENTINCLASS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="STUDENT">
+              <PropertyRef Name="MSHOCSINH" />
+            </Principal>
+            <Dependent Role="STUDENTINCLASS">
+              <PropertyRef Name="MSHOCSINH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TESTSCOR_TESTSCORE_STUDENT">
+          <End Role="STUDENT" Type="Self.STUDENT" Multiplicity="1" />
+          <End Role="TESTSCORES" Type="Self.TESTSCORES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="STUDENT">
+              <PropertyRef Name="MSHOCSINH" />
+            </Principal>
+            <Dependent Role="TESTSCORES">
+              <PropertyRef Name="MSHOCSINH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TESTSCOR_TESTSCORE_SUBJECT">
+          <End Role="SUBJECT" Type="Self.SUBJECT" Multiplicity="1" />
+          <End Role="TESTSCORES" Type="Self.TESTSCORES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SUBJECT">
+              <PropertyRef Name="SUBJECTID" />
+            </Principal>
+            <Dependent Role="TESTSCORES">
+              <PropertyRef Name="SUBJECTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ACCOUNT_FOR_STUDENT">
+          <End Role="ACCOUNT" Type="Self.ACCOUNT" Multiplicity="*" />
+          <End Role="STUDENT" Type="Self.STUDENT" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="QuanLyHocSinhEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ACCOUNT" EntityType="Self.ACCOUNT" />
+          <EntitySet Name="CLASS" EntityType="Self.CLASS" />
+          <EntitySet Name="GRADELEVEL" EntityType="Self.GRADELEVEL" />
+          <EntitySet Name="LEARNINGOUTCOMES" EntityType="Self.LEARNINGOUTCOMES" />
+          <EntitySet Name="SCHOOLYEAR" EntityType="Self.SCHOOLYEAR" />
+          <EntitySet Name="SEMESTER" EntityType="Self.SEMESTER" />
+          <EntitySet Name="STUDENT" EntityType="Self.STUDENT" />
+          <EntitySet Name="STUDENTINCLASS" EntityType="Self.STUDENTINCLASS" />
+          <EntitySet Name="SUBJECT" EntityType="Self.SUBJECT" />
+          <EntitySet Name="TYPEACCOUNT" EntityType="Self.TYPEACCOUNT" />
+          <EntitySet Name="TYPERESULT" EntityType="Self.TYPERESULT" />
+          <EntitySet Name="TESTSCORES" EntityType="Self.TESTSCORES" />
+          <AssociationSet Name="FK_ACCOUNT_FK_TYPEAC_TYPEACCO" Association="Self.FK_ACCOUNT_FK_TYPEAC_TYPEACCO">
+            <End Role="TYPEACCOUNT" EntitySet="TYPEACCOUNT" />
+            <End Role="ACCOUNT" EntitySet="ACCOUNT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CLASS_FK_CLASS__GRADELEV" Association="Self.FK_CLASS_FK_CLASS__GRADELEV">
+            <End Role="GRADELEVEL" EntitySet="GRADELEVEL" />
+            <End Role="CLASS" EntitySet="CLASS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_STUDENTI_STUDENTIN_CLASS" Association="Self.FK_STUDENTI_STUDENTIN_CLASS">
+            <End Role="CLASS" EntitySet="CLASS" />
+            <End Role="STUDENTINCLASS" EntitySet="STUDENTINCLASS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LEARNING_FK_SCHOOLYE" Association="Self.FK_LEARNING_FK_SCHOOLYE">
+            <End Role="SCHOOLYEAR" EntitySet="SCHOOLYEAR" />
+            <End Role="LEARNINGOUTCOMES" EntitySet="LEARNINGOUTCOMES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LEARNING_RELATIONS_STUDENT" Association="Self.FK_LEARNING_RELATIONS_STUDENT">
+            <End Role="STUDENT" EntitySet="STUDENT" />
+            <End Role="LEARNINGOUTCOMES" EntitySet="LEARNINGOUTCOMES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TR_IN_LOFK" Association="Self.FK_TR_IN_LOFK">
+            <End Role="TYPERESULT" EntitySet="TYPERESULT" />
+            <End Role="LEARNINGOUTCOMES" EntitySet="LEARNINGOUTCOMES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_STUDENTI_STUDENTIN_SCHOOLYE" Association="Self.FK_STUDENTI_STUDENTIN_SCHOOLYE">
+            <End Role="SCHOOLYEAR" EntitySet="SCHOOLYEAR" />
+            <End Role="STUDENTINCLASS" EntitySet="STUDENTINCLASS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TESTSCOR_TESTSCORE_SCHOOLYE" Association="Self.FK_TESTSCOR_TESTSCORE_SCHOOLYE">
+            <End Role="SCHOOLYEAR" EntitySet="SCHOOLYEAR" />
+            <End Role="TESTSCORES" EntitySet="TESTSCORES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TESTSCOR_TESTSCORE_SEMESTER" Association="Self.FK_TESTSCOR_TESTSCORE_SEMESTER">
+            <End Role="SEMESTER" EntitySet="SEMESTER" />
+            <End Role="TESTSCORES" EntitySet="TESTSCORES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_STUDENTI_STUDENTIN_STUDENT" Association="Self.FK_STUDENTI_STUDENTIN_STUDENT">
+            <End Role="STUDENT" EntitySet="STUDENT" />
+            <End Role="STUDENTINCLASS" EntitySet="STUDENTINCLASS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TESTSCOR_TESTSCORE_STUDENT" Association="Self.FK_TESTSCOR_TESTSCORE_STUDENT">
+            <End Role="STUDENT" EntitySet="STUDENT" />
+            <End Role="TESTSCORES" EntitySet="TESTSCORES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TESTSCOR_TESTSCORE_SUBJECT" Association="Self.FK_TESTSCOR_TESTSCORE_SUBJECT">
+            <End Role="SUBJECT" EntitySet="SUBJECT" />
+            <End Role="TESTSCORES" EntitySet="TESTSCORES" />
+          </AssociationSet>
+          <AssociationSet Name="ACCOUNT_FOR_STUDENT" Association="Self.ACCOUNT_FOR_STUDENT">
+            <End Role="ACCOUNT" EntitySet="ACCOUNT" />
+            <End Role="STUDENT" EntitySet="STUDENT" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="QuanLyHocSinhEntities">
+          <EntitySetMapping Name="ACCOUNT">
+            <EntityTypeMapping TypeName="Model.ACCOUNT">
+              <MappingFragment StoreEntitySet="ACCOUNT">
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="IDTYPE" ColumnName="IDTYPE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CLASS">
+            <EntityTypeMapping TypeName="Model.CLASS">
+              <MappingFragment StoreEntitySet="CLASS">
+                <ScalarProperty Name="IDCLASS" ColumnName="IDCLASS" />
+                <ScalarProperty Name="GRADELEVELID" ColumnName="GRADELEVELID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GRADELEVEL">
+            <EntityTypeMapping TypeName="Model.GRADELEVEL">
+              <MappingFragment StoreEntitySet="GRADELEVEL">
+                <ScalarProperty Name="GRADELEVELID" ColumnName="GRADELEVELID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LEARNINGOUTCOMES">
+            <EntityTypeMapping TypeName="Model.LEARNINGOUTCOMES">
+              <MappingFragment StoreEntitySet="LEARNINGOUTCOMES">
+                <ScalarProperty Name="LEARNINGOUTCOMESID" ColumnName="LEARNINGOUTCOMESID" />
+                <ScalarProperty Name="TYPERESULTID" ColumnName="TYPERESULTID" />
+                <ScalarProperty Name="MSHOCSINH" ColumnName="MSHOCSINH" />
+                <ScalarProperty Name="SCHOOLYEARID" ColumnName="SCHOOLYEARID" />
+                <ScalarProperty Name="MEDIUMSCORE" ColumnName="MEDIUMSCORE" />
+                <ScalarProperty Name="CONDUCT" ColumnName="CONDUCT" />
+                <ScalarProperty Name="GRADE" ColumnName="GRADE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SCHOOLYEAR">
+            <EntityTypeMapping TypeName="Model.SCHOOLYEAR">
+              <MappingFragment StoreEntitySet="SCHOOLYEAR">
+                <ScalarProperty Name="SCHOOLYEARID" ColumnName="SCHOOLYEARID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SEMESTER">
+            <EntityTypeMapping TypeName="Model.SEMESTER">
+              <MappingFragment StoreEntitySet="SEMESTER">
+                <ScalarProperty Name="SEMESTERID" ColumnName="SEMESTERID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="COEFFICIENT" ColumnName="COEFFICIENT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="STUDENT">
+            <EntityTypeMapping TypeName="Model.STUDENT">
+              <MappingFragment StoreEntitySet="STUDENT">
+                <ScalarProperty Name="MSHOCSINH" ColumnName="MSHOCSINH" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="BIRTHDAY" ColumnName="BIRTHDAY" />
+                <ScalarProperty Name="SEX" ColumnName="SEX" />
+                <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+                <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="STUDENTINCLASS">
+            <EntityTypeMapping TypeName="Model.STUDENTINCLASS">
+              <MappingFragment StoreEntitySet="STUDENTINCLASS">
+                <ScalarProperty Name="SCHOOLYEARID" ColumnName="SCHOOLYEARID" />
+                <ScalarProperty Name="IDCLASS" ColumnName="IDCLASS" />
+                <ScalarProperty Name="MSHOCSINH" ColumnName="MSHOCSINH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SUBJECT">
+            <EntityTypeMapping TypeName="Model.SUBJECT">
+              <MappingFragment StoreEntitySet="SUBJECT">
+                <ScalarProperty Name="SUBJECTID" ColumnName="SUBJECTID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TYPEACCOUNT">
+            <EntityTypeMapping TypeName="Model.TYPEACCOUNT">
+              <MappingFragment StoreEntitySet="TYPEACCOUNT">
+                <ScalarProperty Name="IDTYPE" ColumnName="IDTYPE" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TYPERESULT">
+            <EntityTypeMapping TypeName="Model.TYPERESULT">
+              <MappingFragment StoreEntitySet="TYPERESULT">
+                <ScalarProperty Name="TYPERESULTID" ColumnName="TYPERESULTID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TESTSCORES">
+            <EntityTypeMapping TypeName="Model.TESTSCORES">
+              <MappingFragment StoreEntitySet="TESTSCORES">
+                <ScalarProperty Name="SUBJECTID" ColumnName="SUBJECTID" />
+                <ScalarProperty Name="SEMESTERID" ColumnName="SEMESTERID" />
+                <ScalarProperty Name="SCHOOLYEARID" ColumnName="SCHOOLYEARID" />
+                <ScalarProperty Name="MSHOCSINH" ColumnName="MSHOCSINH" />
+                <ScalarProperty Name="SCORE_5M" ColumnName="SCORE_5M" />
+                <ScalarProperty Name="SCORE_15M" ColumnName="SCORE_15M" />
+                <ScalarProperty Name="SCORE_45M" ColumnName="SCORE_45M" />
+                <ScalarProperty Name="SCORE_MIDYEAR" ColumnName="SCORE_MIDYEAR" />
+                <ScalarProperty Name="SCORE_ENDYEAR" ColumnName="SCORE_ENDYEAR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="ACCOUNT_FOR_STUDENT" TypeName="Model.ACCOUNT_FOR_STUDENT" StoreEntitySet="ACCOUNT_FOR_STUDENT">
+            <EndProperty Name="ACCOUNT">
+              <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+            </EndProperty>
+            <EndProperty Name="STUDENT">
+              <ScalarProperty Name="MSHOCSINH" ColumnName="MSHOCSINH" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
