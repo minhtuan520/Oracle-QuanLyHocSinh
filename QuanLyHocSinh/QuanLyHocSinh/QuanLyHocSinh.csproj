@@ -95,6 +95,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\QuanLyHocSinh.BLL\QuanLyHocSinh.BLL.csproj">
+      <Project>{45141202-74C7-4120-BDEC-7267D02AB156}</Project>
+      <Name>QuanLyHocSinh.BLL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\QuanLyHocSinh.DAL\QuanLyHocSinh.DAL.csproj">
       <Project>{dae02057-67b1-40ec-b126-b92155af495f}</Project>
       <Name>QuanLyHocSinh.DAL</Name>
