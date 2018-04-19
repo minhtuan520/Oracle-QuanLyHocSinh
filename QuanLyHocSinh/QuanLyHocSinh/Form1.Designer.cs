@@ -106,7 +106,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(375, 207);
+            this.ClientSize = new System.Drawing.Size(375, 209);
             this.Controls.Add(this.radioAdmin);
             this.Controls.Add(this.radioHocSinh);
             this.Controls.Add(this.btnLogin);
