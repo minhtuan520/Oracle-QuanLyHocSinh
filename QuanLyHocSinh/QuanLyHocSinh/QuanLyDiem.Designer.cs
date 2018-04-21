@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.label5 = new System.Windows.Forms.Label();
-            this.cmbYear = new System.Windows.Forms.ComboBox();
+            this.cmbSemester = new System.Windows.Forms.ComboBox();
             this.bntPrint = new System.Windows.Forms.Button();
             this.bntSave = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.GridView_Diem = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -40,29 +40,38 @@
             this.cmbClass = new System.Windows.Forms.ComboBox();
             this.cmbGrade = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.MSHOCSINH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SCORE_5M = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SCORE_15M = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SCORE_45M = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SCORE_MIDYEAR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SCORE_ENDYEAR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MEDIUMSCORE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.GridView_Diem)).BeginInit();
             this.SuspendLayout();
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(331, 129);
+            this.label5.Location = new System.Drawing.Point(450, 126);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(50, 13);
             this.label5.TabIndex = 23;
             this.label5.Text = "HỌC KỲ:";
             // 
-            // cmbYear
+            // cmbSemester
             // 
-            this.cmbYear.FormattingEnabled = true;
-            this.cmbYear.Location = new System.Drawing.Point(387, 126);
-            this.cmbYear.Name = "cmbYear";
-            this.cmbYear.Size = new System.Drawing.Size(159, 21);
-            this.cmbYear.TabIndex = 22;
+            this.cmbSemester.FormattingEnabled = true;
+            this.cmbSemester.Location = new System.Drawing.Point(506, 123);
+            this.cmbSemester.Name = "cmbSemester";
+            this.cmbSemester.Size = new System.Drawing.Size(159, 21);
+            this.cmbSemester.TabIndex = 22;
+            this.cmbSemester.SelectedIndexChanged += new System.EventHandler(this.cmbSemester_SelectedIndexChanged);
             // 
             // bntPrint
             // 
-            this.bntPrint.Location = new System.Drawing.Point(395, 398);
+            this.bntPrint.Location = new System.Drawing.Point(552, 392);
             this.bntPrint.Name = "bntPrint";
             this.bntPrint.Size = new System.Drawing.Size(113, 37);
             this.bntPrint.TabIndex = 21;
@@ -71,25 +80,34 @@
             // 
             // bntSave
             // 
-            this.bntSave.Location = new System.Drawing.Point(92, 398);
+            this.bntSave.Location = new System.Drawing.Point(249, 392);
             this.bntSave.Name = "bntSave";
             this.bntSave.Size = new System.Drawing.Size(113, 37);
             this.bntSave.TabIndex = 20;
             this.bntSave.Text = "LƯU";
             this.bntSave.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // GridView_Diem
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(44, 183);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(628, 193);
-            this.dataGridView1.TabIndex = 19;
+            this.GridView_Diem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridView_Diem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MSHOCSINH,
+            this.NAME,
+            this.SCORE_5M,
+            this.SCORE_15M,
+            this.SCORE_45M,
+            this.SCORE_MIDYEAR,
+            this.SCORE_ENDYEAR,
+            this.MEDIUMSCORE});
+            this.GridView_Diem.Location = new System.Drawing.Point(12, 153);
+            this.GridView_Diem.Name = "GridView_Diem";
+            this.GridView_Diem.Size = new System.Drawing.Size(821, 229);
+            this.GridView_Diem.TabIndex = 19;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(331, 78);
+            this.label4.Location = new System.Drawing.Point(450, 75);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(31, 13);
             this.label4.TabIndex = 18;
@@ -98,7 +116,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(41, 134);
+            this.label3.Location = new System.Drawing.Point(160, 131);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(32, 13);
             this.label3.TabIndex = 17;
@@ -107,7 +125,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(41, 76);
+            this.label2.Location = new System.Drawing.Point(160, 73);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(33, 13);
             this.label2.TabIndex = 16;
@@ -116,23 +134,25 @@
             // cmbSubject
             // 
             this.cmbSubject.FormattingEnabled = true;
-            this.cmbSubject.Location = new System.Drawing.Point(92, 126);
+            this.cmbSubject.Location = new System.Drawing.Point(211, 123);
             this.cmbSubject.Name = "cmbSubject";
             this.cmbSubject.Size = new System.Drawing.Size(159, 21);
             this.cmbSubject.TabIndex = 15;
+            this.cmbSubject.SelectedIndexChanged += new System.EventHandler(this.cmbSubject_SelectedIndexChanged);
             // 
             // cmbClass
             // 
             this.cmbClass.FormattingEnabled = true;
-            this.cmbClass.Location = new System.Drawing.Point(387, 75);
+            this.cmbClass.Location = new System.Drawing.Point(506, 72);
             this.cmbClass.Name = "cmbClass";
             this.cmbClass.Size = new System.Drawing.Size(159, 21);
             this.cmbClass.TabIndex = 14;
+            this.cmbClass.SelectedIndexChanged += new System.EventHandler(this.cmbClass_SelectedIndexChanged);
             // 
             // cmbGrade
             // 
             this.cmbGrade.FormattingEnabled = true;
-            this.cmbGrade.Location = new System.Drawing.Point(92, 75);
+            this.cmbGrade.Location = new System.Drawing.Point(211, 72);
             this.cmbGrade.Name = "cmbGrade";
             this.cmbGrade.Size = new System.Drawing.Size(159, 21);
             this.cmbGrade.TabIndex = 13;
@@ -141,22 +161,73 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(242, 6);
+            this.label1.Location = new System.Drawing.Point(311, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(235, 33);
             this.label1.TabIndex = 12;
             this.label1.Text = "QUẢN LÝ ĐIỂM";
             // 
+            // MSHOCSINH
+            // 
+            this.MSHOCSINH.DataPropertyName = "MSHOCSINH";
+            this.MSHOCSINH.HeaderText = "MSHS";
+            this.MSHOCSINH.Name = "MSHOCSINH";
+            this.MSHOCSINH.ReadOnly = true;
+            // 
+            // NAME
+            // 
+            this.NAME.DataPropertyName = "NAME";
+            this.NAME.HeaderText = "Họ và tên";
+            this.NAME.Name = "NAME";
+            this.NAME.ReadOnly = true;
+            // 
+            // SCORE_5M
+            // 
+            this.SCORE_5M.DataPropertyName = "SCORE_5M";
+            this.SCORE_5M.HeaderText = "5 phút";
+            this.SCORE_5M.Name = "SCORE_5M";
+            // 
+            // SCORE_15M
+            // 
+            this.SCORE_15M.DataPropertyName = "SCORE_15M";
+            this.SCORE_15M.HeaderText = "15 phút";
+            this.SCORE_15M.Name = "SCORE_15M";
+            // 
+            // SCORE_45M
+            // 
+            this.SCORE_45M.DataPropertyName = "SCORE_45M";
+            this.SCORE_45M.HeaderText = "45 phút";
+            this.SCORE_45M.Name = "SCORE_45M";
+            // 
+            // SCORE_MIDYEAR
+            // 
+            this.SCORE_MIDYEAR.DataPropertyName = "SCORE_MIDYEAR";
+            this.SCORE_MIDYEAR.HeaderText = "Giữa kỳ";
+            this.SCORE_MIDYEAR.Name = "SCORE_MIDYEAR";
+            // 
+            // SCORE_ENDYEAR
+            // 
+            this.SCORE_ENDYEAR.DataPropertyName = "SCORE_ENDYEAR";
+            this.SCORE_ENDYEAR.HeaderText = "Cuối kỳ";
+            this.SCORE_ENDYEAR.Name = "SCORE_ENDYEAR";
+            // 
+            // MEDIUMSCORE
+            // 
+            this.MEDIUMSCORE.DataPropertyName = "MEDIUMSCORE";
+            this.MEDIUMSCORE.HeaderText = "Trung bình";
+            this.MEDIUMSCORE.Name = "MEDIUMSCORE";
+            this.MEDIUMSCORE.ReadOnly = true;
+            // 
             // QuanLyDiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(712, 440);
+            this.ClientSize = new System.Drawing.Size(845, 441);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.cmbYear);
+            this.Controls.Add(this.cmbSemester);
             this.Controls.Add(this.bntPrint);
             this.Controls.Add(this.bntSave);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.GridView_Diem);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -166,7 +237,8 @@
             this.Controls.Add(this.label1);
             this.Name = "QuanLyDiem";
             this.Text = "QuanLyDiem";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.QuanLyDiem_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.GridView_Diem)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -175,10 +247,10 @@
         #endregion
 
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox cmbYear;
+        private System.Windows.Forms.ComboBox cmbSemester;
         private System.Windows.Forms.Button bntPrint;
         private System.Windows.Forms.Button bntSave;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView GridView_Diem;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -186,5 +258,13 @@
         private System.Windows.Forms.ComboBox cmbClass;
         private System.Windows.Forms.ComboBox cmbGrade;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MSHOCSINH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NAME;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SCORE_5M;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SCORE_15M;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SCORE_45M;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SCORE_MIDYEAR;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SCORE_ENDYEAR;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MEDIUMSCORE;
     }
 }

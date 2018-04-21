@@ -42,7 +42,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountController.cs" />
+    <Compile Include="ClassController.cs" />
+    <Compile Include="GradelevelController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScoresController.cs" />
+    <Compile Include="SemesterController.cs" />
+    <Compile Include="SubjectController.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\QuanLyHocSinh.DAL\QuanLyHocSinh.DAL.csproj">

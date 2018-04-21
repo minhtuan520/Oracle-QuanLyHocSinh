@@ -41,12 +41,18 @@ namespace QuanLyHocSinh
             else
             {
                 AccountController accountController = new AccountController();
-                if (accountController.Login(account)==0)
+                if (accountController.Login(account) == 0)
                 {
                     MessageBox.Show("Tên đăng nhập hoặc mật khẩu sai, vui lòng nhập lại", "Thông báo");
                 }
                 else
+                {
                     MessageBox.Show("Chúc mừng bạn đã đăng nhập thành công", "Thông báo");
+                    QuanLyDiem quanLyDiem_f = new QuanLyDiem();
+                    quanLyDiem_f.Show();
+                    this.Hide();
+                }
+                   
             }
         }
     }
