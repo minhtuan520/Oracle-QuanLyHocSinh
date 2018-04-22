@@ -48,6 +48,7 @@
     <Compile Include="ScoresController.cs" />
     <Compile Include="SemesterController.cs" />
     <Compile Include="SubjectController.cs" />
+    <Compile Include="YearController.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\QuanLyHocSinh.DAL\QuanLyHocSinh.DAL.csproj">
