@@ -271,6 +271,7 @@
             this.Controls.Add(this.label2);
             this.Name = "XemDiem";
             this.Text = "XemDiem";
+            this.Load += new System.EventHandler(this.XemDiem_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -166,6 +166,7 @@
             this.Controls.Add(this.label1);
             this.Name = "QuanLyHanhKiem";
             this.Text = "QuanLyHanhKiem";
+            this.Load += new System.EventHandler(this.QuanLyHanhKiem_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
