@@ -98,7 +98,8 @@
             this.radioAdmin.Location = new System.Drawing.Point(231, 120);
             this.radioAdmin.Name = "radioAdmin";
             this.radioAdmin.Size = new System.Drawing.Size(54, 17);
-            this.radioAdmin.TabIndex = 4;
+            this.radioAdmin.TabIndex = 3;
+            this.radioAdmin.TabStop = true;
             this.radioAdmin.Text = "Admin";
             this.radioAdmin.UseVisualStyleBackColor = true;
             // 

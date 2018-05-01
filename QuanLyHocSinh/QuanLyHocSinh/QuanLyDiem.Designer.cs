@@ -33,13 +33,6 @@
             this.bntPrint = new System.Windows.Forms.Button();
             this.bntSave = new System.Windows.Forms.Button();
             this.GridView_Diem = new System.Windows.Forms.DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cmbSubject = new System.Windows.Forms.ComboBox();
-            this.cmbClass = new System.Windows.Forms.ComboBox();
-            this.cmbGrade = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.MSHOCSINH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SCORE_5M = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +41,15 @@
             this.SCORE_MIDYEAR = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SCORE_ENDYEAR = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MEDIUMSCORE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cmbSubject = new System.Windows.Forms.ComboBox();
+            this.cmbClass = new System.Windows.Forms.ComboBox();
+            this.cmbGrade = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnImport = new System.Windows.Forms.Button();
+            this.btn_Print = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.GridView_Diem)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,6 +79,7 @@
             this.bntPrint.TabIndex = 21;
             this.bntPrint.Text = "IN";
             this.bntPrint.UseVisualStyleBackColor = true;
+            this.bntPrint.Click += new System.EventHandler(this.bntPrint_Click);
             // 
             // bntSave
             // 
@@ -103,6 +106,57 @@
             this.GridView_Diem.Name = "GridView_Diem";
             this.GridView_Diem.Size = new System.Drawing.Size(821, 229);
             this.GridView_Diem.TabIndex = 19;
+            // 
+            // MSHOCSINH
+            // 
+            this.MSHOCSINH.DataPropertyName = "MSHOCSINH";
+            this.MSHOCSINH.HeaderText = "MSHS";
+            this.MSHOCSINH.Name = "MSHOCSINH";
+            this.MSHOCSINH.ReadOnly = true;
+            // 
+            // NAME
+            // 
+            this.NAME.DataPropertyName = "NAME";
+            this.NAME.HeaderText = "Họ và tên";
+            this.NAME.Name = "NAME";
+            this.NAME.ReadOnly = true;
+            // 
+            // SCORE_5M
+            // 
+            this.SCORE_5M.DataPropertyName = "SCORE_5M";
+            this.SCORE_5M.HeaderText = "5 phút";
+            this.SCORE_5M.Name = "SCORE_5M";
+            // 
+            // SCORE_15M
+            // 
+            this.SCORE_15M.DataPropertyName = "SCORE_15M";
+            this.SCORE_15M.HeaderText = "15 phút";
+            this.SCORE_15M.Name = "SCORE_15M";
+            // 
+            // SCORE_45M
+            // 
+            this.SCORE_45M.DataPropertyName = "SCORE_45M";
+            this.SCORE_45M.HeaderText = "45 phút";
+            this.SCORE_45M.Name = "SCORE_45M";
+            // 
+            // SCORE_MIDYEAR
+            // 
+            this.SCORE_MIDYEAR.DataPropertyName = "SCORE_MIDYEAR";
+            this.SCORE_MIDYEAR.HeaderText = "Giữa kỳ";
+            this.SCORE_MIDYEAR.Name = "SCORE_MIDYEAR";
+            // 
+            // SCORE_ENDYEAR
+            // 
+            this.SCORE_ENDYEAR.DataPropertyName = "SCORE_ENDYEAR";
+            this.SCORE_ENDYEAR.HeaderText = "Cuối kỳ";
+            this.SCORE_ENDYEAR.Name = "SCORE_ENDYEAR";
+            // 
+            // MEDIUMSCORE
+            // 
+            this.MEDIUMSCORE.DataPropertyName = "MEDIUMSCORE";
+            this.MEDIUMSCORE.HeaderText = "Trung bình";
+            this.MEDIUMSCORE.Name = "MEDIUMSCORE";
+            this.MEDIUMSCORE.ReadOnly = true;
             // 
             // label4
             // 
@@ -167,62 +221,33 @@
             this.label1.TabIndex = 12;
             this.label1.Text = "QUẢN LÝ ĐIỂM";
             // 
-            // MSHOCSINH
+            // btnImport
             // 
-            this.MSHOCSINH.DataPropertyName = "MSHOCSINH";
-            this.MSHOCSINH.HeaderText = "MSHS";
-            this.MSHOCSINH.Name = "MSHOCSINH";
-            this.MSHOCSINH.ReadOnly = true;
+            this.btnImport.Location = new System.Drawing.Point(390, 392);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(75, 37);
+            this.btnImport.TabIndex = 24;
+            this.btnImport.Text = "Import";
+            this.btnImport.UseVisualStyleBackColor = true;
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
             // 
-            // NAME
+            // btn_Print
             // 
-            this.NAME.DataPropertyName = "NAME";
-            this.NAME.HeaderText = "Họ và tên";
-            this.NAME.Name = "NAME";
-            this.NAME.ReadOnly = true;
-            // 
-            // SCORE_5M
-            // 
-            this.SCORE_5M.DataPropertyName = "SCORE_5M";
-            this.SCORE_5M.HeaderText = "5 phút";
-            this.SCORE_5M.Name = "SCORE_5M";
-            // 
-            // SCORE_15M
-            // 
-            this.SCORE_15M.DataPropertyName = "SCORE_15M";
-            this.SCORE_15M.HeaderText = "15 phút";
-            this.SCORE_15M.Name = "SCORE_15M";
-            // 
-            // SCORE_45M
-            // 
-            this.SCORE_45M.DataPropertyName = "SCORE_45M";
-            this.SCORE_45M.HeaderText = "45 phút";
-            this.SCORE_45M.Name = "SCORE_45M";
-            // 
-            // SCORE_MIDYEAR
-            // 
-            this.SCORE_MIDYEAR.DataPropertyName = "SCORE_MIDYEAR";
-            this.SCORE_MIDYEAR.HeaderText = "Giữa kỳ";
-            this.SCORE_MIDYEAR.Name = "SCORE_MIDYEAR";
-            // 
-            // SCORE_ENDYEAR
-            // 
-            this.SCORE_ENDYEAR.DataPropertyName = "SCORE_ENDYEAR";
-            this.SCORE_ENDYEAR.HeaderText = "Cuối kỳ";
-            this.SCORE_ENDYEAR.Name = "SCORE_ENDYEAR";
-            // 
-            // MEDIUMSCORE
-            // 
-            this.MEDIUMSCORE.DataPropertyName = "MEDIUMSCORE";
-            this.MEDIUMSCORE.HeaderText = "Trung bình";
-            this.MEDIUMSCORE.Name = "MEDIUMSCORE";
-            this.MEDIUMSCORE.ReadOnly = true;
+            this.btn_Print.Location = new System.Drawing.Point(12, 20);
+            this.btn_Print.Name = "btn_Print";
+            this.btn_Print.Size = new System.Drawing.Size(75, 23);
+            this.btn_Print.TabIndex = 25;
+            this.btn_Print.Text = "In Pdf";
+            this.btn_Print.UseVisualStyleBackColor = true;
+            this.btn_Print.Click += new System.EventHandler(this.btn_Print_Click);
             // 
             // QuanLyDiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(845, 441);
+            this.ClientSize = new System.Drawing.Size(845, 435);
+            this.Controls.Add(this.btn_Print);
+            this.Controls.Add(this.btnImport);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cmbSemester);
             this.Controls.Add(this.bntPrint);
@@ -266,5 +291,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SCORE_MIDYEAR;
         private System.Windows.Forms.DataGridViewTextBoxColumn SCORE_ENDYEAR;
         private System.Windows.Forms.DataGridViewTextBoxColumn MEDIUMSCORE;
+        private System.Windows.Forms.Button btnImport;
+        private System.Windows.Forms.Button btn_Print;
     }
 }
