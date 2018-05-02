@@ -24,5 +24,10 @@ namespace QuanLyHocSinh
 
             
         }
+
+        private void bntExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
