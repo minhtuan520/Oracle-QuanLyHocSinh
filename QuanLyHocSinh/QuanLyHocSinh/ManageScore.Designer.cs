@@ -34,10 +34,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.bntSave = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bntExport = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bntImport = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bntPrint = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bntExport = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bntSave = new Bunifu.Framework.UI.BunifuFlatButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cmbSemester = new System.Windows.Forms.ComboBox();
             this.cmbClass = new System.Windows.Forms.ComboBox();
@@ -147,78 +147,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chức Năng: ";
             // 
-            // bntSave
-            // 
-            this.bntSave.Activecolor = System.Drawing.Color.DarkCyan;
-            this.bntSave.BackColor = System.Drawing.Color.CadetBlue;
-            this.bntSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bntSave.BorderRadius = 0;
-            this.bntSave.ButtonText = "Lưu";
-            this.bntSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bntSave.DisabledColor = System.Drawing.Color.Gray;
-            this.bntSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bntSave.Iconcolor = System.Drawing.Color.Transparent;
-            this.bntSave.Iconimage = null;
-            this.bntSave.Iconimage_right = null;
-            this.bntSave.Iconimage_right_Selected = null;
-            this.bntSave.Iconimage_Selected = null;
-            this.bntSave.IconMarginLeft = 0;
-            this.bntSave.IconMarginRight = 0;
-            this.bntSave.IconRightVisible = true;
-            this.bntSave.IconRightZoom = 0D;
-            this.bntSave.IconVisible = true;
-            this.bntSave.IconZoom = 60D;
-            this.bntSave.IsTab = false;
-            this.bntSave.Location = new System.Drawing.Point(8, 29);
-            this.bntSave.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.bntSave.Name = "bntSave";
-            this.bntSave.Normalcolor = System.Drawing.Color.CadetBlue;
-            this.bntSave.OnHovercolor = System.Drawing.Color.CadetBlue;
-            this.bntSave.OnHoverTextColor = System.Drawing.Color.Lavender;
-            this.bntSave.selected = false;
-            this.bntSave.Size = new System.Drawing.Size(92, 53);
-            this.bntSave.TabIndex = 9;
-            this.bntSave.Text = "Lưu";
-            this.bntSave.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bntSave.Textcolor = System.Drawing.Color.White;
-            this.bntSave.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // bntExport
-            // 
-            this.bntExport.Activecolor = System.Drawing.Color.DarkCyan;
-            this.bntExport.BackColor = System.Drawing.Color.CadetBlue;
-            this.bntExport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bntExport.BorderRadius = 0;
-            this.bntExport.ButtonText = "Xuất";
-            this.bntExport.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bntExport.DisabledColor = System.Drawing.Color.Gray;
-            this.bntExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bntExport.Iconcolor = System.Drawing.Color.Transparent;
-            this.bntExport.Iconimage = ((System.Drawing.Image)(resources.GetObject("bntExport.Iconimage")));
-            this.bntExport.Iconimage_right = null;
-            this.bntExport.Iconimage_right_Selected = null;
-            this.bntExport.Iconimage_Selected = null;
-            this.bntExport.IconMarginLeft = 0;
-            this.bntExport.IconMarginRight = 0;
-            this.bntExport.IconRightVisible = true;
-            this.bntExport.IconRightZoom = 0D;
-            this.bntExport.IconVisible = true;
-            this.bntExport.IconZoom = 60D;
-            this.bntExport.IsTab = false;
-            this.bntExport.Location = new System.Drawing.Point(117, 87);
-            this.bntExport.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.bntExport.Name = "bntExport";
-            this.bntExport.Normalcolor = System.Drawing.Color.CadetBlue;
-            this.bntExport.OnHovercolor = System.Drawing.Color.CadetBlue;
-            this.bntExport.OnHoverTextColor = System.Drawing.Color.Lavender;
-            this.bntExport.selected = false;
-            this.bntExport.Size = new System.Drawing.Size(100, 54);
-            this.bntExport.TabIndex = 27;
-            this.bntExport.Text = "Xuất";
-            this.bntExport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bntExport.Textcolor = System.Drawing.Color.White;
-            this.bntExport.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
             // bntImport
             // 
             this.bntImport.Activecolor = System.Drawing.Color.DarkCyan;
@@ -292,6 +220,79 @@
             this.bntPrint.Textcolor = System.Drawing.Color.White;
             this.bntPrint.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bntPrint.Click += new System.EventHandler(this.bntPrint_Click);
+            // 
+            // bntExport
+            // 
+            this.bntExport.Activecolor = System.Drawing.Color.DarkCyan;
+            this.bntExport.BackColor = System.Drawing.Color.CadetBlue;
+            this.bntExport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bntExport.BorderRadius = 0;
+            this.bntExport.ButtonText = "Xuất";
+            this.bntExport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bntExport.DisabledColor = System.Drawing.Color.Gray;
+            this.bntExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bntExport.Iconcolor = System.Drawing.Color.Transparent;
+            this.bntExport.Iconimage = ((System.Drawing.Image)(resources.GetObject("bntExport.Iconimage")));
+            this.bntExport.Iconimage_right = null;
+            this.bntExport.Iconimage_right_Selected = null;
+            this.bntExport.Iconimage_Selected = null;
+            this.bntExport.IconMarginLeft = 0;
+            this.bntExport.IconMarginRight = 0;
+            this.bntExport.IconRightVisible = true;
+            this.bntExport.IconRightZoom = 0D;
+            this.bntExport.IconVisible = true;
+            this.bntExport.IconZoom = 60D;
+            this.bntExport.IsTab = false;
+            this.bntExport.Location = new System.Drawing.Point(117, 87);
+            this.bntExport.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.bntExport.Name = "bntExport";
+            this.bntExport.Normalcolor = System.Drawing.Color.CadetBlue;
+            this.bntExport.OnHovercolor = System.Drawing.Color.CadetBlue;
+            this.bntExport.OnHoverTextColor = System.Drawing.Color.Lavender;
+            this.bntExport.selected = false;
+            this.bntExport.Size = new System.Drawing.Size(100, 54);
+            this.bntExport.TabIndex = 27;
+            this.bntExport.Text = "Xuất";
+            this.bntExport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bntExport.Textcolor = System.Drawing.Color.White;
+            this.bntExport.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bntExport.Click += new System.EventHandler(this.bntExport_Click);
+            // 
+            // bntSave
+            // 
+            this.bntSave.Activecolor = System.Drawing.Color.DarkCyan;
+            this.bntSave.BackColor = System.Drawing.Color.CadetBlue;
+            this.bntSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bntSave.BorderRadius = 0;
+            this.bntSave.ButtonText = "Lưu";
+            this.bntSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bntSave.DisabledColor = System.Drawing.Color.Gray;
+            this.bntSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bntSave.Iconcolor = System.Drawing.Color.Transparent;
+            this.bntSave.Iconimage = null;
+            this.bntSave.Iconimage_right = null;
+            this.bntSave.Iconimage_right_Selected = null;
+            this.bntSave.Iconimage_Selected = null;
+            this.bntSave.IconMarginLeft = 0;
+            this.bntSave.IconMarginRight = 0;
+            this.bntSave.IconRightVisible = true;
+            this.bntSave.IconRightZoom = 0D;
+            this.bntSave.IconVisible = true;
+            this.bntSave.IconZoom = 60D;
+            this.bntSave.IsTab = false;
+            this.bntSave.Location = new System.Drawing.Point(8, 29);
+            this.bntSave.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.bntSave.Name = "bntSave";
+            this.bntSave.Normalcolor = System.Drawing.Color.CadetBlue;
+            this.bntSave.OnHovercolor = System.Drawing.Color.CadetBlue;
+            this.bntSave.OnHoverTextColor = System.Drawing.Color.Lavender;
+            this.bntSave.selected = false;
+            this.bntSave.Size = new System.Drawing.Size(92, 53);
+            this.bntSave.TabIndex = 9;
+            this.bntSave.Text = "Lưu";
+            this.bntSave.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bntSave.Textcolor = System.Drawing.Color.White;
+            this.bntSave.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // groupBox2
             // 

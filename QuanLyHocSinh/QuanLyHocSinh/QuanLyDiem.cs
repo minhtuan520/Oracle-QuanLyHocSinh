@@ -128,6 +128,10 @@ namespace QuanLyHocSinh
             }
             */
         }
-        
+
+        private void bntSave_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

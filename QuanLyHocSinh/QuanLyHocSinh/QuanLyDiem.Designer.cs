@@ -66,6 +66,7 @@
             this.bntSave.TabIndex = 20;
             this.bntSave.Text = "LƯU";
             this.bntSave.UseVisualStyleBackColor = true;
+            this.bntSave.Click += new System.EventHandler(this.bntSave_Click);
             // 
             // label4
             // 

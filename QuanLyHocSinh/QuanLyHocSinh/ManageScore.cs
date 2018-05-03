@@ -13,6 +13,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace QuanLyHocSinh
 {
@@ -254,6 +255,73 @@ namespace QuanLyHocSinh
             Import frmImport = new Import();
             frmImport.MdiParent = this.MdiParent;
             frmImport.Show();
+        }
+
+        private void bntExport_Click(object sender, EventArgs e)
+        {           
+            try
+            {
+                Excel.Application excel = new Excel.Application();
+                excel.Visible = true;
+                Excel.Workbook workbook = excel.Workbooks.Add(System.Reflection.Missing.Value);
+                Excel.Worksheet sheet1 = (Excel.Worksheet)workbook.Sheets[1];
+                int StartCol = 1;
+                int StartRow = 1;
+                int j = 0, i = 0;
+
+                //Write Headers
+                for (j = 0; j < GridView_Diem.Columns.Count; j++)
+                {
+                    Excel.Range myRange = (Excel.Range)sheet1.Cells[StartRow, StartCol + j];
+                    myRange.Value2 = GridView_Diem.Columns[j].HeaderText;
+                }
+                StartRow++;
+                //Write datagridview content
+                for (i = 0; i < GridView_Diem.Rows.Count; i++)
+                {
+                    for (j = 0; j < GridView_Diem.Columns.Count; j++)
+                    {
+                        try
+                        {
+                            Excel.Range myRange = (Microsoft.Office.Interop.Excel.Range)sheet1.Cells[StartRow + i, StartCol + j];
+                            myRange.Value2 = GridView_Diem[j, i].Value == null ? "" : GridView_Diem[j, i].Value;
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Quá trình xuất file bị lỗi, vui lòng thử lại sau", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Quá trình xuất file bị lỗi, vui lòng thử lại sau", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);              
+            }
+        }
+        private void copyAlltoClipboard()
+        {
+            GridView_Diem.SelectAll();
+            DataObject dataObj = GridView_Diem.GetClipboardContent();
+            if (dataObj != null)
+                Clipboard.SetDataObject(dataObj);
+        }      
+
+        private void releaseObject(object obj)
+        {
+            try
+            {
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(obj);
+                obj = null;
+            }
+            catch (Exception ex)
+            {
+                obj = null;
+                MessageBox.Show("Exception Occurred while releasing object " + ex.ToString());
+            }
+            finally
+            {
+                GC.Collect();
+            }
         }
     }
 }
