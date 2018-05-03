@@ -16,5 +16,12 @@ namespace QuanLyHocSinh
         {
             InitializeComponent();
         }
+
+        private void bunifuImageButton1_Click(object sender, EventArgs e)
+        {
+            FindStudent frmFindStudent = new FindStudent();
+            frmFindStudent.MdiParent = this.MdiParent;
+            frmFindStudent.Show();
+        }
     }
 }

@@ -16,20 +16,30 @@ namespace QuanLyHocSinh
         {
             InitializeComponent();
 
+            // hide background of logo
             var a = PointToScreen(logoschool.Location);
             a = bunifuGradientPanel1.PointToClient(a);
             logoschool.Parent = bunifuGradientPanel1;
             logoschool.Location = a;
             logoschool.BackColor = Color.Transparent;
 
+            //hide background of tittle
             var b = PointToScreen(titleSchool.Location);
             a = bunifuGradientPanel1.PointToClient(b);
             titleSchool.Parent = bunifuGradientPanel1;
             titleSchool.Location = a;
             titleSchool.BackColor = Color.Transparent;
 
-            panel1.Height = bntManageStudent.Height;
-            panel1.Top = bntManageStudent.Top;
+            //hide background of Username
+            var c = PointToScreen(labelName.Location);
+            c = bunifuGradientPanel1.PointToClient(c);
+            labelName.Parent = bunifuGradientPanel1;
+            labelName.Location = c;
+            labelName.BackColor = Color.Transparent;
+
+            menuSystem.BackColor = Color.Transparent;
+            
+            SlidePanel.Visible=false;
         }
 
         private bool CheckExistForm(String name)
@@ -60,8 +70,9 @@ namespace QuanLyHocSinh
 
         private void bntManageStudent_Click(object sender, EventArgs e)
         {
-            panel1.Height = bntManageStudent.Height;
-            panel1.Top = bntManageStudent.Top;
+            SlidePanel.Visible = true;
+            SlidePanel.Height = bntManageStudent.Height;
+            SlidePanel.Top = bntManageStudent.Top;
 
             if (!CheckExistForm("ManageStudent"))
             {
@@ -75,8 +86,9 @@ namespace QuanLyHocSinh
 
         private void bntManageScore_Click(object sender, EventArgs e)
         {
-            panel1.Height = bntManageScore.Height;
-            panel1.Top = bntManageScore.Top;
+            SlidePanel.Visible = true;
+            SlidePanel.Height = bntManageScore.Height;
+            SlidePanel.Top = bntManageScore.Top;
 
             if (!CheckExistForm("ManageScore"))
             {
@@ -90,8 +102,9 @@ namespace QuanLyHocSinh
 
         private void bntManageConduct_Click(object sender, EventArgs e)
         {
-            panel1.Height = bntManageConduct.Height;
-            panel1.Top = bntManageConduct.Top;
+            SlidePanel.Visible = true;
+            SlidePanel.Height = bntManageConduct.Height;
+            SlidePanel.Top = bntManageConduct.Top;
 
             if (!CheckExistForm("ManageConduct"))
             {
@@ -102,40 +115,26 @@ namespace QuanLyHocSinh
             else
                 ActiveChildForm("ManageConduct");
         }
-
-        private void bntChangePassword_Click(object sender, EventArgs e)
-        {
-            panel1.Height = bntChangePassword.Height;
-            panel1.Top = bntChangePassword.Top;
-
-            if (!CheckExistForm("ChangePassword"))
-            {
-                ChangePassword frmChangePassword = new ChangePassword();
-                frmChangePassword.MdiParent = this;
-                frmChangePassword.Show();
-            }
-            else
-                ActiveChildForm("ChangePassword");
-        }
-
-        private void bntSearch_Click(object sender, EventArgs e)
-        {
-            panel1.Height = bntSearch.Height;
-            panel1.Top = bntSearch.Top;
-
-            if (!CheckExistForm("FindStudent"))
-            {
-                FindStudent frmFindStudent = new FindStudent();
-                frmFindStudent.MdiParent = this;
-                frmFindStudent.Show();
-            }
-            else
-                ActiveChildForm("FindStudent");
-        }
+               
+        
 
         private void bntExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void ItemChangePassword_Click(object sender, EventArgs e)
+        {
+            ChangePassword frmChangePassword = new ChangePassword();
+            frmChangePassword.MdiParent = this;
+            frmChangePassword.Show();
+        }
+
+        private void ItemLogOut_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Login frmLogin = new Login();
+            frmLogin.Show();
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace QuanLyHocSinh
 {
-    partial class TrangChu
+    partial class Import
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // TrangChu
+            // Import
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(769, 530);
-            this.Name = "TrangChu";
-            this.Text = "TrangChu";
+            this.ClientSize = new System.Drawing.Size(712, 441);
+            this.Name = "Import";
+            this.Text = "Import";
             this.ResumeLayout(false);
 
         }
