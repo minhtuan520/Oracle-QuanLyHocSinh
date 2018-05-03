@@ -37,6 +37,7 @@ namespace QuanLyHocSinh
             frmFindStudent.MdiParent = this.MdiParent;
             frmFindStudent.Show();
         }
+
         #region Load Combobox
         private void LoadCmb()
         {
@@ -246,6 +247,13 @@ namespace QuanLyHocSinh
             {
                 MessageBox.Show("Bạn chưa chọn nơi lưu file", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void bntImport_Click(object sender, EventArgs e)
+        {
+            Import frmImport = new Import();
+            frmImport.MdiParent = this.MdiParent;
+            frmImport.Show();
         }
     }
 }

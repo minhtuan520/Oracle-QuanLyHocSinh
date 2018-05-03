@@ -22,5 +22,10 @@ namespace QuanLyHocSinh
             titleChangePassword.Location = a;
             titleChangePassword.BackColor = Color.Transparent;
         }
+
+        private void bntExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

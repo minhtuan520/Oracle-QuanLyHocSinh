@@ -118,6 +118,7 @@
             this.bntLogin.TabIndex = 0;
             this.bntLogin.Text = "Đăng Nhập";
             this.bntLogin.UseVisualStyleBackColor = false;
+            this.bntLogin.Click += new System.EventHandler(this.bntLogin_Click);
             // 
             // bunifuGradientPanel3
             // 

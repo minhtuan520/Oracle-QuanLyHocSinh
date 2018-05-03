@@ -73,6 +73,11 @@ namespace QuanLyHocSinh
             SlidePanel.Visible = true;
             SlidePanel.Height = bntManageStudent.Height;
             SlidePanel.Top = bntManageStudent.Top;
+            // delete other form
+            foreach (Form frmMdiChidren in this.MdiChildren)
+            {
+                frmMdiChidren.Close();
+            }
 
             if (!CheckExistForm("ManageStudent"))
             {
@@ -89,6 +94,11 @@ namespace QuanLyHocSinh
             SlidePanel.Visible = true;
             SlidePanel.Height = bntManageScore.Height;
             SlidePanel.Top = bntManageScore.Top;
+            // delete other form
+            foreach (Form frmMdiChidren in this.MdiChildren)
+            {
+                frmMdiChidren.Close();
+            }
 
             if (!CheckExistForm("ManageScore"))
             {
@@ -105,6 +115,11 @@ namespace QuanLyHocSinh
             SlidePanel.Visible = true;
             SlidePanel.Height = bntManageConduct.Height;
             SlidePanel.Top = bntManageConduct.Top;
+            // delete other form
+            foreach (Form frmMdiChidren in this.MdiChildren)
+            {
+                frmMdiChidren.Close();
+            }
 
             if (!CheckExistForm("ManageConduct"))
             {
@@ -132,9 +147,8 @@ namespace QuanLyHocSinh
 
         private void ItemLogOut_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Login frmLogin = new Login();
-            frmLogin.Show();
+            this.Close();    
+            Login.ActiveForm.Show();            
         }
     }
 }

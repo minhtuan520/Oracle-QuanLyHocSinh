@@ -30,14 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentScore));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.picturelogo = new System.Windows.Forms.PictureBox();
-            this.titleSchool = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.hỗTrợToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.đổiMậtKhẩuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -63,16 +55,24 @@
             this.label11 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.bntPrint = new Bunifu.Framework.UI.BunifuImageButton();
+            this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.picturelogo = new System.Windows.Forms.PictureBox();
+            this.titleSchool = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.hỗTrợToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.itemChangePassword = new System.Windows.Forms.ToolStripMenuItem();
+            this.itemLogOut = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
-            this.bunifuGradientPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picturelogo)).BeginInit();
-            this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bntPrint)).BeginInit();
+            this.bunifuGradientPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picturelogo)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -90,99 +90,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(783, 539);
             this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // bunifuGradientPanel1
-            // 
-            this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
-            this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuGradientPanel1.Controls.Add(this.label2);
-            this.bunifuGradientPanel1.Controls.Add(this.picturelogo);
-            this.bunifuGradientPanel1.Controls.Add(this.titleSchool);
-            this.bunifuGradientPanel1.Controls.Add(this.menuStrip1);
-            this.bunifuGradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bunifuGradientPanel1.GradientBottomLeft = System.Drawing.SystemColors.HotTrack;
-            this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.SteelBlue;
-            this.bunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.SkyBlue;
-            this.bunifuGradientPanel1.GradientTopRight = System.Drawing.Color.White;
-            this.bunifuGradientPanel1.Location = new System.Drawing.Point(3, 3);
-            this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
-            this.bunifuGradientPanel1.Quality = 10;
-            this.bunifuGradientPanel1.Size = new System.Drawing.Size(777, 101);
-            this.bunifuGradientPanel1.TabIndex = 0;
-            // 
-            // picturelogo
-            // 
-            this.picturelogo.Dock = System.Windows.Forms.DockStyle.Left;
-            this.picturelogo.Image = ((System.Drawing.Image)(resources.GetObject("picturelogo.Image")));
-            this.picturelogo.Location = new System.Drawing.Point(0, 0);
-            this.picturelogo.Name = "picturelogo";
-            this.picturelogo.Size = new System.Drawing.Size(123, 101);
-            this.picturelogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picturelogo.TabIndex = 0;
-            this.picturelogo.TabStop = false;
-            // 
-            // titleSchool
-            // 
-            this.titleSchool.AutoSize = true;
-            this.titleSchool.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleSchool.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.titleSchool.Location = new System.Drawing.Point(306, 37);
-            this.titleSchool.Name = "titleSchool";
-            this.titleSchool.Size = new System.Drawing.Size(332, 37);
-            this.titleSchool.TabIndex = 1;
-            this.titleSchool.Text = "TRƯỜNG TIỂU HỌC";
-            this.titleSchool.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(621, 85);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(116, 16);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Tên Đăng Nhập";
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.hỗTrợToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(740, 77);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.menuStrip1.Size = new System.Drawing.Size(36, 24);
-            this.menuStrip1.TabIndex = 3;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // hỗTrợToolStripMenuItem
-            // 
-            this.hỗTrợToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.hỗTrợToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.đổiMậtKhẩuToolStripMenuItem,
-            this.đăngXuấtToolStripMenuItem});
-            this.hỗTrợToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("hỗTrợToolStripMenuItem.Image")));
-            this.hỗTrợToolStripMenuItem.Name = "hỗTrợToolStripMenuItem";
-            this.hỗTrợToolStripMenuItem.Size = new System.Drawing.Size(28, 20);
-            // 
-            // đổiMậtKhẩuToolStripMenuItem
-            // 
-            this.đổiMậtKhẩuToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.đổiMậtKhẩuToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.đổiMậtKhẩuToolStripMenuItem.Name = "đổiMậtKhẩuToolStripMenuItem";
-            this.đổiMậtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.đổiMậtKhẩuToolStripMenuItem.Text = "Đổi Mật Khẩu";
-            // 
-            // đăngXuấtToolStripMenuItem
-            // 
-            this.đăngXuấtToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.đăngXuấtToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.đăngXuấtToolStripMenuItem.Text = "Đăng Xuất";
             // 
             // tableLayoutPanel2
             // 
@@ -210,7 +117,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.label1.Location = new System.Drawing.Point(41, 0);
             this.label1.Name = "label1";
@@ -364,9 +271,9 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 185F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 185F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 185F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(693, 185);
             this.tableLayoutPanel3.TabIndex = 35;
             // 
@@ -471,6 +378,101 @@
             this.bntPrint.WaitOnLoad = true;
             this.bntPrint.Zoom = 5;
             // 
+            // bunifuGradientPanel1
+            // 
+            this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
+            this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuGradientPanel1.Controls.Add(this.label2);
+            this.bunifuGradientPanel1.Controls.Add(this.picturelogo);
+            this.bunifuGradientPanel1.Controls.Add(this.titleSchool);
+            this.bunifuGradientPanel1.Controls.Add(this.menuStrip1);
+            this.bunifuGradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bunifuGradientPanel1.GradientBottomLeft = System.Drawing.SystemColors.HotTrack;
+            this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.SteelBlue;
+            this.bunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.SkyBlue;
+            this.bunifuGradientPanel1.GradientTopRight = System.Drawing.Color.White;
+            this.bunifuGradientPanel1.Location = new System.Drawing.Point(3, 3);
+            this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
+            this.bunifuGradientPanel1.Quality = 10;
+            this.bunifuGradientPanel1.Size = new System.Drawing.Size(777, 101);
+            this.bunifuGradientPanel1.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.label2.Location = new System.Drawing.Point(621, 85);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(116, 16);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Tên Đăng Nhập";
+            // 
+            // picturelogo
+            // 
+            this.picturelogo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.picturelogo.Image = ((System.Drawing.Image)(resources.GetObject("picturelogo.Image")));
+            this.picturelogo.Location = new System.Drawing.Point(0, 0);
+            this.picturelogo.Name = "picturelogo";
+            this.picturelogo.Size = new System.Drawing.Size(123, 101);
+            this.picturelogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picturelogo.TabIndex = 0;
+            this.picturelogo.TabStop = false;
+            // 
+            // titleSchool
+            // 
+            this.titleSchool.AutoSize = true;
+            this.titleSchool.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleSchool.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.titleSchool.Location = new System.Drawing.Point(306, 37);
+            this.titleSchool.Name = "titleSchool";
+            this.titleSchool.Size = new System.Drawing.Size(382, 42);
+            this.titleSchool.TabIndex = 1;
+            this.titleSchool.Text = "TRƯỜNG TIỂU HỌC";
+            this.titleSchool.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.hỗTrợToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(648, 77);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.menuStrip1.Size = new System.Drawing.Size(128, 24);
+            this.menuStrip1.TabIndex = 3;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // hỗTrợToolStripMenuItem
+            // 
+            this.hỗTrợToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.hỗTrợToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.itemChangePassword,
+            this.itemLogOut});
+            this.hỗTrợToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("hỗTrợToolStripMenuItem.Image")));
+            this.hỗTrợToolStripMenuItem.Name = "hỗTrợToolStripMenuItem";
+            this.hỗTrợToolStripMenuItem.Size = new System.Drawing.Size(28, 20);
+            // 
+            // itemChangePassword
+            // 
+            this.itemChangePassword.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.itemChangePassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.itemChangePassword.Name = "itemChangePassword";
+            this.itemChangePassword.Size = new System.Drawing.Size(160, 22);
+            this.itemChangePassword.Text = "Đổi Mật Khẩu";
+            this.itemChangePassword.Click += new System.EventHandler(this.itemChangePassword_Click);
+            // 
+            // itemLogOut
+            // 
+            this.itemLogOut.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.itemLogOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.itemLogOut.Name = "itemLogOut";
+            this.itemLogOut.Size = new System.Drawing.Size(160, 22);
+            this.itemLogOut.Text = "Đăng Xuất";
+            this.itemLogOut.Click += new System.EventHandler(this.itemLogOut_Click);
+            // 
             // StudentScore
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -481,11 +483,6 @@
             this.Name = "StudentScore";
             this.Text = "StudentScore";
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.bunifuGradientPanel1.ResumeLayout(false);
-            this.bunifuGradientPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picturelogo)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -495,6 +492,11 @@
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bntPrint)).EndInit();
+            this.bunifuGradientPanel1.ResumeLayout(false);
+            this.bunifuGradientPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picturelogo)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -508,8 +510,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem hỗTrợToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem đổiMậtKhẩuToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem đăngXuấtToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem itemChangePassword;
+        private System.Windows.Forms.ToolStripMenuItem itemLogOut;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;

@@ -176,10 +176,10 @@
             // 
             this.titleSchool.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.titleSchool.AutoSize = true;
-            this.titleSchool.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleSchool.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleSchool.Location = new System.Drawing.Point(308, 22);
             this.titleSchool.Name = "titleSchool";
-            this.titleSchool.Size = new System.Drawing.Size(332, 37);
+            this.titleSchool.Size = new System.Drawing.Size(382, 42);
             this.titleSchool.TabIndex = 1;
             this.titleSchool.Text = "TRƯỜNG TIỂU HỌC";
             this.titleSchool.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -229,6 +229,7 @@
             this.IsMdiContainer = true;
             this.Name = "Main";
             this.Text = "Main";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.bunifuGradientPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logoschool)).EndInit();
             this.menuStrip1.ResumeLayout(false);
