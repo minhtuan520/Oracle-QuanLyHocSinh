@@ -150,13 +150,10 @@ namespace QuanLyHocSinh
                 GridView_Diem.DataSource = db;
             }
         }
-
         #endregion
-
         private void bntPrint_Click(object sender, EventArgs e)
         {
             SaveFileDialog fsave = new SaveFileDialog();
-
             fsave.Filter = "(Tất cả các tệp)|*.*|(Các tệp pdf)|*.pdf";
             fsave.ShowDialog();
             if (fsave.FileName != "")
@@ -166,19 +163,17 @@ namespace QuanLyHocSinh
                     Document doc = new Document(PageSize.LETTER, 5, 5, 42, 35);
                     PdfWriter pdfWriter = PdfWriter.GetInstance(doc, new FileStream(fsave.FileName, FileMode.Create));
                     doc.Open();
+                    PdfPTable pdfPTable = new PdfPTable(GridView_Diem.Columns.Count + 1);
+                    #region Font for VN
                     string ARIALUNI_TFF = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Fonts), "ARIALUNI.TTF");
-
                     //Create a base font object making sure to specify IDENTITY-H
                     BaseFont bf = BaseFont.CreateFont(ARIALUNI_TFF, BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
-
-                    //Create a specific font object unicode
-                    iTextSharp.text.Font f = new iTextSharp.text.Font(bf, 12, iTextSharp.text.Font.NORMAL);
-                    PdfPTable pdfPTable = new PdfPTable(GridView_Diem.Columns.Count + 1);
+                    //font for body
+                    iTextSharp.text.Font f = new iTextSharp.text.Font(bf, 12, iTextSharp.text.Font.NORMAL); 
+                    #endregion                    
                     #region get title
-
                     for (int col = 0; col < GridView_Diem.Columns.Count; col++)
                     {
-
                         if (col != 0)
                             pdfPTable.AddCell(new Phrase(GridView_Diem.Columns
                         [col].HeaderText, f));
@@ -188,10 +183,9 @@ namespace QuanLyHocSinh
                             pdfPTable.AddCell(new Phrase(GridView_Diem.Columns[col].HeaderText, f));
                         }
                     }
-                    #endregion
-
                     pdfPTable.HeaderRows = 1;
-
+                    #endregion
+                    #region get data in gridview
                     for (int row = 0; row < GridView_Diem.Rows.Count; row++)
                     {
                         for (int col = 0; col < GridView_Diem.Columns.Count; col++)
@@ -203,7 +197,7 @@ namespace QuanLyHocSinh
                                     pdfPTable.AddCell(new Phrase(GridView_Diem[col, row].Value.ToString(), f));
                                 }
                                 else
-                                {//stt
+                                {
                                     pdfPTable.AddCell(new Phrase((row + 1).ToString(), f));
                                     pdfPTable.AddCell(new Phrase(GridView_Diem[col, row].Value.ToString(), f));
                                 }
@@ -214,7 +208,8 @@ namespace QuanLyHocSinh
                             }
                         }
                     }
-                    //pdfPTable.AddCell(new Phrase(GridView_Diem[0, 0].Value.ToString(), f));
+                    #endregion
+                    #region Create different text
                     Paragraph title_1, title_2, title_3, endParagraph;
                     iTextSharp.text.Font titleFont = new iTextSharp.text.Font(bf, 20, iTextSharp.text.Font.NORMAL);
                     title_1 = new Paragraph("BẢNG ĐIỂM HỌC KỲ " + cmbSemester.Text + " Năm " + cmbYear.Text, titleFont);
@@ -225,6 +220,9 @@ namespace QuanLyHocSinh
                     title_3.Alignment = Element.ALIGN_CENTER;
                     endParagraph = new Paragraph("Thời gian in " + DateTime.Now.ToString(), titleFont);
                     endParagraph.Alignment = Element.ALIGN_RIGHT;
+                    #endregion
+                    #region Add text to doc
+
                     doc.Add(title_1);
                     doc.Add(new Phrase("\n"));
                     doc.Add(title_2);
@@ -233,7 +231,8 @@ namespace QuanLyHocSinh
                     doc.Add(new Phrase("\n"));
                     doc.Add(pdfPTable);
                     doc.Add(new Phrase("\n"));
-                    doc.Add(endParagraph);
+                    doc.Add(endParagraph); 
+#endregion
 
                     doc.Close();
                     MessageBox.Show("In thành công", "Thông báo");
