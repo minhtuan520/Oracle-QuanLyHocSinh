@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="12.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="12.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ACCOUNT">
           <Key>
             <PropertyRef Name="USERNAME" />
@@ -91,8 +91,6 @@
           <Property Name="SUBJECTID" Type="varchar2" MaxLength="255" Nullable="false" />
           <Property Name="NAME" Type="varchar2" MaxLength="255" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'C##QUANLYHOCSINH.TESTSCORES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="TESTSCORES">
           <Key>
             <PropertyRef Name="SUBJECTID" />
@@ -303,21 +301,9 @@ warning 6002: The table/view 'C##QUANLYHOCSINH.TESTSCORES' does not have a prima
           <EntitySet Name="STUDENT" EntityType="Self.STUDENT" Schema="C##QUANLYHOCSINH" store:Type="Tables" />
           <EntitySet Name="STUDENTINCLASS" EntityType="Self.STUDENTINCLASS" Schema="C##QUANLYHOCSINH" store:Type="Tables" />
           <EntitySet Name="SUBJECT" EntityType="Self.SUBJECT" Schema="C##QUANLYHOCSINH" store:Type="Tables" />
+          <EntitySet Name="TESTSCORES" EntityType="Self.TESTSCORES" Schema="C##QUANLYHOCSINH" store:Type="Tables" />
           <EntitySet Name="TYPEACCOUNT" EntityType="Self.TYPEACCOUNT" Schema="C##QUANLYHOCSINH" store:Type="Tables" />
           <EntitySet Name="TYPERESULT" EntityType="Self.TYPERESULT" Schema="C##QUANLYHOCSINH" store:Type="Tables" />
-          <EntitySet Name="TESTSCORES" EntityType="Self.TESTSCORES" store:Type="Tables" store:Schema="C##QUANLYHOCSINH">
-            <DefiningQuery>SELECT 
-"TESTSCORES"."SUBJECTID" AS "SUBJECTID", 
-"TESTSCORES"."SEMESTERID" AS "SEMESTERID", 
-"TESTSCORES"."SCHOOLYEARID" AS "SCHOOLYEARID", 
-"TESTSCORES"."MSHOCSINH" AS "MSHOCSINH", 
-"TESTSCORES"."SCORE_5M" AS "SCORE_5M", 
-"TESTSCORES"."SCORE_15M" AS "SCORE_15M", 
-"TESTSCORES"."SCORE_45M" AS "SCORE_45M", 
-"TESTSCORES"."SCORE_MIDYEAR" AS "SCORE_MIDYEAR", 
-"TESTSCORES"."SCORE_ENDYEAR" AS "SCORE_ENDYEAR"
-FROM "C##QUANLYHOCSINH"."TESTSCORES" "TESTSCORES"</DefiningQuery>
-          </EntitySet>
           <AssociationSet Name="FK_ACCOUNT__ACCOUNT_F_ACCOUNT" Association="Self.FK_ACCOUNT__ACCOUNT_F_ACCOUNT">
             <End Role="ACCOUNT" EntitySet="ACCOUNT" />
             <End Role="ACCOUNT_FOR_STUDENT" EntitySet="ACCOUNT_FOR_STUDENT" />
@@ -375,8 +361,7 @@ FROM "C##QUANLYHOCSINH"."TESTSCORES" "TESTSCORES"</DefiningQuery>
             <End Role="LEARNINGOUTCOMES" EntitySet="LEARNINGOUTCOMES" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -873,7 +858,7 @@ FROM "C##QUANLYHOCSINH"."TESTSCORES" "TESTSCORES"</DefiningQuery>
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="true" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />

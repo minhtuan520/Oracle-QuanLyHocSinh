@@ -15,7 +15,7 @@ namespace QuanLyHocSinh.BLL
             List<CLASS> results = _QuanLyHocSinhEntities.CLASS.ToList();
             return results;
         }
-        public List<CLASS> GetClassByGradeLevelId(decimal GradeLevelId)
+        public List<CLASS> GetClass(decimal GradeLevelId)
         {
             List<CLASS> results = _QuanLyHocSinhEntities.CLASS.Where(c => c.GRADELEVELID == GradeLevelId).ToList();
             return results;

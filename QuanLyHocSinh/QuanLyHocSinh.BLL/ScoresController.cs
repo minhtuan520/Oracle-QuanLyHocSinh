@@ -12,7 +12,7 @@ namespace QuanLyHocSinh.BLL
         private QuanLyHocSinhEntities _QuanLyHocSinhEntities = new QuanLyHocSinhEntities();
         public List<SCORES> GetAll(string subjectID, decimal semesterID, string classID, string yearID)
         {
-            var listResult = (from student in _QuanLyHocSinhEntities.STUDENTS
+            var listResult = (from student in _QuanLyHocSinhEntities.STUDENT
                               join
                               classes in _QuanLyHocSinhEntities.STUDENTINCLASS
                               on student.MSHOCSINH equals classes.MSHOCSINH
@@ -42,7 +42,48 @@ namespace QuanLyHocSinh.BLL
             }
             return listResult;
         }
-
-
+        public bool UpdateListScores(List<SCORES> listScores, string schoolYearID, decimal semesterID, string subjectID)
+        {
+            bool flag = true;
+            for (int i = 0; i < listScores.Count; i++)
+            {
+                string mshs = listScores[i].MSHOCSINH;
+                List<TESTSCORES> findScoreUpdate = _QuanLyHocSinhEntities.TESTSCORES.Where(testScore => testScore.MSHOCSINH == mshs && testScore.SCHOOLYEARID == schoolYearID && testScore.SEMESTERID == semesterID && testScore.SUBJECTID == subjectID).Take(1).ToList();
+                
+                //var findScoreUpdate = (from testScores in _QuanLyHocSinhEntities.TESTSCORES
+                //                       where(((testScores.MSHOCSINH == listScores[i].MSHOCSINH) && (testScores.SCHOOLYEARID == schoolYearID) && (testScores.SEMESTERID == semesterID)&&(testScores.SUBJECTID == subjectID))) select testScores ).ToList();
+                if (findScoreUpdate != null)
+                {
+                    if (listScores[i].SCORE_5M != null)
+                        findScoreUpdate[0].SCORE_5M = listScores[i].SCORE_5M;
+                    if (listScores[i].SCORE_15M != null)
+                        findScoreUpdate[0].SCORE_15M = listScores[i].SCORE_15M;
+                    if (listScores[i].SCORE_45M != null)
+                        findScoreUpdate[0].SCORE_45M = listScores[i].SCORE_45M;
+                    if (listScores[i].SCORE_MIDYEAR != null)
+                        findScoreUpdate[0].SCORE_MIDYEAR = listScores[i].SCORE_MIDYEAR;
+                    if (listScores[i].SCORE_ENDYEAR != null)
+                        findScoreUpdate[0].SCORE_ENDYEAR = listScores[i].SCORE_ENDYEAR;
+                }
+                else
+                {
+                    flag = false;
+                    break;
+                }
+            }
+            if (flag == true)
+            {
+                try
+                {
+                    _QuanLyHocSinhEntities.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    flag = false;
+                    return flag;
+                }
+            }
+            return flag;
+        }
     }
 }

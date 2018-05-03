@@ -103,7 +103,11 @@ namespace QuanLyHocSinh
             if (!CheckExistForm("ManageScore"))
             {
                 ManageScore frmManageScore = new ManageScore();
+                frmManageScore.TopLevel = false;
+                frmManageScore.Dock = DockStyle.Fill;
+                this.Controls.Add(frmManageScore);               
                 frmManageScore.MdiParent = this;
+                
                 frmManageScore.Show();
             }
             else

@@ -25,17 +25,17 @@ namespace QuanLyHocSinh.DAL
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<ACCOUNT> ACCOUNTS { get; set; }
+        public DbSet<ACCOUNT> ACCOUNT { get; set; }
         public DbSet<CLASS> CLASS { get; set; }
-        public DbSet<GRADELEVEL> GRADELEVELS { get; set; }
+        public DbSet<GRADELEVEL> GRADELEVEL { get; set; }
         public DbSet<LEARNINGOUTCOMES> LEARNINGOUTCOMES { get; set; }
-        public DbSet<SCHOOLYEAR> SCHOOLYEARS { get; set; }
-        public DbSet<SEMESTER> SEMESTERS { get; set; }
-        public DbSet<STUDENT> STUDENTS { get; set; }
+        public DbSet<SCHOOLYEAR> SCHOOLYEAR { get; set; }
+        public DbSet<SEMESTER> SEMESTER { get; set; }
+        public DbSet<STUDENT> STUDENT { get; set; }
         public DbSet<STUDENTINCLASS> STUDENTINCLASS { get; set; }
-        public DbSet<SUBJECT> SUBJECTS { get; set; }
-        public DbSet<TYPEACCOUNT> TYPEACCOUNTS { get; set; }
-        public DbSet<TYPERESULT> TYPERESULTS { get; set; }
+        public DbSet<SUBJECT> SUBJECT { get; set; }
+        public DbSet<TYPEACCOUNT> TYPEACCOUNT { get; set; }
+        public DbSet<TYPERESULT> TYPERESULT { get; set; }
         public DbSet<TESTSCORES> TESTSCORES { get; set; }
     }
 }

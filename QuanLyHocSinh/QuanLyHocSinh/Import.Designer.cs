@@ -33,12 +33,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.bntNo = new Bunifu.Framework.UI.BunifuImageButton();
             this.bntYes = new Bunifu.Framework.UI.BunifuImageButton();
-            this.data = new System.Windows.Forms.DataGridView();
+            this.GirdviewImport = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bntNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bntYes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.data)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GirdviewImport)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -48,7 +48,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.data, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.GirdviewImport, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -96,15 +96,16 @@
             this.bntYes.TabIndex = 8;
             this.bntYes.TabStop = false;
             this.bntYes.Zoom = 10;
+            this.bntYes.Click += new System.EventHandler(this.bntYes_Click);
             // 
-            // data
+            // GirdviewImport
             // 
-            this.data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.data.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.data.Location = new System.Drawing.Point(42, 99);
-            this.data.Name = "data";
-            this.data.Size = new System.Drawing.Size(702, 371);
-            this.data.TabIndex = 6;
+            this.GirdviewImport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GirdviewImport.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GirdviewImport.Location = new System.Drawing.Point(42, 99);
+            this.GirdviewImport.Name = "GirdviewImport";
+            this.GirdviewImport.Size = new System.Drawing.Size(702, 371);
+            this.GirdviewImport.TabIndex = 6;
             // 
             // Import
             // 
@@ -114,11 +115,12 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Import";
             this.Text = "Import";
+            this.Load += new System.EventHandler(this.Import_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bntNo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bntYes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.data)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GirdviewImport)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -129,6 +131,6 @@
         private System.Windows.Forms.Panel panel1;
         private Bunifu.Framework.UI.BunifuImageButton bntNo;
         private Bunifu.Framework.UI.BunifuImageButton bntYes;
-        private System.Windows.Forms.DataGridView data;
+        private System.Windows.Forms.DataGridView GirdviewImport;
     }
 }

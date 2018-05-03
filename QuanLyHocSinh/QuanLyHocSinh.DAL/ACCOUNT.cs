@@ -11,14 +11,14 @@ namespace QuanLyHocSinh.DAL
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class ACCOUNT
     {
         public ACCOUNT()
         {
             this.STUDENT = new HashSet<STUDENT>();
-        }        
+        }
+    
         public string USERNAME { get; set; }
         public string PASSWORD { get; set; }
         public Nullable<decimal> IDTYPE { get; set; }

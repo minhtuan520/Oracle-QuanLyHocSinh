@@ -12,7 +12,7 @@ namespace QuanLyHocSinh.BLL
         private QuanLyHocSinhEntities _QuanLyHocSinhEntities = new QuanLyHocSinhEntities();
         public List<GRADELEVEL> GetAll()
         {
-            List<GRADELEVEL> results = _QuanLyHocSinhEntities.GRADELEVELS.ToList();
+            List<GRADELEVEL> results = _QuanLyHocSinhEntities.GRADELEVEL.ToList();
             return results;
         }
     }

@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -25,12 +26,16 @@ namespace QuanLyHocSinh
         }
         private void ManageScore_Load(object sender, EventArgs e)
         {
+            this.ControlBox = false;
+            this.FormBorderStyle = FormBorderStyle.None;
             LoadCmb();
             ScoresController scoresController = new ScoresController();
             var listScores = scoresController.GetAll(cmbSubject.SelectedValue.ToString(), (decimal)cmbSemester.SelectedValue, cmbClass.SelectedValue.ToString(), cmbYear.SelectedValue.ToString());
             DataTable db = new DataTable();
             db = listScores.ToDataTable();
             GridView_Diem.DataSource = db;
+            
+       
         }
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
@@ -121,7 +126,7 @@ namespace QuanLyHocSinh
             if (cmbGrade.SelectedValue == null) ;
             else
             {
-                var listClass = classController.GetClassByGradeLevelId((decimal)cmbGrade.SelectedValue);
+                var listClass = classController.GetClass((decimal)cmbGrade.SelectedValue);
                 if (listClass.Count > 0)
                 {
                     cmbClass.DataSource = listClass;
@@ -252,9 +257,10 @@ namespace QuanLyHocSinh
 
         private void bntImport_Click(object sender, EventArgs e)
         {
-            Import frmImport = new Import();
+            Import frmImport = new Import(1);                       
             frmImport.MdiParent = this.MdiParent;
             frmImport.Show();
+           
         }
 
         private void bntExport_Click(object sender, EventArgs e)

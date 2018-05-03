@@ -12,7 +12,7 @@ namespace QuanLyHocSinh.BLL
         private QuanLyHocSinhEntities _QuanLyHocSinhEntities = new QuanLyHocSinhEntities();
         public List<SEMESTER> GetAll()
         {
-            List<SEMESTER> results = _QuanLyHocSinhEntities.SEMESTERS.ToList();
+            List<SEMESTER> results = _QuanLyHocSinhEntities.SEMESTER.ToList();
             return results;
         }
     }

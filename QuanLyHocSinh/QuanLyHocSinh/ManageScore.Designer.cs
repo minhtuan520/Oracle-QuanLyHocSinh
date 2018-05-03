@@ -497,6 +497,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(767, 504);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.MinimizeBox = false;
             this.Name = "ManageScore";
             this.Text = "ManageScore";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
