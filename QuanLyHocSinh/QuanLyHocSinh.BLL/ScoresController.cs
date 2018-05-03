@@ -10,7 +10,7 @@ namespace QuanLyHocSinh.BLL
     public class ScoresController
     {
         private QuanLyHocSinhEntities _QuanLyHocSinhEntities = new QuanLyHocSinhEntities();
-        public List<SCORES> GetAll(string subjectID, decimal semesterID, string classID)
+        public List<SCORES> GetAll(string subjectID, decimal semesterID, string classID, string yearID)
         {
             var listResult = (from student in _QuanLyHocSinhEntities.STUDENTS
                               join
@@ -18,7 +18,7 @@ namespace QuanLyHocSinh.BLL
                               on student.MSHOCSINH equals classes.MSHOCSINH
                               join testCores in _QuanLyHocSinhEntities.TESTSCORES
                               on student.MSHOCSINH equals testCores.MSHOCSINH
-                              where testCores.SUBJECTID == subjectID && testCores.SEMESTERID == semesterID && classes.IDCLASS == classID
+                              where testCores.SUBJECTID == subjectID && testCores.SEMESTERID == semesterID && classes.IDCLASS == classID && classes.SCHOOLYEARID == yearID
                               select new SCORES
                               {
                                   MSHOCSINH = student.MSHOCSINH,

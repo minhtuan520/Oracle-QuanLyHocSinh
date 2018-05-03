@@ -24,95 +24,13 @@ namespace QuanLyHocSinh
 
         private void QuanLyDiem_Load(object sender, EventArgs e)
         {
-            LoadCmb();
-            ScoresController scoresController = new ScoresController();
-            var listScores = scoresController.GetAll(cmbSubject.SelectedValue.ToString(), (decimal)cmbSemester.SelectedValue, cmbClass.SelectedValue.ToString());
-            DataTable db = new DataTable();
-            db = listScores.ToDataTable();
-            GridView_Diem.DataSource = db;
+            
         }
-        private void LoadCmbGrade()
-        {
-            GradelevelController gradeLevelController = new GradelevelController();
-            List<GRADELEVEL> listGradeLevel = gradeLevelController.GetAll();
-            cmbGrade.ValueMember = "GRADELEVELID";
-            cmbGrade.DisplayMember = "NAME";
-            cmbGrade.DataSource = listGradeLevel;
-        }
-        private void LoadCmbClass()
-        {
-            ClassController classController = new ClassController();
-            List<CLASS> classes = classController.GetAll();
-            cmbClass.ValueMember = "IDCLASS";
-            cmbClass.DisplayMember = "NAME";
-            cmbClass.DataSource = classes;
-        }
-        private void LoadCmbSubject()
-        {
-            SubjectController subjectController = new SubjectController();
-            List<SUBJECT> subjects = subjectController.GetAll();
-            cmbSubject.ValueMember = "SUBJECTID";
-            cmbSubject.DisplayMember = "NAME";
-            cmbSubject.DataSource = subjects;
-        }
-        private void LoadCmbSemester()
-        {
-            SemesterController semesterController = new SemesterController();
-            List<SEMESTER> semesters = semesterController.GetAll();
-            cmbSemester.ValueMember = "SEMESTERID";
-            cmbSemester.DisplayMember = "NAME";
-            cmbSemester.DataSource = semesters;
-        }
-        private void LoadCmb()
-        {
-            LoadCmbGrade();
-            LoadCmbClass();
-            LoadCmbSubject();
-            LoadCmbSemester();
-        }
-
-        private void cmbSubject_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            ScoresController scoresController = new ScoresController();
-            if (cmbSemester.SelectedValue == null || cmbClass.SelectedValue == null || cmbSubject.SelectedValue == null) ;
-            else
-            {
-                var listScores = scoresController.GetAll(cmbSubject.SelectedValue.ToString(), (decimal)cmbSemester.SelectedValue, cmbClass.SelectedValue.ToString());
-                DataTable db = new DataTable();
-                db = listScores.ToDataTable();
-                GridView_Diem.DataSource = db;
-            }
-        }
-
-        private void cmbClass_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            ScoresController scoresController = new ScoresController();
-            if (cmbClass.SelectedValue == null || cmbSemester.SelectedValue == null || cmbSubject.SelectedValue == null) ;
-            else
-            {
-                var listScores = scoresController.GetAll(cmbSubject.SelectedValue.ToString(), (decimal)cmbSemester.SelectedValue, cmbClass.SelectedValue.ToString());
-                DataTable db = new DataTable();
-                db = listScores.ToDataTable();
-                GridView_Diem.DataSource = db;
-            }
-        }
-
-        private void cmbSemester_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            ScoresController scoresController = new ScoresController();
-            if (cmbClass.SelectedValue == null || cmbSubject.SelectedValue == null ||
-                cmbSemester.SelectedValue == null) ;
-            else
-            {
-                var listScores = scoresController.GetAll(cmbSubject.SelectedValue.ToString(), (decimal)cmbSemester.SelectedValue, cmbClass.SelectedValue.ToString());
-                DataTable db = new DataTable();
-                db = listScores.ToDataTable();
-                GridView_Diem.DataSource = db;
-            }
-        }
-
+       
+        
         private void bntPrint_Click(object sender, EventArgs e)
         {
+            /*
             copyAlltoClipboard();
             Excel.Application xlexcel;
             Excel.Workbook xlWorkBook;
@@ -125,17 +43,21 @@ namespace QuanLyHocSinh
             Excel.Range CR = (Excel.Range)xlWorkSheet.Cells[1, 1];
             CR.Select();
             xlWorkSheet.PasteSpecial(CR, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true);
+            */
         }
         private void copyAlltoClipboard()
         {
+            /*
             GridView_Diem.SelectAll();
             DataObject dataObj = GridView_Diem.GetClipboardContent();
             if (dataObj != null)
                 Clipboard.SetDataObject(dataObj);
+                */
         }
 
         private void btnImport_Click(object sender, EventArgs e)
         {
+            /*
             OpenFileDialog fopen = new OpenFileDialog();
             fopen.Filter = "(Tất cả các tệp)|*.*|(Các tệp excel)|*.xlsx";
             fopen.ShowDialog();
@@ -154,11 +76,12 @@ namespace QuanLyHocSinh
                 MessageBox.Show("Bạn chưa chọn tập tin nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
-
+            */
         }
 
         private void btn_Print_Click(object sender, EventArgs e)
         {
+            /*
             SaveFileDialog fsave = new SaveFileDialog();
             fsave.Filter = "(Tất cả các tệp)|*.*|(Các tệp pdf)|*.pdf";
             fsave.ShowDialog();
@@ -203,6 +126,8 @@ namespace QuanLyHocSinh
             {
                 MessageBox.Show("Bạn chưa chọn nơi lưu file", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            */
         }
+        
     }
 }

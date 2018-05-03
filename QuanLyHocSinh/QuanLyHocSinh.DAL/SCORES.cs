@@ -7,9 +7,7 @@ using System.Threading.Tasks;
 namespace QuanLyHocSinh.DAL
 {
     public class SCORES
-    {
-        public decimal? MEDIUMSCORE { get; set; }
-
+    {      
         public string MSHOCSINH { get; set; }
         public string NAME { get; set; }
         public Nullable<decimal> SCORE_5M { get; set; }
@@ -17,5 +15,6 @@ namespace QuanLyHocSinh.DAL
         public Nullable<decimal> SCORE_45M { get; set; }
         public Nullable<decimal> SCORE_MIDYEAR { get; set; }
         public Nullable<decimal> SCORE_ENDYEAR { get; set; }
+        public decimal? MEDIUMSCORE { get; set; }
     }
 }
