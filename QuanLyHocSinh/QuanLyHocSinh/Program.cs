@@ -16,7 +16,7 @@ namespace QuanLyHocSinh
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new StudentScore());
+            Application.Run(new Login());
         }
     }
 }

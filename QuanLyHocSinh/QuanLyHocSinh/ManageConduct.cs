@@ -23,5 +23,12 @@ namespace QuanLyHocSinh
             frmFindStudent.MdiParent = this.MdiParent;
             frmFindStudent.Show();
         }
+
+        private void bntImport_Click(object sender, EventArgs e)
+        {
+            Import frmImport = new Import();
+            frmImport.MdiParent = this.MdiParent;
+            frmImport.Show();
+        }
     }
 }

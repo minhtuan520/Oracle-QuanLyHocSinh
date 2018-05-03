@@ -29,5 +29,11 @@ namespace QuanLyHocSinh
         {
             this.Close();
         }
+
+        private void bntLogin_Click(object sender, EventArgs e)
+        {
+            Main frmMain = new Main();            
+            frmMain.Show();              
+        }
     }
 }

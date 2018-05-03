@@ -103,6 +103,7 @@
             this.bntExit.TabIndex = 1;
             this.bntExit.Text = "Thoát";
             this.bntExit.UseVisualStyleBackColor = false;
+            this.bntExit.Click += new System.EventHandler(this.bntExit_Click);
             // 
             // bntChange
             // 

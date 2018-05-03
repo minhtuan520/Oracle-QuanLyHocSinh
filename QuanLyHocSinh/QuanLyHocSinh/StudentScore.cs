@@ -36,5 +36,18 @@ namespace QuanLyHocSinh
 
             menuStrip1.BackColor = Color.Transparent;
         }
+
+        private void itemChangePassword_Click(object sender, EventArgs e)
+        {
+            ChangePassword frmChangePassword = new ChangePassword();
+            frmChangePassword.MdiParent = this;
+            frmChangePassword.Show();
+        }
+
+        private void itemLogOut_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Login.ActiveForm.Show();
+        }
     }
 }

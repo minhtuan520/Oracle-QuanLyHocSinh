@@ -30,8 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageScore));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.label7 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.bntSave = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bntExport = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bntImport = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bntPrint = new Bunifu.Framework.UI.BunifuFlatButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -43,19 +49,13 @@
             this.cmbClass = new System.Windows.Forms.ComboBox();
             this.cmbYear = new System.Windows.Forms.ComboBox();
             this.cmbGrade = new System.Windows.Forms.ComboBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.bntInport = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bntPrint = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bntExport = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bntSave = new Bunifu.Framework.UI.BunifuFlatButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -71,18 +71,34 @@
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 53F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(767, 504);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // bunifuImageButton1
+            // 
+            this.bunifuImageButton1.BackColor = System.Drawing.SystemColors.Control;
+            this.bunifuImageButton1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
+            this.bunifuImageButton1.ImageActive = null;
+            this.bunifuImageButton1.Location = new System.Drawing.Point(731, 39);
+            this.bunifuImageButton1.Name = "bunifuImageButton1";
+            this.bunifuImageButton1.Size = new System.Drawing.Size(33, 33);
+            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButton1.TabIndex = 16;
+            this.bunifuImageButton1.TabStop = false;
+            this.bunifuImageButton1.Zoom = 10;
+            this.bunifuImageButton1.Click += new System.EventHandler(this.bunifuImageButton1_Click);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.label7.Location = new System.Drawing.Point(41, 0);
             this.label7.Name = "label7";
@@ -96,16 +112,176 @@
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.tableLayoutPanel2.Controls.Add(this.groupBox1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.groupBox2, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.groupBox1, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(41, 78);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 170F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(684, 170);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 145F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(684, 145);
             this.tableLayoutPanel2.TabIndex = 30;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.bntSave);
+            this.groupBox1.Controls.Add(this.bntExport);
+            this.groupBox1.Controls.Add(this.bntImport);
+            this.groupBox1.Controls.Add(this.bntPrint);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.groupBox1.Location = new System.Drawing.Point(447, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(230, 138);
+            this.groupBox1.TabIndex = 29;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Chức Năng: ";
+            // 
+            // bntSave
+            // 
+            this.bntSave.Activecolor = System.Drawing.Color.DarkCyan;
+            this.bntSave.BackColor = System.Drawing.Color.CadetBlue;
+            this.bntSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bntSave.BorderRadius = 1;
+            this.bntSave.ButtonText = "Lưu";
+            this.bntSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bntSave.DisabledColor = System.Drawing.Color.Gray;
+            this.bntSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bntSave.Iconcolor = System.Drawing.Color.Transparent;
+            this.bntSave.Iconimage = ((System.Drawing.Image)(resources.GetObject("bntSave.Iconimage")));
+            this.bntSave.Iconimage_right = null;
+            this.bntSave.Iconimage_right_Selected = null;
+            this.bntSave.Iconimage_Selected = null;
+            this.bntSave.IconMarginLeft = 0;
+            this.bntSave.IconMarginRight = 0;
+            this.bntSave.IconRightVisible = true;
+            this.bntSave.IconRightZoom = 0D;
+            this.bntSave.IconVisible = true;
+            this.bntSave.IconZoom = 60D;
+            this.bntSave.IsTab = false;
+            this.bntSave.Location = new System.Drawing.Point(7, 25);
+            this.bntSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bntSave.Name = "bntSave";
+            this.bntSave.Normalcolor = System.Drawing.Color.CadetBlue;
+            this.bntSave.OnHovercolor = System.Drawing.Color.CadetBlue;
+            this.bntSave.OnHoverTextColor = System.Drawing.Color.Lavender;
+            this.bntSave.selected = false;
+            this.bntSave.Size = new System.Drawing.Size(103, 36);
+            this.bntSave.TabIndex = 7;
+            this.bntSave.Text = "Lưu";
+            this.bntSave.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bntSave.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.bntSave.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
+            // bntExport
+            // 
+            this.bntExport.Activecolor = System.Drawing.Color.DarkCyan;
+            this.bntExport.BackColor = System.Drawing.Color.CadetBlue;
+            this.bntExport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bntExport.BorderRadius = 1;
+            this.bntExport.ButtonText = "  Xuất";
+            this.bntExport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bntExport.DisabledColor = System.Drawing.Color.Gray;
+            this.bntExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bntExport.Iconcolor = System.Drawing.Color.Transparent;
+            this.bntExport.Iconimage = ((System.Drawing.Image)(resources.GetObject("bntExport.Iconimage")));
+            this.bntExport.Iconimage_right = null;
+            this.bntExport.Iconimage_right_Selected = null;
+            this.bntExport.Iconimage_Selected = null;
+            this.bntExport.IconMarginLeft = 0;
+            this.bntExport.IconMarginRight = 0;
+            this.bntExport.IconRightVisible = true;
+            this.bntExport.IconRightZoom = 0D;
+            this.bntExport.IconVisible = true;
+            this.bntExport.IconZoom = 60D;
+            this.bntExport.IsTab = false;
+            this.bntExport.Location = new System.Drawing.Point(120, 72);
+            this.bntExport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bntExport.Name = "bntExport";
+            this.bntExport.Normalcolor = System.Drawing.Color.CadetBlue;
+            this.bntExport.OnHovercolor = System.Drawing.Color.CadetBlue;
+            this.bntExport.OnHoverTextColor = System.Drawing.Color.Lavender;
+            this.bntExport.selected = false;
+            this.bntExport.Size = new System.Drawing.Size(103, 36);
+            this.bntExport.TabIndex = 6;
+            this.bntExport.Text = "  Xuất";
+            this.bntExport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bntExport.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.bntExport.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
+            // bntImport
+            // 
+            this.bntImport.Activecolor = System.Drawing.Color.DarkCyan;
+            this.bntImport.BackColor = System.Drawing.Color.CadetBlue;
+            this.bntImport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bntImport.BorderRadius = 1;
+            this.bntImport.ButtonText = "  Nhập ";
+            this.bntImport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bntImport.DisabledColor = System.Drawing.Color.Gray;
+            this.bntImport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bntImport.Iconcolor = System.Drawing.Color.Transparent;
+            this.bntImport.Iconimage = ((System.Drawing.Image)(resources.GetObject("bntImport.Iconimage")));
+            this.bntImport.Iconimage_right = null;
+            this.bntImport.Iconimage_right_Selected = null;
+            this.bntImport.Iconimage_Selected = null;
+            this.bntImport.IconMarginLeft = 0;
+            this.bntImport.IconMarginRight = 0;
+            this.bntImport.IconRightVisible = true;
+            this.bntImport.IconRightZoom = 0D;
+            this.bntImport.IconVisible = true;
+            this.bntImport.IconZoom = 60D;
+            this.bntImport.IsTab = false;
+            this.bntImport.Location = new System.Drawing.Point(7, 72);
+            this.bntImport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bntImport.Name = "bntImport";
+            this.bntImport.Normalcolor = System.Drawing.Color.CadetBlue;
+            this.bntImport.OnHovercolor = System.Drawing.Color.CadetBlue;
+            this.bntImport.OnHoverTextColor = System.Drawing.Color.Lavender;
+            this.bntImport.selected = false;
+            this.bntImport.Size = new System.Drawing.Size(103, 36);
+            this.bntImport.TabIndex = 5;
+            this.bntImport.Text = "  Nhập ";
+            this.bntImport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bntImport.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.bntImport.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bntImport.Click += new System.EventHandler(this.bntImport_Click);
+            // 
+            // bntPrint
+            // 
+            this.bntPrint.Activecolor = System.Drawing.Color.DarkCyan;
+            this.bntPrint.BackColor = System.Drawing.Color.CadetBlue;
+            this.bntPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bntPrint.BorderRadius = 1;
+            this.bntPrint.ButtonText = "  In";
+            this.bntPrint.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bntPrint.DisabledColor = System.Drawing.Color.Gray;
+            this.bntPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bntPrint.Iconcolor = System.Drawing.Color.Transparent;
+            this.bntPrint.Iconimage = ((System.Drawing.Image)(resources.GetObject("bntPrint.Iconimage")));
+            this.bntPrint.Iconimage_right = null;
+            this.bntPrint.Iconimage_right_Selected = null;
+            this.bntPrint.Iconimage_Selected = null;
+            this.bntPrint.IconMarginLeft = 0;
+            this.bntPrint.IconMarginRight = 0;
+            this.bntPrint.IconRightVisible = true;
+            this.bntPrint.IconRightZoom = 0D;
+            this.bntPrint.IconVisible = true;
+            this.bntPrint.IconZoom = 60D;
+            this.bntPrint.IsTab = false;
+            this.bntPrint.Location = new System.Drawing.Point(120, 25);
+            this.bntPrint.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bntPrint.Name = "bntPrint";
+            this.bntPrint.Normalcolor = System.Drawing.Color.CadetBlue;
+            this.bntPrint.OnHovercolor = System.Drawing.Color.CadetBlue;
+            this.bntPrint.OnHoverTextColor = System.Drawing.Color.Lavender;
+            this.bntPrint.selected = false;
+            this.bntPrint.Size = new System.Drawing.Size(103, 36);
+            this.bntPrint.TabIndex = 2;
+            this.bntPrint.Text = "  In";
+            this.bntPrint.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bntPrint.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.bntPrint.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // groupBox2
             // 
@@ -119,12 +295,11 @@
             this.groupBox2.Controls.Add(this.cmbClass);
             this.groupBox2.Controls.Add(this.cmbYear);
             this.groupBox2.Controls.Add(this.cmbGrade);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.groupBox2.Location = new System.Drawing.Point(3, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(438, 164);
+            this.groupBox2.Size = new System.Drawing.Size(438, 139);
             this.groupBox2.TabIndex = 28;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông Tin: ";
@@ -224,185 +399,14 @@
             this.cmbGrade.Size = new System.Drawing.Size(138, 24);
             this.cmbGrade.TabIndex = 0;
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.bntInport);
-            this.groupBox1.Controls.Add(this.bntPrint);
-            this.groupBox1.Controls.Add(this.bntExport);
-            this.groupBox1.Controls.Add(this.bntSave);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.groupBox1.Location = new System.Drawing.Point(447, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(234, 164);
-            this.groupBox1.TabIndex = 29;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Chức Năng: ";
-            // 
-            // bntInport
-            // 
-            this.bntInport.Activecolor = System.Drawing.Color.DarkCyan;
-            this.bntInport.BackColor = System.Drawing.Color.CadetBlue;
-            this.bntInport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bntInport.BorderRadius = 0;
-            this.bntInport.ButtonText = "Nhập";
-            this.bntInport.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bntInport.DisabledColor = System.Drawing.Color.Gray;
-            this.bntInport.Iconcolor = System.Drawing.Color.Transparent;
-            this.bntInport.Iconimage = ((System.Drawing.Image)(resources.GetObject("bntInport.Iconimage")));
-            this.bntInport.Iconimage_right = null;
-            this.bntInport.Iconimage_right_Selected = null;
-            this.bntInport.Iconimage_Selected = null;
-            this.bntInport.IconMarginLeft = 0;
-            this.bntInport.IconMarginRight = 0;
-            this.bntInport.IconRightVisible = true;
-            this.bntInport.IconRightZoom = 0D;
-            this.bntInport.IconVisible = true;
-            this.bntInport.IconZoom = 60D;
-            this.bntInport.IsTab = false;
-            this.bntInport.Location = new System.Drawing.Point(8, 87);
-            this.bntInport.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.bntInport.Name = "bntInport";
-            this.bntInport.Normalcolor = System.Drawing.Color.CadetBlue;
-            this.bntInport.OnHovercolor = System.Drawing.Color.CadetBlue;
-            this.bntInport.OnHoverTextColor = System.Drawing.Color.Lavender;
-            this.bntInport.selected = false;
-            this.bntInport.Size = new System.Drawing.Size(92, 53);
-            this.bntInport.TabIndex = 13;
-            this.bntInport.Text = "Nhập";
-            this.bntInport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bntInport.Textcolor = System.Drawing.Color.White;
-            this.bntInport.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // bntPrint
-            // 
-            this.bntPrint.Activecolor = System.Drawing.Color.DarkCyan;
-            this.bntPrint.BackColor = System.Drawing.Color.CadetBlue;
-            this.bntPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bntPrint.BorderRadius = 0;
-            this.bntPrint.ButtonText = "In";
-            this.bntPrint.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bntPrint.DisabledColor = System.Drawing.Color.Gray;
-            this.bntPrint.Iconcolor = System.Drawing.Color.Transparent;
-            this.bntPrint.Iconimage = ((System.Drawing.Image)(resources.GetObject("bntPrint.Iconimage")));
-            this.bntPrint.Iconimage_right = null;
-            this.bntPrint.Iconimage_right_Selected = null;
-            this.bntPrint.Iconimage_Selected = null;
-            this.bntPrint.IconMarginLeft = 0;
-            this.bntPrint.IconMarginRight = 0;
-            this.bntPrint.IconRightVisible = true;
-            this.bntPrint.IconRightZoom = 0D;
-            this.bntPrint.IconVisible = true;
-            this.bntPrint.IconZoom = 60D;
-            this.bntPrint.IsTab = false;
-            this.bntPrint.Location = new System.Drawing.Point(117, 29);
-            this.bntPrint.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.bntPrint.Name = "bntPrint";
-            this.bntPrint.Normalcolor = System.Drawing.Color.CadetBlue;
-            this.bntPrint.OnHovercolor = System.Drawing.Color.CadetBlue;
-            this.bntPrint.OnHoverTextColor = System.Drawing.Color.Lavender;
-            this.bntPrint.selected = false;
-            this.bntPrint.Size = new System.Drawing.Size(97, 53);
-            this.bntPrint.TabIndex = 12;
-            this.bntPrint.Text = "In";
-            this.bntPrint.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bntPrint.Textcolor = System.Drawing.Color.White;
-            this.bntPrint.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // bntExport
-            // 
-            this.bntExport.Activecolor = System.Drawing.Color.DarkCyan;
-            this.bntExport.BackColor = System.Drawing.Color.CadetBlue;
-            this.bntExport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bntExport.BorderRadius = 0;
-            this.bntExport.ButtonText = "Xuất";
-            this.bntExport.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bntExport.DisabledColor = System.Drawing.Color.Gray;
-            this.bntExport.Iconcolor = System.Drawing.Color.Transparent;
-            this.bntExport.Iconimage = ((System.Drawing.Image)(resources.GetObject("bntExport.Iconimage")));
-            this.bntExport.Iconimage_right = null;
-            this.bntExport.Iconimage_right_Selected = null;
-            this.bntExport.Iconimage_Selected = null;
-            this.bntExport.IconMarginLeft = 0;
-            this.bntExport.IconMarginRight = 0;
-            this.bntExport.IconRightVisible = true;
-            this.bntExport.IconRightZoom = 0D;
-            this.bntExport.IconVisible = true;
-            this.bntExport.IconZoom = 60D;
-            this.bntExport.IsTab = false;
-            this.bntExport.Location = new System.Drawing.Point(117, 87);
-            this.bntExport.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.bntExport.Name = "bntExport";
-            this.bntExport.Normalcolor = System.Drawing.Color.CadetBlue;
-            this.bntExport.OnHovercolor = System.Drawing.Color.CadetBlue;
-            this.bntExport.OnHoverTextColor = System.Drawing.Color.Lavender;
-            this.bntExport.selected = false;
-            this.bntExport.Size = new System.Drawing.Size(100, 54);
-            this.bntExport.TabIndex = 27;
-            this.bntExport.Text = "Xuất";
-            this.bntExport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bntExport.Textcolor = System.Drawing.Color.White;
-            this.bntExport.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // bntSave
-            // 
-            this.bntSave.Activecolor = System.Drawing.Color.DarkCyan;
-            this.bntSave.BackColor = System.Drawing.Color.CadetBlue;
-            this.bntSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bntSave.BorderRadius = 0;
-            this.bntSave.ButtonText = "Lưu";
-            this.bntSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bntSave.DisabledColor = System.Drawing.Color.Gray;
-            this.bntSave.Iconcolor = System.Drawing.Color.Transparent;
-            this.bntSave.Iconimage = ((System.Drawing.Image)(resources.GetObject("bntSave.Iconimage")));
-            this.bntSave.Iconimage_right = null;
-            this.bntSave.Iconimage_right_Selected = null;
-            this.bntSave.Iconimage_Selected = null;
-            this.bntSave.IconMarginLeft = 0;
-            this.bntSave.IconMarginRight = 0;
-            this.bntSave.IconRightVisible = true;
-            this.bntSave.IconRightZoom = 0D;
-            this.bntSave.IconVisible = true;
-            this.bntSave.IconZoom = 60D;
-            this.bntSave.IsTab = false;
-            this.bntSave.Location = new System.Drawing.Point(8, 29);
-            this.bntSave.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.bntSave.Name = "bntSave";
-            this.bntSave.Normalcolor = System.Drawing.Color.CadetBlue;
-            this.bntSave.OnHovercolor = System.Drawing.Color.CadetBlue;
-            this.bntSave.OnHoverTextColor = System.Drawing.Color.Lavender;
-            this.bntSave.selected = false;
-            this.bntSave.Size = new System.Drawing.Size(92, 53);
-            this.bntSave.TabIndex = 9;
-            this.bntSave.Text = "Lưu";
-            this.bntSave.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bntSave.Textcolor = System.Drawing.Color.White;
-            this.bntSave.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(41, 254);
+            this.dataGridView1.Location = new System.Drawing.Point(41, 229);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(684, 247);
+            this.dataGridView1.Size = new System.Drawing.Size(684, 261);
             this.dataGridView1.TabIndex = 31;
-            // 
-            // bunifuImageButton1
-            // 
-            this.bunifuImageButton1.BackColor = System.Drawing.SystemColors.Control;
-            this.bunifuImageButton1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
-            this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(731, 39);
-            this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(33, 33);
-            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton1.TabIndex = 16;
-            this.bunifuImageButton1.TabStop = false;
-            this.bunifuImageButton1.Zoom = 10;
-            this.bunifuImageButton1.Click += new System.EventHandler(this.bunifuImageButton1_Click);
             // 
             // ManageScore
             // 
@@ -415,12 +419,12 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -441,12 +445,12 @@
         private System.Windows.Forms.ComboBox cmbClass;
         private System.Windows.Forms.ComboBox cmbYear;
         private System.Windows.Forms.ComboBox cmbGrade;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private Bunifu.Framework.UI.BunifuFlatButton bntInport;
-        private Bunifu.Framework.UI.BunifuFlatButton bntPrint;
-        private Bunifu.Framework.UI.BunifuFlatButton bntExport;
-        private Bunifu.Framework.UI.BunifuFlatButton bntSave;
         private System.Windows.Forms.DataGridView dataGridView1;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private Bunifu.Framework.UI.BunifuFlatButton bntSave;
+        private Bunifu.Framework.UI.BunifuFlatButton bntExport;
+        private Bunifu.Framework.UI.BunifuFlatButton bntImport;
+        private Bunifu.Framework.UI.BunifuFlatButton bntPrint;
     }
 }
