@@ -293,6 +293,7 @@
             this.bntSave.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bntSave.Textcolor = System.Drawing.Color.White;
             this.bntSave.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bntSave.Click += new System.EventHandler(this.bntSave_Click);
             // 
             // groupBox2
             // 

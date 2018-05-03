@@ -1,6 +1,7 @@
 ﻿using iTextSharp.text;
 using iTextSharp.text.pdf;
 using MoreLinq;
+using Oracle.ManagedDataAccess.Client;
 using QuanLyHocSinh.BLL;
 using QuanLyHocSinh.DAL;
 using System;
@@ -34,8 +35,7 @@ namespace QuanLyHocSinh
             DataTable db = new DataTable();
             db = listScores.ToDataTable();
             GridView_Diem.DataSource = db;
-            
-       
+
         }
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
@@ -158,6 +158,11 @@ namespace QuanLyHocSinh
             }
         }
         #endregion
+        #region button event
+        private void bntSave_Click(object sender, EventArgs e)
+        {
+
+        }
         private void bntPrint_Click(object sender, EventArgs e)
         {
             SaveFileDialog fsave = new SaveFileDialog();
@@ -176,8 +181,8 @@ namespace QuanLyHocSinh
                     //Create a base font object making sure to specify IDENTITY-H
                     BaseFont bf = BaseFont.CreateFont(ARIALUNI_TFF, BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
                     //font for body
-                    iTextSharp.text.Font f = new iTextSharp.text.Font(bf, 12, iTextSharp.text.Font.NORMAL); 
-                    #endregion                    
+                    iTextSharp.text.Font f = new iTextSharp.text.Font(bf, 12, iTextSharp.text.Font.NORMAL);
+                    #endregion
                     #region get title
                     for (int col = 0; col < GridView_Diem.Columns.Count; col++)
                     {
@@ -238,8 +243,8 @@ namespace QuanLyHocSinh
                     doc.Add(new Phrase("\n"));
                     doc.Add(pdfPTable);
                     doc.Add(new Phrase("\n"));
-                    doc.Add(endParagraph); 
-#endregion
+                    doc.Add(endParagraph);
+                    #endregion
 
                     doc.Close();
                     MessageBox.Show("In thành công", "Thông báo");
@@ -257,14 +262,15 @@ namespace QuanLyHocSinh
 
         private void bntImport_Click(object sender, EventArgs e)
         {
-            Import frmImport = new Import(1);                       
+            Import frmImport = new Import(1);
             frmImport.MdiParent = this.MdiParent;
             frmImport.Show();
-           
+
         }
 
+
         private void bntExport_Click(object sender, EventArgs e)
-        {           
+        {
             try
             {
                 Excel.Application excel = new Excel.Application();
@@ -289,7 +295,7 @@ namespace QuanLyHocSinh
                     {
                         try
                         {
-                            Excel.Range myRange = (Microsoft.Office.Interop.Excel.Range)sheet1.Cells[StartRow + i, StartCol + j];
+                            Excel.Range myRange = (Excel.Range)sheet1.Cells[StartRow + i, StartCol + j];
                             myRange.Value2 = GridView_Diem[j, i].Value == null ? "" : GridView_Diem[j, i].Value;
                         }
                         catch
@@ -301,16 +307,17 @@ namespace QuanLyHocSinh
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Quá trình xuất file bị lỗi, vui lòng thử lại sau", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);              
+                MessageBox.Show("Quá trình xuất file bị lỗi, vui lòng thử lại sau", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
+        } 
+        #endregion
         private void copyAlltoClipboard()
         {
             GridView_Diem.SelectAll();
             DataObject dataObj = GridView_Diem.GetClipboardContent();
             if (dataObj != null)
                 Clipboard.SetDataObject(dataObj);
-        }      
+        }
 
         private void releaseObject(object obj)
         {
@@ -329,5 +336,8 @@ namespace QuanLyHocSinh
                 GC.Collect();
             }
         }
+
+      
     }
+
 }

@@ -25,8 +25,7 @@ namespace QuanLyHocSinh
 
         private void DiemToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            QuanLyDiem f = new QuanLyDiem();
-            f.Show();
+           
         }
 
         private void hanhKiemToolStripMenuItem_Click(object sender, EventArgs e)

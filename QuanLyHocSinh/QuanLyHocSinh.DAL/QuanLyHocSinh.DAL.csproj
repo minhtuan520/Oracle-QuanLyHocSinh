@@ -53,6 +53,7 @@
     <Compile Include="CLASS.cs">
       <DependentUpon>QuanLyHocSinh.tt</DependentUpon>
     </Compile>
+    <Compile Include="CONDUCT.cs" />
     <Compile Include="SCORES.cs" />
     <Compile Include="GRADELEVEL.cs">
       <DependentUpon>QuanLyHocSinh.tt</DependentUpon>

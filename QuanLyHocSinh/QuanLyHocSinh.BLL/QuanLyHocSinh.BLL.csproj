@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="AccountController.cs" />
     <Compile Include="ClassController.cs" />
+    <Compile Include="ConductController.cs" />
     <Compile Include="GradelevelController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScoresController.cs" />

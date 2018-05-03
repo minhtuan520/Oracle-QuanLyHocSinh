@@ -48,9 +48,7 @@ namespace QuanLyHocSinh
                 else
                 {
                     MessageBox.Show("Chúc mừng bạn đã đăng nhập thành công", "Thông báo");
-                    QuanLyDiem quanLyDiem_f = new QuanLyDiem();
-                    quanLyDiem_f.Show();
-                    this.Hide();
+                   
                 }
                    
             }

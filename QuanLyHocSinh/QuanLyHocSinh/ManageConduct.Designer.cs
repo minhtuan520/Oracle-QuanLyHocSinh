@@ -46,13 +46,16 @@
             this.cmbClass = new System.Windows.Forms.ComboBox();
             this.cmbYear = new System.Windows.Forms.ComboBox();
             this.cmbGrade = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.GridView_Conduct = new System.Windows.Forms.DataGridView();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.MSHOCSINH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CONDUCTNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridView_Conduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,7 +67,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.GridView_Conduct, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.bunifuImageButton1, 2, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -301,6 +304,7 @@
             this.cmbSemester.Name = "cmbSemester";
             this.cmbSemester.Size = new System.Drawing.Size(121, 24);
             this.cmbSemester.TabIndex = 12;
+            this.cmbSemester.SelectedIndexChanged += new System.EventHandler(this.cmbSemester_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -340,6 +344,7 @@
             this.cmbClass.Name = "cmbClass";
             this.cmbClass.Size = new System.Drawing.Size(121, 24);
             this.cmbClass.TabIndex = 2;
+            this.cmbClass.SelectedIndexChanged += new System.EventHandler(this.cmbClass_SelectedIndexChanged);
             // 
             // cmbYear
             // 
@@ -349,6 +354,7 @@
             this.cmbYear.Name = "cmbYear";
             this.cmbYear.Size = new System.Drawing.Size(121, 24);
             this.cmbYear.TabIndex = 1;
+            this.cmbYear.SelectedIndexChanged += new System.EventHandler(this.cmbYear_SelectedIndexChanged);
             // 
             // cmbGrade
             // 
@@ -358,15 +364,20 @@
             this.cmbGrade.Name = "cmbGrade";
             this.cmbGrade.Size = new System.Drawing.Size(121, 24);
             this.cmbGrade.TabIndex = 0;
+            this.cmbGrade.SelectedIndexChanged += new System.EventHandler(this.cmbGrade_SelectedIndexChanged);
             // 
-            // dataGridView1
+            // GridView_Conduct
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(40, 260);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(674, 241);
-            this.dataGridView1.TabIndex = 28;
+            this.GridView_Conduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridView_Conduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MSHOCSINH,
+            this.NAME,
+            this.CONDUCTNAME});
+            this.GridView_Conduct.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GridView_Conduct.Location = new System.Drawing.Point(40, 260);
+            this.GridView_Conduct.Name = "GridView_Conduct";
+            this.GridView_Conduct.Size = new System.Drawing.Size(674, 241);
+            this.GridView_Conduct.TabIndex = 28;
             // 
             // bunifuImageButton1
             // 
@@ -383,6 +394,29 @@
             this.bunifuImageButton1.Zoom = 10;
             this.bunifuImageButton1.Click += new System.EventHandler(this.bunifuImageButton1_Click);
             // 
+            // MSHOCSINH
+            // 
+            this.MSHOCSINH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.MSHOCSINH.DataPropertyName = "MSHOCSINH";
+            this.MSHOCSINH.HeaderText = "MSHS";
+            this.MSHOCSINH.Name = "MSHOCSINH";
+            this.MSHOCSINH.ReadOnly = true;
+            // 
+            // NAME
+            // 
+            this.NAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NAME.DataPropertyName = "NAME";
+            this.NAME.HeaderText = "Họ và tên";
+            this.NAME.Name = "NAME";
+            this.NAME.ReadOnly = true;
+            // 
+            // CONDUCTNAME
+            // 
+            this.CONDUCTNAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CONDUCTNAME.DataPropertyName = "CONDUCTNAME";
+            this.CONDUCTNAME.HeaderText = "Hạnh kiểm";
+            this.CONDUCTNAME.Name = "CONDUCTNAME";
+            // 
             // ManageConduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -392,13 +426,14 @@
             this.Name = "ManageConduct";
             this.Text = "ManageConduct";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.ManageConduct_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridView_Conduct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             this.ResumeLayout(false);
 
@@ -418,12 +453,15 @@
         private System.Windows.Forms.ComboBox cmbClass;
         private System.Windows.Forms.ComboBox cmbYear;
         private System.Windows.Forms.ComboBox cmbGrade;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView GridView_Conduct;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
         private System.Windows.Forms.GroupBox groupBox1;
         private Bunifu.Framework.UI.BunifuFlatButton bntSave;
         private Bunifu.Framework.UI.BunifuFlatButton bntExport;
         private Bunifu.Framework.UI.BunifuFlatButton bntImport;
         private Bunifu.Framework.UI.BunifuFlatButton bntPrint;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MSHOCSINH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NAME;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CONDUCTNAME;
     }
 }

@@ -48,10 +48,7 @@ namespace QuanLyHocSinh.BLL
             for (int i = 0; i < listScores.Count; i++)
             {
                 string mshs = listScores[i].MSHOCSINH;
-                List<TESTSCORES> findScoreUpdate = _QuanLyHocSinhEntities.TESTSCORES.Where(testScore => testScore.MSHOCSINH == mshs && testScore.SCHOOLYEARID == schoolYearID && testScore.SEMESTERID == semesterID && testScore.SUBJECTID == subjectID).Take(1).ToList();
-                
-                //var findScoreUpdate = (from testScores in _QuanLyHocSinhEntities.TESTSCORES
-                //                       where(((testScores.MSHOCSINH == listScores[i].MSHOCSINH) && (testScores.SCHOOLYEARID == schoolYearID) && (testScores.SEMESTERID == semesterID)&&(testScores.SUBJECTID == subjectID))) select testScores ).ToList();
+                List<TESTSCORES> findScoreUpdate = _QuanLyHocSinhEntities.TESTSCORES.Where(testScore => testScore.MSHOCSINH == mshs && testScore.SCHOOLYEARID == schoolYearID && testScore.SEMESTERID == semesterID && testScore.SUBJECTID == subjectID).Take(1).ToList();           
                 if (findScoreUpdate != null)
                 {
                     if (listScores[i].SCORE_5M != null)
