@@ -39,9 +39,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.TextBox();
-            this.txtPasswrd = new System.Windows.Forms.TextBox();
-            this.bntStudent = new System.Windows.Forms.RadioButton();
-            this.bntAdmin = new System.Windows.Forms.RadioButton();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.radioHocSinh = new System.Windows.Forms.RadioButton();
+            this.radioAdmin = new System.Windows.Forms.RadioButton();
             this.bunifuGradientPanel1.SuspendLayout();
             this.bunifuGradientPanel2.SuspendLayout();
             this.bunifuGradientPanel3.SuspendLayout();
@@ -177,47 +177,47 @@
             this.txtUsername.Size = new System.Drawing.Size(196, 24);
             this.txtUsername.TabIndex = 4;
             // 
-            // txtPasswrd
+            // txtPassword
             // 
-            this.txtPasswrd.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.txtPasswrd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPasswrd.Location = new System.Drawing.Point(261, 158);
-            this.txtPasswrd.Name = "txtPasswrd";
-            this.txtPasswrd.Size = new System.Drawing.Size(196, 24);
-            this.txtPasswrd.TabIndex = 5;
+            this.txtPassword.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(261, 158);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(196, 24);
+            this.txtPassword.TabIndex = 5;
             // 
-            // bntStudent
+            // radioHocSinh
             // 
-            this.bntStudent.AutoSize = true;
-            this.bntStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bntStudent.Location = new System.Drawing.Point(192, 80);
-            this.bntStudent.Name = "bntStudent";
-            this.bntStudent.Size = new System.Drawing.Size(98, 20);
-            this.bntStudent.TabIndex = 6;
-            this.bntStudent.TabStop = true;
-            this.bntStudent.Text = "HỌC SINH";
-            this.bntStudent.UseVisualStyleBackColor = true;
+            this.radioHocSinh.AutoSize = true;
+            this.radioHocSinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioHocSinh.Location = new System.Drawing.Point(192, 80);
+            this.radioHocSinh.Name = "radioHocSinh";
+            this.radioHocSinh.Size = new System.Drawing.Size(98, 20);
+            this.radioHocSinh.TabIndex = 6;
+            this.radioHocSinh.TabStop = true;
+            this.radioHocSinh.Text = "HỌC SINH";
+            this.radioHocSinh.UseVisualStyleBackColor = true;
             // 
-            // bntAdmin
+            // radioAdmin
             // 
-            this.bntAdmin.AutoSize = true;
-            this.bntAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bntAdmin.Location = new System.Drawing.Point(319, 80);
-            this.bntAdmin.Name = "bntAdmin";
-            this.bntAdmin.Size = new System.Drawing.Size(98, 20);
-            this.bntAdmin.TabIndex = 7;
-            this.bntAdmin.TabStop = true;
-            this.bntAdmin.Text = "QUẢN TRỊ";
-            this.bntAdmin.UseVisualStyleBackColor = true;
+            this.radioAdmin.AutoSize = true;
+            this.radioAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioAdmin.Location = new System.Drawing.Point(319, 80);
+            this.radioAdmin.Name = "radioAdmin";
+            this.radioAdmin.Size = new System.Drawing.Size(98, 20);
+            this.radioAdmin.TabIndex = 7;
+            this.radioAdmin.TabStop = true;
+            this.radioAdmin.Text = "QUẢN TRỊ";
+            this.radioAdmin.UseVisualStyleBackColor = true;
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(469, 276);
-            this.Controls.Add(this.bntAdmin);
-            this.Controls.Add(this.bntStudent);
-            this.Controls.Add(this.txtPasswrd);
+            this.Controls.Add(this.radioAdmin);
+            this.Controls.Add(this.radioHocSinh);
+            this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -248,8 +248,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtUsername;
-        private System.Windows.Forms.TextBox txtPasswrd;
-        private System.Windows.Forms.RadioButton bntStudent;
-        private System.Windows.Forms.RadioButton bntAdmin;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.RadioButton radioHocSinh;
+        private System.Windows.Forms.RadioButton radioAdmin;
     }
 }

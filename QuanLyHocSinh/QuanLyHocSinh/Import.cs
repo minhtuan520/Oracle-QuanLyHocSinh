@@ -146,6 +146,48 @@ namespace QuanLyHocSinh
                         }
                         break;
                     }
+                case 3:
+                    {
+                        DialogResult dialogResult = MessageBox.Show("Bạn có chắc muốn nhập từ danh sách này không", "thông báo", MessageBoxButtons.YesNo);
+                        if (dialogResult == DialogResult.Yes)
+                        {
+                            try
+                            {
+                                var listStudent = convertToListStudent(_db);
+                                string schooYear = _db.Rows[0]["Năm học"].ToString();
+                                string Class = _db.Rows[0]["Lớp"].ToString();
+                               
+                                if (schooYear == string.Empty || Class == string.Empty )
+                                {
+                                    MessageBox.Show("thao tác bị lỗi, vui lòng thử lại sau", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                                else
+                                {
+                                    YearController yearController = new YearController();
+                                    SubjectController subjectController = new SubjectController();
+                                    StudentController studentController = new StudentController();
+                                    string schooYearId = yearController.GetID(schooYear);
+                                    
+                                    bool isInsert = studentController.AddListStudent(listStudent, schooYearId, Class);
+                                    if (isInsert)
+                                        MessageBox.Show("Update thành công", "Thông báo");
+                                    else
+                                        MessageBox.Show("thao tác bị lỗi, vui lòng thử lại sau", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+
+                                MessageBox.Show("thao tác bị lỗi, vui lòng thử lại sau", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+
+                        }
+                        else if (dialogResult == DialogResult.No)
+                        {
+                            //do something else
+                        }
+                        break;
+                    }
 
             }
         }
@@ -161,7 +203,7 @@ namespace QuanLyHocSinh
                 SCORE_45M = (decimal?)m.Field<double?>("45 phút"),
                 SCORE_MIDYEAR = (decimal?)m.Field<double?>("Giữa kỳ"),
                 SCORE_ENDYEAR = (decimal?)m.Field<double?>("Cuối kỳ"),
-                MEDIUMSCORE = null
+                MEDIUMSCORE = null                
             }).ToList();
             return listScores;
         }
@@ -175,18 +217,34 @@ namespace QuanLyHocSinh
             }).ToList();
             return listScores;
         }
+        private List<STUDENT> convertToListStudent(DataTable db)
+        {           
+            List<STUDENT> listStudent = db.AsEnumerable().Select(m => new STUDENT()
+            {
+                MSHOCSINH = m.Field<string>("MSHS"),
+                NAME = m.Field<string>("Họ và tên"),
+                BIRTHDAY = (DateTime?)(m.Field<DateTime>("Ngày sinh")),
+                ADDRESS = m.Field<string>("Địa chỉ"),
+                SEX = (m.Field<string>("Giới tính"))=="Nam"?1:0,
+                PHONE = m.Field<string>("SDT"),
+            }).ToList();
+            //List<STUDENT> students = new List<STUDENT>();
+            //for (int i = 0; i < listStudent.Count; i++)
+            //{
+            //    STUDENT student = new STUDENT();
+            //    student.NAME = listStudent[i].NAME;
+            //    student.MSHOCSINH = listStudent[i].MSHOCSINH;
+            //    student.PHONE = listStudent[i].PHONE;
+            //    if (listStudent[i].SEX == "Nam")
+            //        student.SEX = 1;
+            //    else
+            //        student.SEX = 0;
+            //    student.BIRTHDAY = listStudent[i].BIRTHDAY;
+            //    student.ADDRESS = listStudent[i].ADDRESS;
+            //    students.Add(student);
 
-        //var infomationUpdate = _db.AsEnumerable().Select(m => new
-        //{
-        //    schoolYear = m.Field<string>("Năm học"),
-        //    semmester = m.Field<int>("Học kỳ"),
-        //    subject = m.Field<string>("Môn học")
-        //}).ToList();
-        //if (infomationUpdate[0].schoolYear == null || infomationUpdate[0].semmester < 1 || infomationUpdate[0].semmester > 2 || infomationUpdate[0].subject == null)
-        //{
-        //    MessageBox.Show("Thao tác bị lỗi, vui lòng thử lại sau", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //}
-
-
+            //}
+                return listStudent;
+        }            
     }
 }

@@ -89,6 +89,7 @@
     <Compile Include="STUDENTINCLASS.cs">
       <DependentUpon>QuanLyHocSinh.tt</DependentUpon>
     </Compile>
+    <Compile Include="STUDENTINFORMATION.cs" />
     <Compile Include="SUBJECT.cs">
       <DependentUpon>QuanLyHocSinh.tt</DependentUpon>
     </Compile>
