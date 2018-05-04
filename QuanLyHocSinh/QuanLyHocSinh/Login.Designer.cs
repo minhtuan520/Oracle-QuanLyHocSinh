@@ -190,6 +190,7 @@
             // 
             this.radioHocSinh.AutoSize = true;
             this.radioHocSinh.Checked = true;
+
             this.radioHocSinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioHocSinh.Location = new System.Drawing.Point(192, 80);
             this.radioHocSinh.Name = "radioHocSinh";

@@ -55,6 +55,7 @@ namespace QuanLyHocSinh
                 else
                 {
                     MessageBox.Show("Chúc mừng bạn đã đăng nhập thành công", "Thông báo");
+
                     ChangePassword frmChangePassword = new ChangePassword(txtUsername.Text.ToString(), txtPassword.Text.ToString());
                     if(account.IDTYPE==1)
                     {
@@ -70,5 +71,6 @@ namespace QuanLyHocSinh
                 }
             }
         }        
+           
     }
 }

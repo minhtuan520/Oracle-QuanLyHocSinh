@@ -58,9 +58,13 @@ namespace QuanLyHocSinh
                 ACCOUNT acc = new ACCOUNT();
                 acc.USERNAME = _Username;
                 acc.PASSWORD = _Password;
-                if (!accountController.CheckPassword(acc, txtOldPassword.Text.ToString(), txtNewPassword.Text.ToString()))
+                if (accountController.CheckPassword(acc, txtOldPassword.Text.ToString(), txtNewPassword.Text.ToString())==0)
                 {
-                    Mess
+                    MessageBox.Show("Mật khẩu cũ sai", "Thông báo");
+                }
+                else
+                {
+                    MessageBox.Show("Đổi mật khẩu thành công", "Thông báo");
                 }
             }
 

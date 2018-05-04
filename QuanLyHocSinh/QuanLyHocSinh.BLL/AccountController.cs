@@ -22,9 +22,24 @@ namespace QuanLyHocSinh.BLL
             }
             return 1;
         } 
-        public bool CheckPassword(ACCOUNT acc,string oldPassword, string newPassword)
+        public int CheckPassword(ACCOUNT acc,string oldPassword, string newPassword)
         {
-            return true;
-        }    
+            if(acc.PASSWORD!=oldPassword)
+            {
+                return 0;
+            }
+
+            return 3;
+        }
+
+        internal bool CreateAccount(string mSHOCSINH)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal void RemoveAccount(string mSHS)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
