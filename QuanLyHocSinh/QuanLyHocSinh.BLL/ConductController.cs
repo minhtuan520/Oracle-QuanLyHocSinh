@@ -29,5 +29,38 @@ namespace QuanLyHocSinh.BLL
                               }).Distinct().ToList();
             return listResult;
         }
+        public bool UpdateListScores(List<CONDUCT> listConduct, string schoolYearID, decimal semesterID)
+        {
+            bool flag = true;
+            for (int i = 0; i < listConduct.Count; i++)
+            {
+                string mshs = listConduct[i].MSHOCSINH;
+                var findConductUpdate = (from conduct in _QuanLyHocSinhEntities.LEARNINGOUTCOMES join testScore in _QuanLyHocSinhEntities.TESTSCORES on conduct.MSHOCSINH equals testScore.MSHOCSINH where ((conduct.MSHOCSINH == mshs) && (conduct.SCHOOLYEARID == schoolYearID) && (testScore.SEMESTERID == semesterID)) select conduct).Take(1).ToList();
+
+
+                if (findConductUpdate.Count > 0)
+                {
+                    findConductUpdate[0].CONDUCT = listConduct[i].CONDUCTNAME;
+                }
+                else
+                {
+                    flag = false;
+                    break;
+                }
+            }
+            if (flag == true)
+            {
+                try
+                {
+                    _QuanLyHocSinhEntities.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    flag = false;
+                    return flag;
+                }
+            }
+            return flag;
+        }
     }
 }

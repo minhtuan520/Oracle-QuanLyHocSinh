@@ -86,8 +86,8 @@ namespace QuanLyHocSinh
                                     ScoresController scoresController = new ScoresController();
                                     string schooYearId = yearController.GetID(schooYear);
                                     string subjectId = subjectController.GetId(subject);
-                                    bool update = scoresController.UpdateListScores(listScores, schooYearId, semesterId, subjectId);
-                                    if (update)
+                                    bool isUpdate = scoresController.UpdateListScores(listScores, schooYearId, semesterId, subjectId);
+                                    if (isUpdate)
                                         MessageBox.Show("Update thành công", "Thông báo");
                                     else
                                         MessageBox.Show("thao tác bị lỗi, vui lòng thử lại sau", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -106,6 +106,47 @@ namespace QuanLyHocSinh
                         }
                         break;
                     }
+                case 2:
+                    {
+                        DialogResult dialogResult = MessageBox.Show("Bạn có chắc muốn nhập từ danh sách này không", "thông báo", MessageBoxButtons.YesNo);
+                        if (dialogResult == DialogResult.Yes)
+                        {
+                            try
+                            {
+                                var listConduct = convertToListConduct(_db);
+                                string schooYear = _db.Rows[0]["Năm học"].ToString();
+                                decimal semesterId = Convert.ToDecimal(_db.Rows[0]["Học kỳ"]);                             
+                                if (schooYear == string.Empty || semesterId < 1 || semesterId > 2)
+                                {
+                                    MessageBox.Show("thao tác bị lỗi, vui lòng thử lại sau", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                                else
+                                {
+                                    YearController yearController = new YearController();                                    
+                                    ConductController conductController = new ConductController();
+                                    string schooYearId = yearController.GetID(schooYear);
+                                    
+                                    bool isUpdate = conductController.UpdateListScores(listConduct, schooYearId, semesterId);
+                                    if (isUpdate)
+                                        MessageBox.Show("Update thành công", "Thông báo");
+                                    else
+                                        MessageBox.Show("thao tác bị lỗi, vui lòng thử lại sau", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+
+                                MessageBox.Show("thao tác bị lỗi, vui lòng thử lại sau", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+
+                        }
+                        else if (dialogResult == DialogResult.No)
+                        {
+                            //do something else
+                        }
+                        break;
+                    }
+
             }
         }
 
@@ -121,6 +162,16 @@ namespace QuanLyHocSinh
                 SCORE_MIDYEAR = (decimal?)m.Field<double?>("Giữa kỳ"),
                 SCORE_ENDYEAR = (decimal?)m.Field<double?>("Cuối kỳ"),
                 MEDIUMSCORE = null
+            }).ToList();
+            return listScores;
+        }
+        private List<CONDUCT> convertToListConduct(DataTable db)
+        {
+            List<CONDUCT> listScores = db.AsEnumerable().Select(m => new CONDUCT()
+            {
+                MSHOCSINH = m.Field<string>("MSHS"),
+                NAME = m.Field<string>("Họ và tên"),
+                CONDUCTNAME = m.Field<string>("Hạnh kiểm")               
             }).ToList();
             return listScores;
         }

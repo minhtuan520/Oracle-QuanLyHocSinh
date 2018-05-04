@@ -45,12 +45,39 @@ namespace QuanLyHocSinh.BLL
         public bool UpdateListScores(List<SCORES> listScores, string schoolYearID, decimal semesterID, string subjectID)
         {
             bool flag = true;
+            #region Check rand value (0-10)
+            foreach (SCORES score in listScores)
+            {
+                if (score.SCORE_5M != null && (score.SCORE_5M > 10 || score.SCORE_5M < 0))
+                {
+                    flag = false;
+                }
+                if (score.SCORE_15M != null && (score.SCORE_15M > 10 || score.SCORE_15M < 0))
+                {
+                    flag = false;
+                }
+                if (score.SCORE_45M != null && (score.SCORE_45M > 10 || score.SCORE_45M < 0))
+                {
+                    flag = false;
+                }
+                if (score.SCORE_MIDYEAR != null && (score.SCORE_MIDYEAR > 10 || score.SCORE_MIDYEAR < 0))
+                {
+                    flag = false;
+                }
+                if (score.SCORE_ENDYEAR != null && (score.SCORE_ENDYEAR > 10 || score.SCORE_ENDYEAR < 0))
+                {
+                    flag = false;
+                }
+                if (flag == false)
+                    return flag;
+            } 
+            #endregion
             for (int i = 0; i < listScores.Count; i++)
             {
                 string mshs = listScores[i].MSHOCSINH;
                 List<TESTSCORES> findScoreUpdate = _QuanLyHocSinhEntities.TESTSCORES.Where(testScore => testScore.MSHOCSINH == mshs && testScore.SCHOOLYEARID == schoolYearID && testScore.SEMESTERID == semesterID && testScore.SUBJECTID == subjectID).Take(1).ToList();           
-                if (findScoreUpdate != null)
-                {
+                if (findScoreUpdate.Count>0)
+                {                    
                     if (listScores[i].SCORE_5M != null)
                         findScoreUpdate[0].SCORE_5M = listScores[i].SCORE_5M;
                     if (listScores[i].SCORE_15M != null)
@@ -60,7 +87,7 @@ namespace QuanLyHocSinh.BLL
                     if (listScores[i].SCORE_MIDYEAR != null)
                         findScoreUpdate[0].SCORE_MIDYEAR = listScores[i].SCORE_MIDYEAR;
                     if (listScores[i].SCORE_ENDYEAR != null)
-                        findScoreUpdate[0].SCORE_ENDYEAR = listScores[i].SCORE_ENDYEAR;
+                        findScoreUpdate[0].SCORE_ENDYEAR = listScores[i].SCORE_ENDYEAR;                  
                 }
                 else
                 {

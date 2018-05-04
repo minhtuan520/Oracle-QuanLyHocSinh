@@ -100,6 +100,7 @@
             // 
             // GirdviewImport
             // 
+            this.GirdviewImport.AllowUserToAddRows = false;
             this.GirdviewImport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GirdviewImport.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GirdviewImport.Location = new System.Drawing.Point(42, 99);

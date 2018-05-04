@@ -47,10 +47,10 @@
             this.cmbYear = new System.Windows.Forms.ComboBox();
             this.cmbGrade = new System.Windows.Forms.ComboBox();
             this.GridView_Conduct = new System.Windows.Forms.DataGridView();
-            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.MSHOCSINH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CONDUCTNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -193,6 +193,7 @@
             this.bntExport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bntExport.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.bntExport.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bntExport.Click += new System.EventHandler(this.bntExport_Click);
             // 
             // bntImport
             // 
@@ -266,6 +267,7 @@
             this.bntPrint.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bntPrint.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.bntPrint.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bntPrint.Click += new System.EventHandler(this.bntPrint_Click);
             // 
             // groupBox2
             // 
@@ -379,21 +381,6 @@
             this.GridView_Conduct.Size = new System.Drawing.Size(674, 241);
             this.GridView_Conduct.TabIndex = 28;
             // 
-            // bunifuImageButton1
-            // 
-            this.bunifuImageButton1.BackColor = System.Drawing.SystemColors.Control;
-            this.bunifuImageButton1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
-            this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(720, 37);
-            this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(33, 37);
-            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton1.TabIndex = 29;
-            this.bunifuImageButton1.TabStop = false;
-            this.bunifuImageButton1.Zoom = 10;
-            this.bunifuImageButton1.Click += new System.EventHandler(this.bunifuImageButton1_Click);
-            // 
             // MSHOCSINH
             // 
             this.MSHOCSINH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -416,6 +403,21 @@
             this.CONDUCTNAME.DataPropertyName = "CONDUCTNAME";
             this.CONDUCTNAME.HeaderText = "Hạnh kiểm";
             this.CONDUCTNAME.Name = "CONDUCTNAME";
+            // 
+            // bunifuImageButton1
+            // 
+            this.bunifuImageButton1.BackColor = System.Drawing.SystemColors.Control;
+            this.bunifuImageButton1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
+            this.bunifuImageButton1.ImageActive = null;
+            this.bunifuImageButton1.Location = new System.Drawing.Point(720, 37);
+            this.bunifuImageButton1.Name = "bunifuImageButton1";
+            this.bunifuImageButton1.Size = new System.Drawing.Size(33, 37);
+            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButton1.TabIndex = 29;
+            this.bunifuImageButton1.TabStop = false;
+            this.bunifuImageButton1.Zoom = 10;
+            this.bunifuImageButton1.Click += new System.EventHandler(this.bunifuImageButton1_Click);
             // 
             // ManageConduct
             // 
