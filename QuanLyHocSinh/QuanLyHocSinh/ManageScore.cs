@@ -28,7 +28,7 @@ namespace QuanLyHocSinh
         private void ManageScore_Load(object sender, EventArgs e)
         {
             this.ControlBox = false;
-            this.FormBorderStyle = FormBorderStyle.None;
+            //this.FormBorderStyle = FormBorderStyle.None;
             LoadCmb();
             ScoresController scoresController = new ScoresController();
             var listScores = scoresController.GetAll(cmbSubject.SelectedValue.ToString(), (decimal)cmbSemester.SelectedValue, cmbClass.SelectedValue.ToString(), cmbYear.SelectedValue.ToString());
@@ -37,13 +37,7 @@ namespace QuanLyHocSinh
             GridView_Diem.DataSource = db;
 
         }
-        private void bunifuImageButton1_Click(object sender, EventArgs e)
-        {
-            FindStudent frmFindStudent = new FindStudent();
-            frmFindStudent.MdiParent = this.MdiParent;
-            frmFindStudent.Show();
-        }
-
+        
         #region Load Combobox
         private void LoadCmb()
         {
@@ -337,7 +331,10 @@ namespace QuanLyHocSinh
             }
         }
 
-      
+        private void bntSearch_Click(object sender, EventArgs e)
+        {
+            FindStudent.Instance.ShowDialog();
+        }
     }
 
 }

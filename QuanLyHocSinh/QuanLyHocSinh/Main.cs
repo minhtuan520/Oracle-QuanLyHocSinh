@@ -82,11 +82,16 @@ namespace QuanLyHocSinh
             if (!CheckExistForm("ManageStudent"))
             {
                 ManageStudent frmManageStudent = new ManageStudent();
+                frmManageStudent.TopLevel = false;                                            
+                //this.Controls.Add(frmManageStudent);  
                 frmManageStudent.MdiParent = this;
-                frmManageStudent.Show();
+                frmManageStudent.Show();              
             }
             else
+            {
                 ActiveChildForm("ManageStudent");
+            }
+                
         }
 
         private void bntManageScore_Click(object sender, EventArgs e)
@@ -104,8 +109,8 @@ namespace QuanLyHocSinh
             {
                 ManageScore frmManageScore = new ManageScore();
                 frmManageScore.TopLevel = false;
-                frmManageScore.Dock = DockStyle.Fill;
-                this.Controls.Add(frmManageScore);               
+                //this.Controls.Add(frmManageScore);    
+                //frmManageScore.Dock = DockStyle.Fill;           
                 frmManageScore.MdiParent = this;
                 
                 frmManageScore.Show();
@@ -119,15 +124,12 @@ namespace QuanLyHocSinh
             SlidePanel.Visible = true;
             SlidePanel.Height = bntManageConduct.Height;
             SlidePanel.Top = bntManageConduct.Top;
-            // delete other form
-            foreach (Form frmMdiChidren in this.MdiChildren)
-            {
-                frmMdiChidren.Close();
-            }
+            // delete other form           
 
             if (!CheckExistForm("ManageConduct"))
             {
                 ManageConduct frmManageConduct = new ManageConduct();
+                frmManageConduct.TopLevel = false;
                 frmManageConduct.MdiParent = this;
                 frmManageConduct.Show();
             }
@@ -144,9 +146,24 @@ namespace QuanLyHocSinh
 
         private void ItemChangePassword_Click(object sender, EventArgs e)
         {
-            ChangePassword frmChangePassword = new ChangePassword();
-            frmChangePassword.MdiParent = this;
-            frmChangePassword.Show();
+            foreach (Form frmMdiChidren in this.MdiChildren)
+            {
+                frmMdiChidren.Close();
+            }
+
+            if (!CheckExistForm("ChangePassword"))
+            {
+                ChangePassword frmChangePassword = new ChangePassword();
+                frmChangePassword.MdiParent = this;
+                frmChangePassword.Anchor = AnchorStyles.Left;
+                frmChangePassword.Anchor = AnchorStyles.Top;
+                frmChangePassword.Show();
+            }
+            else
+            {
+                ActiveChildForm("ChangePassword");
+            }
+            
         }
 
         private void ItemLogOut_Click(object sender, EventArgs e)

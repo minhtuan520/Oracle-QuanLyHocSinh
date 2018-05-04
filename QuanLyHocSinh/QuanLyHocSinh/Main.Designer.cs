@@ -64,7 +64,7 @@
             this.bunifuGradientPanel2.Location = new System.Drawing.Point(0, 92);
             this.bunifuGradientPanel2.Name = "bunifuGradientPanel2";
             this.bunifuGradientPanel2.Quality = 10;
-            this.bunifuGradientPanel2.Size = new System.Drawing.Size(179, 483);
+            this.bunifuGradientPanel2.Size = new System.Drawing.Size(179, 657);
             this.bunifuGradientPanel2.TabIndex = 0;
             // 
             // SlidePanel
@@ -132,7 +132,7 @@
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuSystem});
-            this.menuStrip1.Location = new System.Drawing.Point(727, 63);
+            this.menuStrip1.Location = new System.Drawing.Point(948, 63);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.menuStrip1.Size = new System.Drawing.Size(36, 24);
@@ -177,7 +177,7 @@
             this.titleSchool.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.titleSchool.AutoSize = true;
             this.titleSchool.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleSchool.Location = new System.Drawing.Point(308, 22);
+            this.titleSchool.Location = new System.Drawing.Point(419, 22);
             this.titleSchool.Name = "titleSchool";
             this.titleSchool.Size = new System.Drawing.Size(382, 42);
             this.titleSchool.TabIndex = 1;
@@ -191,7 +191,7 @@
             this.labelName.AutoSize = true;
             this.labelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.labelName.Location = new System.Drawing.Point(606, 69);
+            this.labelName.Location = new System.Drawing.Point(827, 69);
             this.labelName.Name = "labelName";
             this.labelName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.labelName.Size = new System.Drawing.Size(118, 18);
@@ -214,7 +214,7 @@
             this.bunifuGradientPanel1.Location = new System.Drawing.Point(0, 0);
             this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
             this.bunifuGradientPanel1.Quality = 10;
-            this.bunifuGradientPanel1.Size = new System.Drawing.Size(763, 92);
+            this.bunifuGradientPanel1.Size = new System.Drawing.Size(984, 92);
             this.bunifuGradientPanel1.TabIndex = 0;
             // 
             // Main
@@ -223,7 +223,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(763, 575);
+            this.ClientSize = new System.Drawing.Size(984, 749);
             this.Controls.Add(this.bunifuGradientPanel2);
             this.Controls.Add(this.bunifuGradientPanel1);
             this.IsMdiContainer = true;

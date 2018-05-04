@@ -36,8 +36,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtNumber = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.checkFemale = new System.Windows.Forms.CheckBox();
-            this.checkMale = new System.Windows.Forms.CheckBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -49,33 +47,38 @@
             this.cmbGrade = new System.Windows.Forms.ComboBox();
             this.cmbYear = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.bntSelect = new Bunifu.Framework.UI.BunifuImageButton();
+            this.radioMale = new System.Windows.Forms.RadioButton();
+            this.radioFemale = new System.Windows.Forms.RadioButton();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bntSelect)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.998176F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 88.87267F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.12915F));
             this.tableLayoutPanel1.Controls.Add(this.label3, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.bunifuImageButton1, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 1, 2);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Controls.Add(this.bntSelect, 1, 3);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 53F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(801, 473);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.51954F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28.55303F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.77287F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.15457F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(685, 473);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // label3
@@ -84,9 +87,9 @@
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(43, 0);
+            this.label3.Location = new System.Drawing.Point(37, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(714, 70);
+            this.label3.Size = new System.Drawing.Size(602, 49);
             this.label3.TabIndex = 12;
             this.label3.Text = "TÌM KIẾM THÔNG TIN";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -98,9 +101,9 @@
             this.bunifuImageButton1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
             this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(763, 39);
+            this.bunifuImageButton1.Location = new System.Drawing.Point(645, 18);
             this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(35, 28);
+            this.bunifuImageButton1.Size = new System.Drawing.Size(37, 28);
             this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bunifuImageButton1.TabIndex = 13;
             this.bunifuImageButton1.TabStop = false;
@@ -109,32 +112,32 @@
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.87948F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.12052F));
             this.tableLayoutPanel2.Controls.Add(this.groupBox1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.groupBox2, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(43, 73);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(37, 52);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(714, 135);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(602, 129);
             this.tableLayoutPanel2.TabIndex = 14;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.radioFemale);
+            this.groupBox1.Controls.Add(this.radioMale);
             this.groupBox1.Controls.Add(this.txtNumber);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.checkFemale);
-            this.groupBox1.Controls.Add(this.checkMale);
             this.groupBox1.Controls.Add(this.txtName);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.groupBox1.Location = new System.Drawing.Point(252, 3);
+            this.groupBox1.Location = new System.Drawing.Point(249, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(408, 118);
+            this.groupBox1.Size = new System.Drawing.Size(338, 118);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin:";
@@ -142,9 +145,9 @@
             // txtNumber
             // 
             this.txtNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumber.Location = new System.Drawing.Point(105, 24);
+            this.txtNumber.Location = new System.Drawing.Point(81, 24);
             this.txtNumber.Name = "txtNumber";
-            this.txtNumber.Size = new System.Drawing.Size(269, 22);
+            this.txtNumber.Size = new System.Drawing.Size(237, 22);
             this.txtNumber.TabIndex = 17;
             // 
             // label1
@@ -157,34 +160,12 @@
             this.label1.TabIndex = 16;
             this.label1.Text = "MSHS: ";
             // 
-            // checkFemale
-            // 
-            this.checkFemale.AutoSize = true;
-            this.checkFemale.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkFemale.Location = new System.Drawing.Point(170, 85);
-            this.checkFemale.Name = "checkFemale";
-            this.checkFemale.Size = new System.Drawing.Size(46, 20);
-            this.checkFemale.TabIndex = 14;
-            this.checkFemale.Text = "Nữ";
-            this.checkFemale.UseVisualStyleBackColor = true;
-            // 
-            // checkMale
-            // 
-            this.checkMale.AutoSize = true;
-            this.checkMale.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkMale.Location = new System.Drawing.Point(105, 85);
-            this.checkMale.Name = "checkMale";
-            this.checkMale.Size = new System.Drawing.Size(59, 20);
-            this.checkMale.TabIndex = 13;
-            this.checkMale.Text = "Nam";
-            this.checkMale.UseVisualStyleBackColor = true;
-            // 
             // txtName
             // 
             this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(105, 52);
+            this.txtName.Location = new System.Drawing.Point(81, 52);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(269, 22);
+            this.txtName.Size = new System.Drawing.Size(246, 22);
             this.txtName.TabIndex = 9;
             // 
             // label5
@@ -219,7 +200,7 @@
             this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.groupBox2.Location = new System.Drawing.Point(3, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(243, 118);
+            this.groupBox2.Size = new System.Drawing.Size(240, 118);
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Khóa";
@@ -291,16 +272,55 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(43, 214);
+            this.dataGridView1.Location = new System.Drawing.Point(37, 187);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(714, 244);
+            this.dataGridView1.Size = new System.Drawing.Size(602, 234);
             this.dataGridView1.TabIndex = 15;
+            // 
+            // bntSelect
+            // 
+            this.bntSelect.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bntSelect.BackColor = System.Drawing.SystemColors.Control;
+            this.bntSelect.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bntSelect.Image = ((System.Drawing.Image)(resources.GetObject("bntSelect.Image")));
+            this.bntSelect.ImageActive = null;
+            this.bntSelect.Location = new System.Drawing.Point(307, 427);
+            this.bntSelect.Name = "bntSelect";
+            this.bntSelect.Size = new System.Drawing.Size(62, 43);
+            this.bntSelect.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bntSelect.TabIndex = 16;
+            this.bntSelect.TabStop = false;
+            this.bntSelect.Zoom = 10;
+            // 
+            // radioMale
+            // 
+            this.radioMale.AutoSize = true;
+            this.radioMale.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioMale.Location = new System.Drawing.Point(109, 84);
+            this.radioMale.Name = "radioMale";
+            this.radioMale.Size = new System.Drawing.Size(58, 20);
+            this.radioMale.TabIndex = 18;
+            this.radioMale.TabStop = true;
+            this.radioMale.Text = "Nam";
+            this.radioMale.UseVisualStyleBackColor = true;
+            // 
+            // radioFemale
+            // 
+            this.radioFemale.AutoSize = true;
+            this.radioFemale.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioFemale.Location = new System.Drawing.Point(191, 84);
+            this.radioFemale.Name = "radioFemale";
+            this.radioFemale.Size = new System.Drawing.Size(45, 20);
+            this.radioFemale.TabIndex = 19;
+            this.radioFemale.TabStop = true;
+            this.radioFemale.Text = "Nữ";
+            this.radioFemale.UseVisualStyleBackColor = true;
             // 
             // FindStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(801, 473);
+            this.ClientSize = new System.Drawing.Size(685, 473);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FindStudent";
             this.Text = "FindStudent";
@@ -313,6 +333,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bntSelect)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -333,11 +354,12 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtNumber;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox checkFemale;
-        private System.Windows.Forms.CheckBox checkMale;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private Bunifu.Framework.UI.BunifuImageButton bntSelect;
+        private System.Windows.Forms.RadioButton radioFemale;
+        private System.Windows.Forms.RadioButton radioMale;
     }
 }

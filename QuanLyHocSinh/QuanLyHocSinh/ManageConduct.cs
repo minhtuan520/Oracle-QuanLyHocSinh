@@ -21,14 +21,7 @@ namespace QuanLyHocSinh
         public ManageConduct()
         {
             InitializeComponent();
-        }
-
-        private void bunifuImageButton1_Click(object sender, EventArgs e)
-        {
-            FindStudent frmFindStudent = new FindStudent();
-            frmFindStudent.MdiParent = this.MdiParent;
-            frmFindStudent.Show();
-        }
+        }        
 
         private void bntImport_Click(object sender, EventArgs e)
         {
@@ -39,6 +32,7 @@ namespace QuanLyHocSinh
 
         private void ManageConduct_Load(object sender, EventArgs e)
         {
+            this.ControlBox = false;
             LoadCmb();
         }
         #region Load Combobox
@@ -83,6 +77,7 @@ namespace QuanLyHocSinh
             cmbYear.DataSource = schoolYears;
         }
         #endregion
+        
 
         private void cmbYear_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -293,6 +288,11 @@ namespace QuanLyHocSinh
             {
                 GC.Collect();
             }
+        }
+
+        private void bntSearch_Click_1(object sender, EventArgs e)
+        {
+            FindStudent.Instance.ShowDialog();
         }
     }
 }

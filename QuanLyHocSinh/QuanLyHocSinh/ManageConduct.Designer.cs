@@ -32,11 +32,6 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.bntSave = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bntExport = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bntImport = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bntPrint = new Bunifu.Framework.UI.BunifuFlatButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cmbSemester = new System.Windows.Forms.ComboBox();
@@ -46,17 +41,21 @@
             this.cmbClass = new System.Windows.Forms.ComboBox();
             this.cmbYear = new System.Windows.Forms.ComboBox();
             this.cmbGrade = new System.Windows.Forms.ComboBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.bntSave = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bntExport = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bntImport = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bntPrint = new Bunifu.Framework.UI.BunifuFlatButton();
             this.GridView_Conduct = new System.Windows.Forms.DataGridView();
             this.MSHOCSINH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CONDUCTNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.bntSearch = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridView_Conduct)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -65,10 +64,10 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel1.Controls.Add(this.label1, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.GridView_Conduct, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.bunifuImageButton1, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.bntSearch, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label1, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -77,7 +76,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35.71429F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.97959F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(756, 507);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1184, 601);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // label1
@@ -85,9 +84,9 @@
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(40, 0);
+            this.label1.Location = new System.Drawing.Point(62, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(674, 77);
+            this.label1.Size = new System.Drawing.Size(1059, 91);
             this.label1.TabIndex = 20;
             this.label1.Text = "QUẢN LÝ HẠNH KIỂM";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -97,15 +96,114 @@
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
-            this.tableLayoutPanel2.Controls.Add(this.groupBox1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.groupBox2, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.groupBox1, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(40, 80);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(62, 94);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(674, 174);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1059, 207);
             this.tableLayoutPanel2.TabIndex = 27;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.cmbSemester);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.cmbClass);
+            this.groupBox2.Controls.Add(this.cmbYear);
+            this.groupBox2.Controls.Add(this.cmbGrade);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.groupBox2.Location = new System.Drawing.Point(3, 3);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(432, 120);
+            this.groupBox2.TabIndex = 21;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Thông Tin: ";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(241, 72);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(57, 16);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Học Kì:";
+            // 
+            // cmbSemester
+            // 
+            this.cmbSemester.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSemester.FormattingEnabled = true;
+            this.cmbSemester.Location = new System.Drawing.Point(303, 69);
+            this.cmbSemester.Name = "cmbSemester";
+            this.cmbSemester.Size = new System.Drawing.Size(121, 24);
+            this.cmbSemester.TabIndex = 12;
+            this.cmbSemester.SelectedIndexChanged += new System.EventHandler(this.cmbSemester_SelectedIndexChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(14, 72);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(83, 16);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Niên Khóa:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(241, 40);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(38, 16);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Lớp:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(14, 40);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(42, 16);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Khối:";
+            // 
+            // cmbClass
+            // 
+            this.cmbClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbClass.FormattingEnabled = true;
+            this.cmbClass.Location = new System.Drawing.Point(303, 37);
+            this.cmbClass.Name = "cmbClass";
+            this.cmbClass.Size = new System.Drawing.Size(121, 24);
+            this.cmbClass.TabIndex = 2;
+            this.cmbClass.SelectedIndexChanged += new System.EventHandler(this.cmbClass_SelectedIndexChanged);
+            // 
+            // cmbYear
+            // 
+            this.cmbYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbYear.FormattingEnabled = true;
+            this.cmbYear.Location = new System.Drawing.Point(99, 69);
+            this.cmbYear.Name = "cmbYear";
+            this.cmbYear.Size = new System.Drawing.Size(121, 24);
+            this.cmbYear.TabIndex = 1;
+            this.cmbYear.SelectedIndexChanged += new System.EventHandler(this.cmbYear_SelectedIndexChanged);
+            // 
+            // cmbGrade
+            // 
+            this.cmbGrade.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbGrade.FormattingEnabled = true;
+            this.cmbGrade.Location = new System.Drawing.Point(100, 37);
+            this.cmbGrade.Name = "cmbGrade";
+            this.cmbGrade.Size = new System.Drawing.Size(121, 24);
+            this.cmbGrade.TabIndex = 0;
+            this.cmbGrade.SelectedIndexChanged += new System.EventHandler(this.cmbGrade_SelectedIndexChanged);
             // 
             // groupBox1
             // 
@@ -115,7 +213,7 @@
             this.groupBox1.Controls.Add(this.bntPrint);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.groupBox1.Location = new System.Drawing.Point(441, 3);
+            this.groupBox1.Location = new System.Drawing.Point(691, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(230, 138);
             this.groupBox1.TabIndex = 24;
@@ -269,105 +367,6 @@
             this.bntPrint.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bntPrint.Click += new System.EventHandler(this.bntPrint_Click);
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.cmbSemester);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.cmbClass);
-            this.groupBox2.Controls.Add(this.cmbYear);
-            this.groupBox2.Controls.Add(this.cmbGrade);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.groupBox2.Location = new System.Drawing.Point(3, 3);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(432, 120);
-            this.groupBox2.TabIndex = 21;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Thông Tin: ";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(241, 72);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(57, 16);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Học Kì:";
-            // 
-            // cmbSemester
-            // 
-            this.cmbSemester.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbSemester.FormattingEnabled = true;
-            this.cmbSemester.Location = new System.Drawing.Point(303, 69);
-            this.cmbSemester.Name = "cmbSemester";
-            this.cmbSemester.Size = new System.Drawing.Size(121, 24);
-            this.cmbSemester.TabIndex = 12;
-            this.cmbSemester.SelectedIndexChanged += new System.EventHandler(this.cmbSemester_SelectedIndexChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(14, 72);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 16);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Niên Khóa:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(241, 40);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 16);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Lớp:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(14, 40);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 16);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Khối:";
-            // 
-            // cmbClass
-            // 
-            this.cmbClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbClass.FormattingEnabled = true;
-            this.cmbClass.Location = new System.Drawing.Point(303, 37);
-            this.cmbClass.Name = "cmbClass";
-            this.cmbClass.Size = new System.Drawing.Size(121, 24);
-            this.cmbClass.TabIndex = 2;
-            this.cmbClass.SelectedIndexChanged += new System.EventHandler(this.cmbClass_SelectedIndexChanged);
-            // 
-            // cmbYear
-            // 
-            this.cmbYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbYear.FormattingEnabled = true;
-            this.cmbYear.Location = new System.Drawing.Point(99, 69);
-            this.cmbYear.Name = "cmbYear";
-            this.cmbYear.Size = new System.Drawing.Size(121, 24);
-            this.cmbYear.TabIndex = 1;
-            this.cmbYear.SelectedIndexChanged += new System.EventHandler(this.cmbYear_SelectedIndexChanged);
-            // 
-            // cmbGrade
-            // 
-            this.cmbGrade.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbGrade.FormattingEnabled = true;
-            this.cmbGrade.Location = new System.Drawing.Point(100, 37);
-            this.cmbGrade.Name = "cmbGrade";
-            this.cmbGrade.Size = new System.Drawing.Size(121, 24);
-            this.cmbGrade.TabIndex = 0;
-            this.cmbGrade.SelectedIndexChanged += new System.EventHandler(this.cmbGrade_SelectedIndexChanged);
-            // 
             // GridView_Conduct
             // 
             this.GridView_Conduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -376,9 +375,9 @@
             this.NAME,
             this.CONDUCTNAME});
             this.GridView_Conduct.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GridView_Conduct.Location = new System.Drawing.Point(40, 260);
+            this.GridView_Conduct.Location = new System.Drawing.Point(62, 307);
             this.GridView_Conduct.Name = "GridView_Conduct";
-            this.GridView_Conduct.Size = new System.Drawing.Size(674, 241);
+            this.GridView_Conduct.Size = new System.Drawing.Size(1059, 287);
             this.GridView_Conduct.TabIndex = 28;
             // 
             // MSHOCSINH
@@ -404,26 +403,26 @@
             this.CONDUCTNAME.HeaderText = "Hạnh kiểm";
             this.CONDUCTNAME.Name = "CONDUCTNAME";
             // 
-            // bunifuImageButton1
+            // bntSearch
             // 
-            this.bunifuImageButton1.BackColor = System.Drawing.SystemColors.Control;
-            this.bunifuImageButton1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
-            this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(720, 37);
-            this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(33, 37);
-            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton1.TabIndex = 29;
-            this.bunifuImageButton1.TabStop = false;
-            this.bunifuImageButton1.Zoom = 10;
-            this.bunifuImageButton1.Click += new System.EventHandler(this.bunifuImageButton1_Click);
+            this.bntSearch.BackColor = System.Drawing.Color.CadetBlue;
+            this.bntSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bntSearch.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bntSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bntSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.bntSearch.Location = new System.Drawing.Point(1127, 47);
+            this.bntSearch.Name = "bntSearch";
+            this.bntSearch.Size = new System.Drawing.Size(54, 41);
+            this.bntSearch.TabIndex = 29;
+            this.bntSearch.Text = "Tìm";
+            this.bntSearch.UseVisualStyleBackColor = false;
+            this.bntSearch.Click += new System.EventHandler(this.bntSearch_Click_1);
             // 
             // ManageConduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(756, 507);
+            this.ClientSize = new System.Drawing.Size(1184, 601);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "ManageConduct";
             this.Text = "ManageConduct";
@@ -432,11 +431,10 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GridView_Conduct)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -456,7 +454,6 @@
         private System.Windows.Forms.ComboBox cmbYear;
         private System.Windows.Forms.ComboBox cmbGrade;
         private System.Windows.Forms.DataGridView GridView_Conduct;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
         private System.Windows.Forms.GroupBox groupBox1;
         private Bunifu.Framework.UI.BunifuFlatButton bntSave;
         private Bunifu.Framework.UI.BunifuFlatButton bntExport;
@@ -465,5 +462,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MSHOCSINH;
         private System.Windows.Forms.DataGridViewTextBoxColumn NAME;
         private System.Windows.Forms.DataGridViewTextBoxColumn CONDUCTNAME;
+        private System.Windows.Forms.Button bntSearch;
     }
 }
