@@ -116,6 +116,7 @@
             this.bntChange.TabIndex = 0;
             this.bntChange.Text = "Đổi";
             this.bntChange.UseVisualStyleBackColor = false;
+            this.bntChange.Click += new System.EventHandler(this.bntChange_Click);
             // 
             // bunifuGradientPanel1
             // 

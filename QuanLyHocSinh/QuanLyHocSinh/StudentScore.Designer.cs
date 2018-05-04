@@ -88,7 +88,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(783, 539);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(984, 749);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -103,14 +103,14 @@
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 1, 2);
             this.tableLayoutPanel2.Controls.Add(this.bntPrint, 1, 3);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 110);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 152);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 4;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(777, 426);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(978, 594);
             this.tableLayoutPanel2.TabIndex = 11;
             // 
             // label1
@@ -119,9 +119,9 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(41, 0);
+            this.label1.Location = new System.Drawing.Point(51, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(693, 63);
+            this.label1.Size = new System.Drawing.Size(874, 89);
             this.label1.TabIndex = 25;
             this.label1.Text = "XEM ĐIỂM";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -142,7 +142,7 @@
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.groupBox1.Location = new System.Drawing.Point(41, 66);
+            this.groupBox1.Location = new System.Drawing.Point(51, 92);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(586, 121);
             this.groupBox1.TabIndex = 34;
@@ -267,14 +267,14 @@
             this.tableLayoutPanel3.Controls.Add(this.groupBox2, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.dataGridView1, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(41, 193);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(51, 270);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 185F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 185F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 185F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(693, 185);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(874, 261);
             this.tableLayoutPanel3.TabIndex = 35;
             // 
             // groupBox2
@@ -288,9 +288,9 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Right;
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.groupBox2.Location = new System.Drawing.Point(509, 3);
+            this.groupBox2.Location = new System.Drawing.Point(690, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(181, 179);
+            this.groupBox2.Size = new System.Drawing.Size(181, 255);
             this.groupBox2.TabIndex = 33;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tổng Kết:";
@@ -358,7 +358,7 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(479, 179);
+            this.dataGridView1.Size = new System.Drawing.Size(605, 255);
             this.dataGridView1.TabIndex = 26;
             // 
             // bntPrint
@@ -369,7 +369,7 @@
             this.bntPrint.Image = ((System.Drawing.Image)(resources.GetObject("bntPrint.Image")));
             this.bntPrint.ImageActive = null;
             this.bntPrint.InitialImage = ((System.Drawing.Image)(resources.GetObject("bntPrint.InitialImage")));
-            this.bntPrint.Location = new System.Drawing.Point(351, 387);
+            this.bntPrint.Location = new System.Drawing.Point(451, 547);
             this.bntPrint.Name = "bntPrint";
             this.bntPrint.Size = new System.Drawing.Size(73, 33);
             this.bntPrint.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -394,7 +394,7 @@
             this.bunifuGradientPanel1.Location = new System.Drawing.Point(3, 3);
             this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
             this.bunifuGradientPanel1.Quality = 10;
-            this.bunifuGradientPanel1.Size = new System.Drawing.Size(777, 101);
+            this.bunifuGradientPanel1.Size = new System.Drawing.Size(978, 143);
             this.bunifuGradientPanel1.TabIndex = 0;
             // 
             // label2
@@ -403,7 +403,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(621, 85);
+            this.label2.Location = new System.Drawing.Point(822, 127);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(116, 16);
             this.label2.TabIndex = 2;
@@ -415,7 +415,7 @@
             this.picturelogo.Image = ((System.Drawing.Image)(resources.GetObject("picturelogo.Image")));
             this.picturelogo.Location = new System.Drawing.Point(0, 0);
             this.picturelogo.Name = "picturelogo";
-            this.picturelogo.Size = new System.Drawing.Size(123, 101);
+            this.picturelogo.Size = new System.Drawing.Size(123, 143);
             this.picturelogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picturelogo.TabIndex = 0;
             this.picturelogo.TabStop = false;
@@ -438,10 +438,10 @@
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.hỗTrợToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(648, 77);
+            this.menuStrip1.Location = new System.Drawing.Point(941, 119);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.menuStrip1.Size = new System.Drawing.Size(128, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(36, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -477,7 +477,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(783, 539);
+            this.ClientSize = new System.Drawing.Size(984, 749);
             this.Controls.Add(this.tableLayoutPanel1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "StudentScore";

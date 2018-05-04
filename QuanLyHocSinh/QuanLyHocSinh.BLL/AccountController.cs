@@ -18,9 +18,13 @@ namespace QuanLyHocSinh.BLL
             {
                 var accountExist = _QuanLyHocSinhEntities.ACCOUNT.Where(ac => ac.USERNAME == account.USERNAME && ac.PASSWORD == account.PASSWORD).Take(1).ToList();//find object correct username and password
                 if (accountExist.Count == 0 || accountExist[0].IDTYPE != account.IDTYPE) //check (find object and idtype correct)
-                    return 0;                           
+                    return 0;
             }
-            return 1;           
-        }
+            return 1;
+        } 
+        public bool CheckPassword(ACCOUNT acc,string oldPassword, string newPassword)
+        {
+            return true;
+        }    
     }
 }
