@@ -39,14 +39,44 @@ namespace QuanLyHocSinh.BLL
             
         }
 
-        internal bool CreateAccount(string mSHOCSINH)
-        {
-            throw new NotImplementedException();
+        public bool CreateAccount(string Username)
+        {           
+            try
+            {
+                //MD5 cryp = new MD5CryptoServiceProvider();
+                ACCOUNT account = new ACCOUNT();
+                account.USERNAME = Username;
+                //var xxx = Encoding.ASCII.GetBytes(Username);
+                //var xxxxxxx = cryp.ComputeHash(xxx);
+
+                account.PASSWORD = Username;//defaul password
+                account.IDTYPE = 0;
+                _QuanLyHocSinhEntities.ACCOUNT.Add(account);
+                _QuanLyHocSinhEntities.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;                
+            }
         }
 
-        internal void RemoveAccount(string mSHS)
+        public bool RemoveAccount(string Username)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var findAccount = _QuanLyHocSinhEntities.ACCOUNT.Where(ac => ac.USERNAME == Username).Take(1).ToList();
+                if (findAccount.Count > 0)
+                {
+                    _QuanLyHocSinhEntities.ACCOUNT.Remove(findAccount[0]);
+                    _QuanLyHocSinhEntities.SaveChanges();                    
+                }
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
     }
 }

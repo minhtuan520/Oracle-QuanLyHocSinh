@@ -47,7 +47,9 @@ namespace QuanLyHocSinh
         {
             this._username = pusername;
             this._password = ppassword;
-            labelName.Text = pusername;
+                    
+            InitializeComponent();
+            labelName.Text = _username;
         }
 
         private bool CheckExistForm(String name)

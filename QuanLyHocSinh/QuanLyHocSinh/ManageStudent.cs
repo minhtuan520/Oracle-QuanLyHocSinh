@@ -18,6 +18,7 @@ namespace QuanLyHocSinh
 {
     public partial class ManageStudent : Form
     {
+        private string _MSHS = "";
         public ManageStudent()
         {
             InitializeComponent();
@@ -99,7 +100,7 @@ namespace QuanLyHocSinh
             if (cmbGrade.SelectedValue == null) ;
             else
             {
-                var listClass = classController.GetClass((decimal)cmbGrade.SelectedValue);
+                var listClass = classController.GetListClass((decimal)cmbGrade.SelectedValue);
                 if (listClass.Count > 0)
                 {
                     cmbClass.DataSource = listClass;
@@ -313,6 +314,56 @@ namespace QuanLyHocSinh
                 }
             }
 
+        }
+
+        private void bntUpdate_Click(object sender, EventArgs e)
+        {
+            StudentController studentController = new StudentController();
+            if (txtName.Text == "" || dateTimeBirthday.Value == null || txtAddress.Text == "" || txtPhone.Text == "" || cmbYear.Text == "") ;
+            else
+            {
+                STUDENTINFORMATION sTUDENTINFORMATION = new STUDENTINFORMATION();
+                sTUDENTINFORMATION.MSHOCSINH = _MSHS;
+                sTUDENTINFORMATION.NAME = txtName.Text;
+                if (radioNam.Checked = true)
+                    sTUDENTINFORMATION.SEX = "Nam";
+                else
+                    sTUDENTINFORMATION.SEX = "Nữ";
+                sTUDENTINFORMATION.PHONE = txtPhone.Text;
+                sTUDENTINFORMATION.ADDRESS = txtAddress.Text;
+                sTUDENTINFORMATION.BIRTHDAY = dateTimeBirthday.Value;
+                if (studentController.UpdateStudent(sTUDENTINFORMATION))
+                {
+                    MessageBox.Show("Update thành công", "Thông báo");
+                }
+                else
+                    MessageBox.Show("Update thất bại", "Thông báo");
+
+            }
+
+           
+        }
+
+        private void GridStudent_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            _MSHS = GridStudent.Rows[e.RowIndex].Cells[0].Value.ToString();
+            txtName.Text = GridStudent.Rows[e.RowIndex].Cells[1].Value.ToString();
+            dateTimeBirthday.Value = (DateTime)GridStudent.Rows[e.RowIndex].Cells[2].Value;
+         
+            txtAddress.Text = GridStudent.Rows[e.RowIndex].Cells[4].Value.ToString();
+            
+            if (GridStudent.Rows[e.RowIndex].Cells[3].Value.ToString() == "Nam")
+            {
+                radioNam.Checked = true;
+               
+            }
+            else
+            {
+                radioNu.Checked = true;
+                
+            }
+            txtPhone.Text = GridStudent.Rows[e.RowIndex].Cells[5].Value.ToString();
+            
         }
     }
 }

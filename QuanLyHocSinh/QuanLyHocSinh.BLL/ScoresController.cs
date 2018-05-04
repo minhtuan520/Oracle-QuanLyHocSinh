@@ -18,7 +18,7 @@ namespace QuanLyHocSinh.BLL
                               on student.MSHOCSINH equals classes.MSHOCSINH
                               join testCores in _QuanLyHocSinhEntities.TESTSCORES
                               on student.MSHOCSINH equals testCores.MSHOCSINH
-                              where testCores.SUBJECTID == subjectID && testCores.SEMESTERID == semesterID && classes.IDCLASS == classID && classes.SCHOOLYEARID == yearID
+                              where testCores.SUBJECTID == subjectID && testCores.SEMESTERID == semesterID && classes.IDCLASS == classID && testCores.SCHOOLYEARID == yearID
                               select new SCORES
                               {
                                   MSHOCSINH = student.MSHOCSINH,
@@ -204,5 +204,6 @@ namespace QuanLyHocSinh.BLL
                 return false;
             }
         }
+        
     }
 }

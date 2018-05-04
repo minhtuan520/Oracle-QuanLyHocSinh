@@ -30,9 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageStudent));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioNu = new System.Windows.Forms.RadioButton();
+            this.radioNam = new System.Windows.Forms.RadioButton();
             this.dateTimeBirthday = new System.Windows.Forms.DateTimePicker();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
@@ -50,11 +51,13 @@
             this.cmbGrade = new System.Windows.Forms.ComboBox();
             this.cmbYear = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-
-            //this.dataGridView1 = new System.Windows.Forms.DataGridView();
-
             this.GridStudent = new System.Windows.Forms.DataGridView();
-
+            this.MSHS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BIRTHDAY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ADDRESS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SEX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PHONE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.bntInsert = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bntExport = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -62,26 +65,14 @@
             this.bntUpdate = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bntPrint = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bntDelete = new Bunifu.Framework.UI.BunifuFlatButton();
-
             this.bntSearch = new System.Windows.Forms.Button();
-
-            this.MSHS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BIRTHDAY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ADDRESS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SEX = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PHONE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.radioNam = new System.Windows.Forms.RadioButton();
-            this.radioNu = new System.Windows.Forms.RadioButton();
-
+            this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-
             ((System.ComponentModel.ISupportInitialize)(this.GridStudent)).BeginInit();
-
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -105,19 +96,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1184, 601);
             this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(62, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1059, 90);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "QUẢN LÝ HỌC SINH";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel2
             // 
@@ -155,6 +133,29 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin:";
+            // 
+            // radioNu
+            // 
+            this.radioNu.AutoSize = true;
+            this.radioNu.Location = new System.Drawing.Point(383, 49);
+            this.radioNu.Name = "radioNu";
+            this.radioNu.Size = new System.Drawing.Size(47, 22);
+            this.radioNu.TabIndex = 17;
+            this.radioNu.TabStop = true;
+            this.radioNu.Text = "Nữ";
+            this.radioNu.UseVisualStyleBackColor = true;
+            // 
+            // radioNam
+            // 
+            this.radioNam.AutoSize = true;
+            this.radioNam.Checked = true;
+            this.radioNam.Location = new System.Drawing.Point(322, 49);
+            this.radioNam.Name = "radioNam";
+            this.radioNam.Size = new System.Drawing.Size(61, 22);
+            this.radioNam.TabIndex = 16;
+            this.radioNam.TabStop = true;
+            this.radioNam.Text = "Nam";
+            this.radioNam.UseVisualStyleBackColor = true;
             // 
             // dateTimeBirthday
             // 
@@ -251,7 +252,6 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.groupBox2.Location = new System.Drawing.Point(691, 3);
-
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(232, 118);
             this.groupBox2.TabIndex = 3;
@@ -296,9 +296,7 @@
             this.cmbClass.Name = "cmbClass";
             this.cmbClass.Size = new System.Drawing.Size(137, 24);
             this.cmbClass.TabIndex = 2;
-
             this.cmbClass.SelectedIndexChanged += new System.EventHandler(this.cmbClass_SelectedIndexChanged);
-
             // 
             // cmbGrade
             // 
@@ -308,9 +306,7 @@
             this.cmbGrade.Name = "cmbGrade";
             this.cmbGrade.Size = new System.Drawing.Size(137, 24);
             this.cmbGrade.TabIndex = 1;
-
             this.cmbGrade.SelectedIndexChanged += new System.EventHandler(this.cmbGrade_SelectedIndexChanged);
-
             // 
             // cmbYear
             // 
@@ -320,9 +316,7 @@
             this.cmbYear.Name = "cmbYear";
             this.cmbYear.Size = new System.Drawing.Size(137, 24);
             this.cmbYear.TabIndex = 0;
-
             this.cmbYear.SelectedIndexChanged += new System.EventHandler(this.cmbYear_SelectedIndexChanged);
-
             // 
             // tableLayoutPanel3
             // 
@@ -336,20 +330,10 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 312F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1059, 312);
             this.tableLayoutPanel3.TabIndex = 13;
             // 
-
-            // dataGridView1
-            //// 
-            //this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            //this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            //this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            //this.dataGridView1.Name = "dataGridView1";
-            //this.dataGridView1.Size = new System.Drawing.Size(788, 306);
-            //this.dataGridView1.TabIndex = 4;
-
             // GridStudent
             // 
             this.GridStudent.AllowUserToAddRows = false;
@@ -366,10 +350,58 @@
             this.GridStudent.Location = new System.Drawing.Point(3, 3);
             this.GridStudent.Name = "GridStudent";
             this.GridStudent.ReadOnly = true;
-            this.GridStudent.Size = new System.Drawing.Size(517, 295);
+            this.GridStudent.Size = new System.Drawing.Size(788, 306);
             this.GridStudent.TabIndex = 4;
             this.GridStudent.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-
+            this.GridStudent.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GridStudent_RowHeaderMouseClick);
+            // 
+            // MSHS
+            // 
+            this.MSHS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.MSHS.DataPropertyName = "MSHOCSINH";
+            this.MSHS.HeaderText = "MSHS";
+            this.MSHS.Name = "MSHS";
+            this.MSHS.ReadOnly = true;
+            // 
+            // NAME
+            // 
+            this.NAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NAME.DataPropertyName = "NAME";
+            this.NAME.HeaderText = "Họ và tên";
+            this.NAME.Name = "NAME";
+            this.NAME.ReadOnly = true;
+            // 
+            // BIRTHDAY
+            // 
+            this.BIRTHDAY.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.BIRTHDAY.DataPropertyName = "BIRTHDAY";
+            this.BIRTHDAY.HeaderText = "Ngày sinh";
+            this.BIRTHDAY.Name = "BIRTHDAY";
+            this.BIRTHDAY.ReadOnly = true;
+            // 
+            // ADDRESS
+            // 
+            this.ADDRESS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ADDRESS.DataPropertyName = "ADDRESS";
+            this.ADDRESS.HeaderText = "Địa chỉ";
+            this.ADDRESS.Name = "ADDRESS";
+            this.ADDRESS.ReadOnly = true;
+            // 
+            // SEX
+            // 
+            this.SEX.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.SEX.DataPropertyName = "SEX";
+            this.SEX.HeaderText = "Giới tính";
+            this.SEX.Name = "SEX";
+            this.SEX.ReadOnly = true;
+            // 
+            // PHONE
+            // 
+            this.PHONE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.PHONE.DataPropertyName = "PHONE";
+            this.PHONE.HeaderText = "SDT";
+            this.PHONE.Name = "PHONE";
+            this.PHONE.ReadOnly = true;
             // 
             // groupBox3
             // 
@@ -536,6 +568,7 @@
             this.bntUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bntUpdate.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.bntUpdate.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bntUpdate.Click += new System.EventHandler(this.bntUpdate_Click);
             // 
             // bntPrint
             // 
@@ -609,7 +642,7 @@
             this.bntDelete.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bntDelete.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.bntDelete.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
+            this.bntDelete.Click += new System.EventHandler(this.bntDelete_Click);
             // 
             // bntSearch
             // 
@@ -625,80 +658,19 @@
             this.bntSearch.Text = "Tìm";
             this.bntSearch.UseVisualStyleBackColor = false;
             this.bntSearch.Click += new System.EventHandler(this.bntSearch_Click);
-
-            this.bntDelete.Click += new System.EventHandler(this.bntDelete_Click);
             // 
-            // MSHS
+            // label1
             // 
-            this.MSHS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.MSHS.DataPropertyName = "MSHOCSINH";
-            this.MSHS.HeaderText = "MSHS";
-            this.MSHS.Name = "MSHS";
-            this.MSHS.ReadOnly = true;
-            // 
-            // NAME
-            // 
-            this.NAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.NAME.DataPropertyName = "NAME";
-            this.NAME.HeaderText = "Họ và tên";
-            this.NAME.Name = "NAME";
-            this.NAME.ReadOnly = true;
-            // 
-            // BIRTHDAY
-            // 
-            this.BIRTHDAY.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.BIRTHDAY.DataPropertyName = "BIRTHDAY";
-            this.BIRTHDAY.HeaderText = "Ngày sinh";
-            this.BIRTHDAY.Name = "BIRTHDAY";
-            this.BIRTHDAY.ReadOnly = true;
-            // 
-            // ADDRESS
-            // 
-            this.ADDRESS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ADDRESS.DataPropertyName = "ADDRESS";
-            this.ADDRESS.HeaderText = "Địa chỉ";
-            this.ADDRESS.Name = "ADDRESS";
-            this.ADDRESS.ReadOnly = true;
-            // 
-            // SEX
-            // 
-            this.SEX.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.SEX.DataPropertyName = "SEX";
-            this.SEX.HeaderText = "Giới tính";
-            this.SEX.Name = "SEX";
-            this.SEX.ReadOnly = true;
-            // 
-            // PHONE
-            // 
-            this.PHONE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.PHONE.DataPropertyName = "PHONE";
-            this.PHONE.HeaderText = "SDT";
-            this.PHONE.Name = "PHONE";
-            this.PHONE.ReadOnly = true;
-            // 
-            // radioNam
-            // 
-            this.radioNam.AutoSize = true;
-            this.radioNam.Checked = true;
-            this.radioNam.Location = new System.Drawing.Point(322, 49);
-            this.radioNam.Name = "radioNam";
-            this.radioNam.Size = new System.Drawing.Size(61, 22);
-            this.radioNam.TabIndex = 16;
-            this.radioNam.TabStop = true;
-            this.radioNam.Text = "Nam";
-            this.radioNam.UseVisualStyleBackColor = true;
-            // 
-            // radioNu
-            // 
-            this.radioNu.AutoSize = true;
-            this.radioNu.Location = new System.Drawing.Point(383, 49);
-            this.radioNu.Name = "radioNu";
-            this.radioNu.Size = new System.Drawing.Size(47, 22);
-            this.radioNu.TabIndex = 17;
-            this.radioNu.TabStop = true;
-            this.radioNu.Text = "Nữ";
-            this.radioNu.UseVisualStyleBackColor = true;
-
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.label1.Location = new System.Drawing.Point(62, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(1059, 90);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "QUẢN LÝ HỌC SINH";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ManageStudent
             // 
@@ -718,9 +690,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
-
             ((System.ComponentModel.ISupportInitialize)(this.GridStudent)).EndInit();
-
             this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
 

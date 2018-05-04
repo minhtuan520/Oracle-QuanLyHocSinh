@@ -8,14 +8,14 @@
         <EntityTypeShape EntityType="Model.ACCOUNT" Width="1.5" PointX="3" PointY="13.125" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.CLASS" Width="1.5" PointX="3.75" PointY="24.5" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.GRADELEVEL" Width="1.5" PointX="1.5" PointY="24.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.LEARNINGOUTCOMES" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.SCHOOLYEAR" Width="1.5" PointX="0.875" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.SEMESTER" Width="1.5" PointX="6.75" PointY="2.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.STUDENT" Width="1.5" PointX="0.875" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.LEARNINGOUTCOMES" Width="1.5" PointX="4.5" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.SCHOOLYEAR" Width="1.5" PointX="2" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.SEMESTER" Width="1.5" PointX="8.625" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.STUDENT" Width="1.5" PointX="0.5" PointY="6.5" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.STUDENTINCLASS" Width="2.375" PointX="7.375" PointY="6.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.SUBJECT" Width="1.5" PointX="0.75" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.SUBJECT" Width="1.5" PointX="4.875" PointY="9.875" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.TYPEACCOUNT" Width="1.5" PointX="1.5" PointY="16.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.TYPERESULT" Width="1.5" PointX="5.375" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TYPERESULT" Width="1.5" PointX="7.625" PointY="4.875" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.TESTSCORES" Width="1.5" PointX="4.25" PointY="0.625" IsExpanded="true" />
         <AssociationConnector Association="Model.FK_ACCOUNT_FK_TYPEAC_TYPEACCO" ManuallyRouted="false" />
         <AssociationConnector Association="Model.FK_CLASS_FK_CLASS__GRADELEV" ManuallyRouted="false" />

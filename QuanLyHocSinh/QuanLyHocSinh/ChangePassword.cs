@@ -29,6 +29,8 @@ namespace QuanLyHocSinh
 
         public ChangePassword(string pUsername,string pPassword)
         {
+            InitializeComponent();
+
             this._Password = pPassword;
             this._Username = pUsername; 
         }

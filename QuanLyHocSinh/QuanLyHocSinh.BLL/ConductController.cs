@@ -20,7 +20,7 @@ namespace QuanLyHocSinh.BLL
                               on studentClass.MSHOCSINH equals conduct.MSHOCSINH
                               join testScore in _QuanLyHocSinhEntities.TESTSCORES
                               on studentClass.MSHOCSINH equals testScore.MSHOCSINH
-                              where ((semesterID == testScore.SEMESTERID) && (classID == studentClass.IDCLASS) && (yearID == studentClass.SCHOOLYEARID))
+                              where ((semesterID == testScore.SEMESTERID) && (classID == studentClass.IDCLASS) && (yearID == testScore.SCHOOLYEARID))
                               select new CONDUCT
                               {
                                   MSHOCSINH = student.MSHOCSINH,
@@ -61,6 +61,25 @@ namespace QuanLyHocSinh.BLL
                 }
             }
             return flag;
+        }
+        public string GetConducName(string MSHS,decimal semesterID, string yearID)
+        {
+            var listResult = (from student in _QuanLyHocSinhEntities.STUDENT
+                              join
+                              studentClass in _QuanLyHocSinhEntities.STUDENTINCLASS
+                              on student.MSHOCSINH equals studentClass.MSHOCSINH
+                              join conduct in _QuanLyHocSinhEntities.LEARNINGOUTCOMES
+                              on studentClass.MSHOCSINH equals conduct.MSHOCSINH
+                              join testScore in _QuanLyHocSinhEntities.TESTSCORES
+                              on studentClass.MSHOCSINH equals testScore.MSHOCSINH
+                              where ((semesterID == testScore.SEMESTERID) && (MSHS == studentClass.MSHOCSINH) && (yearID == testScore.SCHOOLYEARID))
+                              select new CONDUCT
+                              {
+                                  MSHOCSINH = student.MSHOCSINH,
+                                  NAME = student.NAME,
+                                  CONDUCTNAME = conduct.CONDUCT
+                              }).Take(1).ToList();
+            return listResult[0].CONDUCTNAME;
         }
     }
 }

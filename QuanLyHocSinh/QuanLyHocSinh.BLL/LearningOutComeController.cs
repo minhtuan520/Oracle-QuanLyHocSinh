@@ -99,6 +99,6 @@ namespace QuanLyHocSinh.BLL
                 LearnningOutComeID = baseString + "0" + (1 + number);
             }
             return LearnningOutComeID;
-        }
+        }       
     }
 }

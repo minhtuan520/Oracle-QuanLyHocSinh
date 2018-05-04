@@ -55,11 +55,11 @@ namespace QuanLyHocSinh
                 else
                 {
                     MessageBox.Show("Chúc mừng bạn đã đăng nhập thành công", "Thông báo");
-
+                    this.Hide();
                     ChangePassword frmChangePassword = new ChangePassword(txtUsername.Text.ToString(), txtPassword.Text.ToString());
                     if(account.IDTYPE==1)
                     {
-                        Main frmMain = new Main(txtUsername.Text.ToString(), txtPassword.Text.ToString());                        
+                        Main frmMain = new Main(txtUsername.Text.ToString(), txtPassword.Text.ToString());                       
                         frmMain.Show();
                     }
                     else

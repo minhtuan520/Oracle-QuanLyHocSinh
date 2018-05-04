@@ -102,6 +102,7 @@
     <Compile Include="TYPERESULT.cs">
       <DependentUpon>QuanLyHocSinh.tt</DependentUpon>
     </Compile>
+    <Compile Include="ViewStudentScores.cs" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="QuanLyHocSinh.edmx">

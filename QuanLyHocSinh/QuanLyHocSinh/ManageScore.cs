@@ -120,7 +120,7 @@ namespace QuanLyHocSinh
             if (cmbGrade.SelectedValue == null) ;
             else
             {
-                var listClass = classController.GetClass((decimal)cmbGrade.SelectedValue);
+                var listClass = classController.GetListClass((decimal)cmbGrade.SelectedValue);
                 if (listClass.Count > 0)
                 {
                     cmbClass.DataSource = listClass;
@@ -152,12 +152,39 @@ namespace QuanLyHocSinh
             }
         }
         #endregion
-        #region button event
-        private void bntSave_Click(object sender, EventArgs e)
+       
+        private void copyAlltoClipboard()
         {
-
+            GridView_Diem.SelectAll();
+            DataObject dataObj = GridView_Diem.GetClipboardContent();
+            if (dataObj != null)
+                Clipboard.SetDataObject(dataObj);
         }
-        private void bntPrint_Click(object sender, EventArgs e)
+
+        private void releaseObject(object obj)
+        {
+            try
+            {
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(obj);
+                obj = null;
+            }
+            catch (Exception ex)
+            {
+                obj = null;
+                MessageBox.Show("Exception Occurred while releasing object " + ex.ToString());
+            }
+            finally
+            {
+                GC.Collect();
+            }
+        }
+
+        private void bntSearch_Click(object sender, EventArgs e)
+        {
+            FindStudent.Instance.ShowDialog();
+        }
+
+        private void bntPrint_Click_1(object sender, EventArgs e)
         {
             SaveFileDialog fsave = new SaveFileDialog();
             fsave.Filter = "(Tất cả các tệp)|*.*|(Các tệp pdf)|*.pdf";
@@ -254,16 +281,19 @@ namespace QuanLyHocSinh
             }
         }
 
-        private void bntImport_Click(object sender, EventArgs e)
+        private void bntImport_Click_1(object sender, EventArgs e)
         {
             Import frmImport = new Import(1);
             frmImport.MdiParent = this.MdiParent;
             frmImport.Show();
+        }
+
+        private void bntSave_Click(object sender, EventArgs e)
+        {
 
         }
 
-
-        private void bntExport_Click(object sender, EventArgs e)
+        private void bntExport_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -303,37 +333,6 @@ namespace QuanLyHocSinh
             {
                 MessageBox.Show("Quá trình xuất file bị lỗi, vui lòng thử lại sau", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        } 
-        #endregion
-        private void copyAlltoClipboard()
-        {
-            GridView_Diem.SelectAll();
-            DataObject dataObj = GridView_Diem.GetClipboardContent();
-            if (dataObj != null)
-                Clipboard.SetDataObject(dataObj);
-        }
-
-        private void releaseObject(object obj)
-        {
-            try
-            {
-                System.Runtime.InteropServices.Marshal.ReleaseComObject(obj);
-                obj = null;
-            }
-            catch (Exception ex)
-            {
-                obj = null;
-                MessageBox.Show("Exception Occurred while releasing object " + ex.ToString());
-            }
-            finally
-            {
-                GC.Collect();
-            }
-        }
-
-        private void bntSearch_Click(object sender, EventArgs e)
-        {
-            FindStudent.Instance.ShowDialog();
         }
     }
 

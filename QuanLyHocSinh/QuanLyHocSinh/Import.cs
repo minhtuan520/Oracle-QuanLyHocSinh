@@ -167,6 +167,11 @@ namespace QuanLyHocSinh
                                     SubjectController subjectController = new SubjectController();
                                     StudentController studentController = new StudentController();
                                     string schooYearId = yearController.GetID(schooYear);
+                                    if (schooYearId == null)
+                                    {
+                                        yearController.AddYear(schooYear);
+                                        schooYearId = yearController.GetID(schooYear);
+                                    }
                                     
                                     bool isInsert = studentController.AddListStudent(listStudent, schooYearId, Class);
                                     if (isInsert)
@@ -223,27 +228,11 @@ namespace QuanLyHocSinh
             {
                 MSHOCSINH = m.Field<string>("MSHS"),
                 NAME = m.Field<string>("Họ và tên"),
-                BIRTHDAY = (DateTime?)(m.Field<DateTime>("Ngày sinh")),
+                BIRTHDAY = (m.Field<DateTime?>("Ngày sinh")),
                 ADDRESS = m.Field<string>("Địa chỉ"),
-                SEX = (m.Field<string>("Giới tính"))=="Nam"?1:0,
+                SEX = (decimal?)((m.Field<string>("Giới tính")=="Nam"?1:0)),
                 PHONE = m.Field<string>("SDT"),
-            }).ToList();
-            //List<STUDENT> students = new List<STUDENT>();
-            //for (int i = 0; i < listStudent.Count; i++)
-            //{
-            //    STUDENT student = new STUDENT();
-            //    student.NAME = listStudent[i].NAME;
-            //    student.MSHOCSINH = listStudent[i].MSHOCSINH;
-            //    student.PHONE = listStudent[i].PHONE;
-            //    if (listStudent[i].SEX == "Nam")
-            //        student.SEX = 1;
-            //    else
-            //        student.SEX = 0;
-            //    student.BIRTHDAY = listStudent[i].BIRTHDAY;
-            //    student.ADDRESS = listStudent[i].ADDRESS;
-            //    students.Add(student);
-
-            //}
+            }).ToList();           
                 return listStudent;
         }            
     }

@@ -109,7 +109,7 @@ namespace QuanLyHocSinh
             if (cmbGrade.SelectedValue == null) ;
             else
             {
-                var listClass = classController.GetClass((decimal)cmbGrade.SelectedValue);
+                var listClass = classController.GetListClass((decimal)cmbGrade.SelectedValue);
                 if (listClass.Count > 0)
                 {
                     cmbClass.DataSource = listClass;

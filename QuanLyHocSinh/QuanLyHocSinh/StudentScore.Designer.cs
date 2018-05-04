@@ -38,7 +38,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtClass = new System.Windows.Forms.TextBox();
             this.txtBirthday = new System.Windows.Forms.TextBox();
-            this.txtNumber = new System.Windows.Forms.TextBox();
+            this.txtMSHS = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -53,7 +53,7 @@
             this.txtAverageScore = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.gridDiem = new System.Windows.Forms.DataGridView();
             this.bntPrint = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.labelName = new System.Windows.Forms.Label();
@@ -63,12 +63,19 @@
             this.hỗTrợToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.itemChangePassword = new System.Windows.Forms.ToolStripMenuItem();
             this.itemLogOut = new System.Windows.Forms.ToolStripMenuItem();
+            this.Subject = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Score_5M = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Score_15M = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Score_45M = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Score_MiddleYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Score_EndYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MEDIUMSCORE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridDiem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bntPrint)).BeginInit();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picturelogo)).BeginInit();
@@ -90,6 +97,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(984, 749);
             this.tableLayoutPanel1.TabIndex = 0;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // tableLayoutPanel2
             // 
@@ -133,7 +141,7 @@
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.txtClass);
             this.groupBox1.Controls.Add(this.txtBirthday);
-            this.groupBox1.Controls.Add(this.txtNumber);
+            this.groupBox1.Controls.Add(this.txtMSHS);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
@@ -157,6 +165,7 @@
             this.cmbYear.Name = "cmbYear";
             this.cmbYear.Size = new System.Drawing.Size(121, 24);
             this.cmbYear.TabIndex = 21;
+            this.cmbYear.SelectedIndexChanged += new System.EventHandler(this.cmbYear_SelectedIndexChanged);
             // 
             // cmbSemester
             // 
@@ -166,6 +175,7 @@
             this.cmbSemester.Name = "cmbSemester";
             this.cmbSemester.Size = new System.Drawing.Size(121, 24);
             this.cmbSemester.TabIndex = 12;
+            this.cmbSemester.SelectedIndexChanged += new System.EventHandler(this.cmbSemester_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -179,6 +189,7 @@
             // 
             // txtClass
             // 
+            this.txtClass.Enabled = false;
             this.txtClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtClass.Location = new System.Drawing.Point(330, 55);
             this.txtClass.Name = "txtClass";
@@ -187,19 +198,21 @@
             // 
             // txtBirthday
             // 
+            this.txtBirthday.Enabled = false;
             this.txtBirthday.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBirthday.Location = new System.Drawing.Point(105, 55);
             this.txtBirthday.Name = "txtBirthday";
             this.txtBirthday.Size = new System.Drawing.Size(121, 22);
             this.txtBirthday.TabIndex = 9;
             // 
-            // txtNumber
+            // txtMSHS
             // 
-            this.txtNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumber.Location = new System.Drawing.Point(106, 24);
-            this.txtNumber.Name = "txtNumber";
-            this.txtNumber.Size = new System.Drawing.Size(120, 22);
-            this.txtNumber.TabIndex = 6;
+            this.txtMSHS.Enabled = false;
+            this.txtMSHS.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMSHS.Location = new System.Drawing.Point(106, 24);
+            this.txtMSHS.Name = "txtMSHS";
+            this.txtMSHS.Size = new System.Drawing.Size(120, 22);
+            this.txtMSHS.TabIndex = 6;
             // 
             // label6
             // 
@@ -233,6 +246,7 @@
             // 
             // txtName
             // 
+            this.txtName.Enabled = false;
             this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.Location = new System.Drawing.Point(330, 24);
             this.txtName.Name = "txtName";
@@ -265,7 +279,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel3.Controls.Add(this.groupBox2, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.dataGridView1, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.gridDiem, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(51, 270);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -297,6 +311,7 @@
             // 
             // txtConduct
             // 
+            this.txtConduct.Enabled = false;
             this.txtConduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtConduct.Location = new System.Drawing.Point(41, 146);
             this.txtConduct.Name = "txtConduct";
@@ -316,6 +331,7 @@
             // 
             // txtType
             // 
+            this.txtType.Enabled = false;
             this.txtType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtType.Location = new System.Drawing.Point(41, 96);
             this.txtType.Name = "txtType";
@@ -324,6 +340,7 @@
             // 
             // txtAverageScore
             // 
+            this.txtAverageScore.Enabled = false;
             this.txtAverageScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAverageScore.Location = new System.Drawing.Point(41, 45);
             this.txtAverageScore.Name = "txtAverageScore";
@@ -352,14 +369,23 @@
             this.label11.TabIndex = 26;
             this.label11.Text = "Điểm Trung Bình:";
             // 
-            // dataGridView1
+            // gridDiem
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(605, 255);
-            this.dataGridView1.TabIndex = 26;
+            this.gridDiem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridDiem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Subject,
+            this.Score_5M,
+            this.Score_15M,
+            this.Score_45M,
+            this.Score_MiddleYear,
+            this.Score_EndYear,
+            this.MEDIUMSCORE});
+            this.gridDiem.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridDiem.Location = new System.Drawing.Point(3, 3);
+            this.gridDiem.Name = "gridDiem";
+            this.gridDiem.Size = new System.Drawing.Size(605, 255);
+            this.gridDiem.TabIndex = 26;
+            this.gridDiem.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridDiem_CellContentClick);
             // 
             // bntPrint
             // 
@@ -377,6 +403,7 @@
             this.bntPrint.TabStop = false;
             this.bntPrint.WaitOnLoad = true;
             this.bntPrint.Zoom = 5;
+            this.bntPrint.Click += new System.EventHandler(this.bntPrint_Click);
             // 
             // bunifuGradientPanel1
             // 
@@ -460,7 +487,7 @@
             this.itemChangePassword.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.itemChangePassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.itemChangePassword.Name = "itemChangePassword";
-            this.itemChangePassword.Size = new System.Drawing.Size(160, 22);
+            this.itemChangePassword.Size = new System.Drawing.Size(180, 22);
             this.itemChangePassword.Text = "Đổi Mật Khẩu";
             this.itemChangePassword.Click += new System.EventHandler(this.itemChangePassword_Click);
             // 
@@ -469,9 +496,65 @@
             this.itemLogOut.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.itemLogOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.itemLogOut.Name = "itemLogOut";
-            this.itemLogOut.Size = new System.Drawing.Size(160, 22);
+            this.itemLogOut.Size = new System.Drawing.Size(180, 22);
             this.itemLogOut.Text = "Đăng Xuất";
             this.itemLogOut.Click += new System.EventHandler(this.itemLogOut_Click);
+            // 
+            // Subject
+            // 
+            this.Subject.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Subject.DataPropertyName = "SubjectName";
+            this.Subject.HeaderText = "Môn học";
+            this.Subject.Name = "Subject";
+            this.Subject.ReadOnly = true;
+            // 
+            // Score_5M
+            // 
+            this.Score_5M.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Score_5M.DataPropertyName = "SCORE_5M";
+            this.Score_5M.HeaderText = "5p";
+            this.Score_5M.Name = "Score_5M";
+            this.Score_5M.ReadOnly = true;
+            // 
+            // Score_15M
+            // 
+            this.Score_15M.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Score_15M.DataPropertyName = "SCORE_15M";
+            this.Score_15M.HeaderText = "15p";
+            this.Score_15M.Name = "Score_15M";
+            this.Score_15M.ReadOnly = true;
+            // 
+            // Score_45M
+            // 
+            this.Score_45M.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Score_45M.DataPropertyName = "SCORE_45M";
+            this.Score_45M.HeaderText = "45p";
+            this.Score_45M.Name = "Score_45M";
+            this.Score_45M.ReadOnly = true;
+            // 
+            // Score_MiddleYear
+            // 
+            this.Score_MiddleYear.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Score_MiddleYear.DataPropertyName = "SCORE_MIDYEAR";
+            this.Score_MiddleYear.HeaderText = "Giữa kỳ";
+            this.Score_MiddleYear.Name = "Score_MiddleYear";
+            this.Score_MiddleYear.ReadOnly = true;
+            // 
+            // Score_EndYear
+            // 
+            this.Score_EndYear.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Score_EndYear.DataPropertyName = "SCORE_ENDYEAR";
+            this.Score_EndYear.HeaderText = "Cuối kỳ";
+            this.Score_EndYear.Name = "Score_EndYear";
+            this.Score_EndYear.ReadOnly = true;
+            // 
+            // MEDIUMSCORE
+            // 
+            this.MEDIUMSCORE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.MEDIUMSCORE.DataPropertyName = "MEDIUMSCORE";
+            this.MEDIUMSCORE.HeaderText = "Trung bình";
+            this.MEDIUMSCORE.Name = "MEDIUMSCORE";
+            this.MEDIUMSCORE.ReadOnly = true;
             // 
             // StudentScore
             // 
@@ -482,6 +565,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "StudentScore";
             this.Text = "StudentScore";
+            this.Load += new System.EventHandler(this.StudentScore_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
@@ -490,7 +574,7 @@
             this.tableLayoutPanel3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridDiem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bntPrint)).EndInit();
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.bunifuGradientPanel1.PerformLayout();
@@ -520,7 +604,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtClass;
         private System.Windows.Forms.TextBox txtBirthday;
-        private System.Windows.Forms.TextBox txtNumber;
+        private System.Windows.Forms.TextBox txtMSHS;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -535,7 +619,14 @@
         private System.Windows.Forms.TextBox txtAverageScore;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView gridDiem;
         private Bunifu.Framework.UI.BunifuImageButton bntPrint;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Subject;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Score_5M;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Score_15M;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Score_45M;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Score_MiddleYear;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Score_EndYear;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MEDIUMSCORE;
     }
 }

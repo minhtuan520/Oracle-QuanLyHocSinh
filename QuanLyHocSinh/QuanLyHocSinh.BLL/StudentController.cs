@@ -31,14 +31,36 @@ namespace QuanLyHocSinh.BLL
             bool flag = false;
             try
             {
-                student.MSHOCSINH = CreateMSHS();
-                _QuanLyHocSinhEntities.STUDENT.Add(student);
-                flag = AddStudentClass(student, schoolYearId, ClassId);
-                if (flag)
+                if (student.MSHOCSINH == null)
+                {
+                    student.MSHOCSINH = CreateMSHS();
+                    _QuanLyHocSinhEntities.STUDENT.Add(student);
+                }
+                else
+                {
+                    var findStudent = _QuanLyHocSinhEntities.STUDENT.Where(s => s.MSHOCSINH == student.MSHOCSINH).Take(1).ToList();
+                    if (findStudent.Count == 0)
+                    {
+                        student.MSHOCSINH = CreateMSHS();
+                        _QuanLyHocSinhEntities.STUDENT.Add(student);
+                        flag = true;
+                    }
+                    else
+                    {
+                        student = findStudent[0];//ton tai cu
+                    }
+                    
+                }
+                if (flag == false)//ko ton tai => tao account
                 {
                     AccountController accountController = new AccountController();
                     flag = accountController.CreateAccount(student.MSHOCSINH);
+                }                
+                if (flag)
+                {
+                    flag = AddStudentClass(student, schoolYearId, ClassId);
                 }
+                
                 if (flag)
                 {
                     ScoresController scoresController = new ScoresController();
@@ -150,8 +172,32 @@ namespace QuanLyHocSinh.BLL
 
                 return false;
             }
+        }
+        public STUDENT getStudent(string username)
+        {
+            var findStudent = _QuanLyHocSinhEntities.STUDENT.Where(s => s.MSHOCSINH == username).Take(1).ToList();
+            if (findStudent.Count > 0)
+                return findStudent[0];
+            return null;
 
-
+        }
+        public bool UpdateStudent(STUDENTINFORMATION studentInformation)
+        {
+            var findStudent = _QuanLyHocSinhEntities.STUDENT.Where(s => s.MSHOCSINH == studentInformation.MSHOCSINH).Take(1).ToList();
+            if (findStudent.Count > 0)
+            {
+                findStudent[0].NAME = studentInformation.NAME;
+                if (studentInformation.SEX == "Nam")
+                    findStudent[0].SEX = 1;
+                else
+                    findStudent[0].SEX = 0;
+                findStudent[0].PHONE = studentInformation.PHONE;
+                findStudent[0].BIRTHDAY = studentInformation.BIRTHDAY;
+                findStudent[0].ADDRESS = studentInformation.ADDRESS;
+                _QuanLyHocSinhEntities.SaveChanges();
+                return true;
+            }
+            return false;
 
         }
     }

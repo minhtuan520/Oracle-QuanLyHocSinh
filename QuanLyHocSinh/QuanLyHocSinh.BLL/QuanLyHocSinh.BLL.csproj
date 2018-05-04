@@ -50,6 +50,7 @@
     <Compile Include="ScoresController.cs" />
     <Compile Include="SemesterController.cs" />
     <Compile Include="StudentController.cs" />
+    <Compile Include="StudentViewScoreController.cs" />
     <Compile Include="SubjectController.cs" />
     <Compile Include="YearController.cs" />
   </ItemGroup>

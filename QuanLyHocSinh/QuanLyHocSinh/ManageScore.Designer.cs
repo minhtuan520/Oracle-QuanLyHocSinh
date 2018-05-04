@@ -152,6 +152,7 @@
             this.bntSave.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bntSave.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.bntSave.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bntSave.Click += new System.EventHandler(this.bntSave_Click);
             // 
             // bntExport
             // 
@@ -188,6 +189,7 @@
             this.bntExport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bntExport.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.bntExport.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bntExport.Click += new System.EventHandler(this.bntExport_Click_1);
             // 
             // bntImport
             // 
@@ -224,6 +226,7 @@
             this.bntImport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bntImport.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.bntImport.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bntImport.Click += new System.EventHandler(this.bntImport_Click_1);
             // 
             // bntPrint
             // 
@@ -260,6 +263,7 @@
             this.bntPrint.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bntPrint.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.bntPrint.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bntPrint.Click += new System.EventHandler(this.bntPrint_Click_1);
             // 
             // groupBox2
             // 
