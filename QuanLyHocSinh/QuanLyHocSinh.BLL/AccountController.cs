@@ -22,14 +22,21 @@ namespace QuanLyHocSinh.BLL
             }
             return 1;
         } 
-        public int CheckPassword(ACCOUNT acc,string oldPassword, string newPassword)
+        public int CheckPassword(ACCOUNT account,string oldPassword, string newPassword)
         {
-            if(acc.PASSWORD!=oldPassword)
+            if(account.PASSWORD!=oldPassword)
             {
                 return 0;
             }
-
-            return 3;
+            else
+            {
+                var accoutExist = _QuanLyHocSinhEntities.ACCOUNT.Where(ac => ac.USERNAME == account.USERNAME && ac.PASSWORD == account.PASSWORD).Take(1).ToList();
+                accoutExist[0].USERNAME = account.USERNAME;
+                accoutExist[0].PASSWORD = account.PASSWORD;
+                _QuanLyHocSinhEntities.SaveChanges();
+                return 1;
+            }
+            
         }
 
         internal bool CreateAccount(string mSHOCSINH)

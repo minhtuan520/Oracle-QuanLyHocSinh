@@ -12,6 +12,7 @@ namespace QuanLyHocSinh
 {
     public partial class Main : Form
     {
+        string _username, _password;
         public Main()
         {
             InitializeComponent();
@@ -40,6 +41,13 @@ namespace QuanLyHocSinh
             menuSystem.BackColor = Color.Transparent;
             
             SlidePanel.Visible=false;
+        }
+
+        public Main(string pusername, string ppassword)
+        {
+            this._username = pusername;
+            this._password = ppassword;
+            labelName.Text = pusername;
         }
 
         private bool CheckExistForm(String name)

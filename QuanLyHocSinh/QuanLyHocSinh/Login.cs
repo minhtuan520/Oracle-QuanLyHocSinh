@@ -59,12 +59,12 @@ namespace QuanLyHocSinh
                     ChangePassword frmChangePassword = new ChangePassword(txtUsername.Text.ToString(), txtPassword.Text.ToString());
                     if(account.IDTYPE==1)
                     {
-                        Main frmMain = new Main();                        
+                        Main frmMain = new Main(txtUsername.Text.ToString(), txtPassword.Text.ToString());                        
                         frmMain.Show();
                     }
                     else
                     {
-                        StudentScore frmStudedntScore = new StudentScore();
+                        StudentScore frmStudedntScore = new StudentScore(txtUsername.Text.ToString(), txtPassword.Text.ToString());
                         frmStudedntScore.Show();
                     }
                     

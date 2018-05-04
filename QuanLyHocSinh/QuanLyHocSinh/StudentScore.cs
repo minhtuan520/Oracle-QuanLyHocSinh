@@ -12,6 +12,8 @@ namespace QuanLyHocSinh
 {
     public partial class StudentScore : Form
     {
+        string _username, _password;
+
         public StudentScore()
         {
             InitializeComponent();
@@ -29,12 +31,19 @@ namespace QuanLyHocSinh
             titleSchool.BackColor = Color.Transparent;
 
            //hide background of Username
-            var c = PointToScreen(label2.Location);
+            var c = PointToScreen(labelName.Location);
             c = bunifuGradientPanel1.PointToClient(c);
-            label2.Parent = bunifuGradientPanel1;            
-            label2.BackColor = Color.Transparent;
+            labelName.Parent = bunifuGradientPanel1;            
+            labelName.BackColor = Color.Transparent;
 
             menuStrip1.BackColor = Color.Transparent;
+        }
+
+        public StudentScore(string pusername, string ppassword)
+        {
+            this._username = pusername;
+            this._password = ppassword;
+            labelName.Text = pusername;
         }
 
         private void itemChangePassword_Click(object sender, EventArgs e)
