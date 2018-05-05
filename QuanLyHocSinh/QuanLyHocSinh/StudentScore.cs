@@ -55,7 +55,9 @@ namespace QuanLyHocSinh
         private void itemChangePassword_Click(object sender, EventArgs e)
         {
             ChangePassword frmChangePassword = new ChangePassword();
-            frmChangePassword.MdiParent = this;
+            //frmChangePassword.MdiParent = this;
+            //frmChangePassword.Anchor = AnchorStyles.Left;
+            //frmChangePassword.Anchor = AnchorStyles.Top;
             frmChangePassword.Show();
         }
 

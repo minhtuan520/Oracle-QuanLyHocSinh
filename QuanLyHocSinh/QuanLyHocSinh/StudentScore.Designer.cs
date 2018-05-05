@@ -54,6 +54,13 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.gridDiem = new System.Windows.Forms.DataGridView();
+            this.Subject = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Score_5M = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Score_15M = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Score_45M = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Score_MiddleYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Score_EndYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MEDIUMSCORE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bntPrint = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.labelName = new System.Windows.Forms.Label();
@@ -63,13 +70,6 @@
             this.hỗTrợToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.itemChangePassword = new System.Windows.Forms.ToolStripMenuItem();
             this.itemLogOut = new System.Windows.Forms.ToolStripMenuItem();
-            this.Subject = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Score_5M = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Score_15M = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Score_45M = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Score_MiddleYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Score_EndYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MEDIUMSCORE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -95,7 +95,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(984, 749);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1184, 601);
             this.tableLayoutPanel1.TabIndex = 0;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
@@ -111,14 +111,14 @@
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 1, 2);
             this.tableLayoutPanel2.Controls.Add(this.bntPrint, 1, 3);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 152);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 123);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 4;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(978, 594);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1178, 475);
             this.tableLayoutPanel2.TabIndex = 11;
             // 
             // label1
@@ -127,9 +127,9 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(51, 0);
+            this.label1.Location = new System.Drawing.Point(61, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(874, 89);
+            this.label1.Size = new System.Drawing.Size(1054, 71);
             this.label1.TabIndex = 25;
             this.label1.Text = "XEM ĐIỂM";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -150,7 +150,7 @@
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.groupBox1.Location = new System.Drawing.Point(51, 92);
+            this.groupBox1.Location = new System.Drawing.Point(61, 74);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(586, 121);
             this.groupBox1.TabIndex = 34;
@@ -281,14 +281,14 @@
             this.tableLayoutPanel3.Controls.Add(this.groupBox2, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.gridDiem, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(51, 270);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(61, 216);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 261F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 261F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 261F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(874, 261);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1054, 207);
             this.tableLayoutPanel3.TabIndex = 35;
             // 
             // groupBox2
@@ -302,9 +302,9 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Right;
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.groupBox2.Location = new System.Drawing.Point(690, 3);
+            this.groupBox2.Location = new System.Drawing.Point(870, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(181, 255);
+            this.groupBox2.Size = new System.Drawing.Size(181, 201);
             this.groupBox2.TabIndex = 33;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tổng Kết:";
@@ -383,122 +383,9 @@
             this.gridDiem.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridDiem.Location = new System.Drawing.Point(3, 3);
             this.gridDiem.Name = "gridDiem";
-            this.gridDiem.Size = new System.Drawing.Size(605, 255);
+            this.gridDiem.Size = new System.Drawing.Size(731, 201);
             this.gridDiem.TabIndex = 26;
             this.gridDiem.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridDiem_CellContentClick);
-            // 
-            // bntPrint
-            // 
-            this.bntPrint.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bntPrint.BackColor = System.Drawing.SystemColors.Control;
-            this.bntPrint.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bntPrint.Image = ((System.Drawing.Image)(resources.GetObject("bntPrint.Image")));
-            this.bntPrint.ImageActive = null;
-            this.bntPrint.InitialImage = ((System.Drawing.Image)(resources.GetObject("bntPrint.InitialImage")));
-            this.bntPrint.Location = new System.Drawing.Point(451, 547);
-            this.bntPrint.Name = "bntPrint";
-            this.bntPrint.Size = new System.Drawing.Size(73, 33);
-            this.bntPrint.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bntPrint.TabIndex = 36;
-            this.bntPrint.TabStop = false;
-            this.bntPrint.WaitOnLoad = true;
-            this.bntPrint.Zoom = 5;
-            this.bntPrint.Click += new System.EventHandler(this.bntPrint_Click);
-            // 
-            // bunifuGradientPanel1
-            // 
-            this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
-            this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuGradientPanel1.Controls.Add(this.labelName);
-            this.bunifuGradientPanel1.Controls.Add(this.picturelogo);
-            this.bunifuGradientPanel1.Controls.Add(this.titleSchool);
-            this.bunifuGradientPanel1.Controls.Add(this.menuStrip1);
-            this.bunifuGradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bunifuGradientPanel1.GradientBottomLeft = System.Drawing.SystemColors.HotTrack;
-            this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.SteelBlue;
-            this.bunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.SkyBlue;
-            this.bunifuGradientPanel1.GradientTopRight = System.Drawing.Color.White;
-            this.bunifuGradientPanel1.Location = new System.Drawing.Point(3, 3);
-            this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
-            this.bunifuGradientPanel1.Quality = 10;
-            this.bunifuGradientPanel1.Size = new System.Drawing.Size(978, 143);
-            this.bunifuGradientPanel1.TabIndex = 0;
-            // 
-            // labelName
-            // 
-            this.labelName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelName.AutoSize = true;
-            this.labelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.labelName.Location = new System.Drawing.Point(822, 127);
-            this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(116, 16);
-            this.labelName.TabIndex = 2;
-            this.labelName.Text = "Tên Đăng Nhập";
-            // 
-            // picturelogo
-            // 
-            this.picturelogo.Dock = System.Windows.Forms.DockStyle.Left;
-            this.picturelogo.Image = ((System.Drawing.Image)(resources.GetObject("picturelogo.Image")));
-            this.picturelogo.Location = new System.Drawing.Point(0, 0);
-            this.picturelogo.Name = "picturelogo";
-            this.picturelogo.Size = new System.Drawing.Size(123, 143);
-            this.picturelogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picturelogo.TabIndex = 0;
-            this.picturelogo.TabStop = false;
-            // 
-            // titleSchool
-            // 
-            this.titleSchool.AutoSize = true;
-            this.titleSchool.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleSchool.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.titleSchool.Location = new System.Drawing.Point(306, 37);
-            this.titleSchool.Name = "titleSchool";
-            this.titleSchool.Size = new System.Drawing.Size(382, 42);
-            this.titleSchool.TabIndex = 1;
-            this.titleSchool.Text = "TRƯỜNG TIỂU HỌC";
-            this.titleSchool.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.hỗTrợToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(941, 119);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.menuStrip1.Size = new System.Drawing.Size(36, 24);
-            this.menuStrip1.TabIndex = 3;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // hỗTrợToolStripMenuItem
-            // 
-            this.hỗTrợToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.hỗTrợToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.itemChangePassword,
-            this.itemLogOut});
-            this.hỗTrợToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("hỗTrợToolStripMenuItem.Image")));
-            this.hỗTrợToolStripMenuItem.Name = "hỗTrợToolStripMenuItem";
-            this.hỗTrợToolStripMenuItem.Size = new System.Drawing.Size(28, 20);
-            // 
-            // itemChangePassword
-            // 
-            this.itemChangePassword.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.itemChangePassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.itemChangePassword.Name = "itemChangePassword";
-            this.itemChangePassword.Size = new System.Drawing.Size(180, 22);
-            this.itemChangePassword.Text = "Đổi Mật Khẩu";
-            this.itemChangePassword.Click += new System.EventHandler(this.itemChangePassword_Click);
-            // 
-            // itemLogOut
-            // 
-            this.itemLogOut.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.itemLogOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.itemLogOut.Name = "itemLogOut";
-            this.itemLogOut.Size = new System.Drawing.Size(180, 22);
-            this.itemLogOut.Text = "Đăng Xuất";
-            this.itemLogOut.Click += new System.EventHandler(this.itemLogOut_Click);
             // 
             // Subject
             // 
@@ -556,15 +443,129 @@
             this.MEDIUMSCORE.Name = "MEDIUMSCORE";
             this.MEDIUMSCORE.ReadOnly = true;
             // 
+            // bntPrint
+            // 
+            this.bntPrint.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bntPrint.BackColor = System.Drawing.SystemColors.Control;
+            this.bntPrint.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bntPrint.Image = ((System.Drawing.Image)(resources.GetObject("bntPrint.Image")));
+            this.bntPrint.ImageActive = null;
+            this.bntPrint.InitialImage = ((System.Drawing.Image)(resources.GetObject("bntPrint.InitialImage")));
+            this.bntPrint.Location = new System.Drawing.Point(551, 434);
+            this.bntPrint.Name = "bntPrint";
+            this.bntPrint.Size = new System.Drawing.Size(73, 33);
+            this.bntPrint.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bntPrint.TabIndex = 36;
+            this.bntPrint.TabStop = false;
+            this.bntPrint.WaitOnLoad = true;
+            this.bntPrint.Zoom = 5;
+            this.bntPrint.Click += new System.EventHandler(this.bntPrint_Click);
+            // 
+            // bunifuGradientPanel1
+            // 
+            this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
+            this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuGradientPanel1.Controls.Add(this.labelName);
+            this.bunifuGradientPanel1.Controls.Add(this.picturelogo);
+            this.bunifuGradientPanel1.Controls.Add(this.titleSchool);
+            this.bunifuGradientPanel1.Controls.Add(this.menuStrip1);
+            this.bunifuGradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bunifuGradientPanel1.GradientBottomLeft = System.Drawing.SystemColors.HotTrack;
+            this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.SteelBlue;
+            this.bunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.SkyBlue;
+            this.bunifuGradientPanel1.GradientTopRight = System.Drawing.Color.White;
+            this.bunifuGradientPanel1.Location = new System.Drawing.Point(3, 3);
+            this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
+            this.bunifuGradientPanel1.Quality = 10;
+            this.bunifuGradientPanel1.Size = new System.Drawing.Size(1178, 114);
+            this.bunifuGradientPanel1.TabIndex = 0;
+            // 
+            // labelName
+            // 
+            this.labelName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelName.AutoSize = true;
+            this.labelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.labelName.Location = new System.Drawing.Point(1022, 98);
+            this.labelName.Name = "labelName";
+            this.labelName.Size = new System.Drawing.Size(116, 16);
+            this.labelName.TabIndex = 2;
+            this.labelName.Text = "Tên Đăng Nhập";
+            // 
+            // picturelogo
+            // 
+            this.picturelogo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.picturelogo.Image = ((System.Drawing.Image)(resources.GetObject("picturelogo.Image")));
+            this.picturelogo.Location = new System.Drawing.Point(0, 0);
+            this.picturelogo.Name = "picturelogo";
+            this.picturelogo.Size = new System.Drawing.Size(123, 114);
+            this.picturelogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picturelogo.TabIndex = 0;
+            this.picturelogo.TabStop = false;
+            // 
+            // titleSchool
+            // 
+            this.titleSchool.AutoSize = true;
+            this.titleSchool.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleSchool.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.titleSchool.Location = new System.Drawing.Point(306, 37);
+            this.titleSchool.Name = "titleSchool";
+            this.titleSchool.Size = new System.Drawing.Size(382, 42);
+            this.titleSchool.TabIndex = 1;
+            this.titleSchool.Text = "TRƯỜNG TIỂU HỌC";
+            this.titleSchool.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.hỗTrợToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(1141, 90);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.menuStrip1.Size = new System.Drawing.Size(36, 24);
+            this.menuStrip1.TabIndex = 3;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // hỗTrợToolStripMenuItem
+            // 
+            this.hỗTrợToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.hỗTrợToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.itemChangePassword,
+            this.itemLogOut});
+            this.hỗTrợToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("hỗTrợToolStripMenuItem.Image")));
+            this.hỗTrợToolStripMenuItem.Name = "hỗTrợToolStripMenuItem";
+            this.hỗTrợToolStripMenuItem.Size = new System.Drawing.Size(28, 20);
+            // 
+            // itemChangePassword
+            // 
+            this.itemChangePassword.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.itemChangePassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.itemChangePassword.Name = "itemChangePassword";
+            this.itemChangePassword.Size = new System.Drawing.Size(160, 22);
+            this.itemChangePassword.Text = "Đổi Mật Khẩu";
+            this.itemChangePassword.Click += new System.EventHandler(this.itemChangePassword_Click);
+            // 
+            // itemLogOut
+            // 
+            this.itemLogOut.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.itemLogOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.itemLogOut.Name = "itemLogOut";
+            this.itemLogOut.Size = new System.Drawing.Size(160, 22);
+            this.itemLogOut.Text = "Đăng Xuất";
+            this.itemLogOut.Click += new System.EventHandler(this.itemLogOut_Click);
+            // 
             // StudentScore
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 749);
+            this.ClientSize = new System.Drawing.Size(1184, 601);
             this.Controls.Add(this.tableLayoutPanel1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "StudentScore";
             this.Text = "StudentScore";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.StudentScore_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
